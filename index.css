@@ -15,10 +15,16 @@ body{
     background:var(--white)
 }
 
-header, footer{
+/* header, footer{
     padding:16px; 
     background:var(--green); 
     color:#fff
+} */
+header{
+    background:var(--green); 
+    color:var(--white); 
+    padding:16px 0;
+    text-align: center;
 }
 
 .container{
