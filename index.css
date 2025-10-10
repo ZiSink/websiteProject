@@ -22,13 +22,28 @@ header{
     text-align: center;
 }
 
+.logotipo{
+    height: 60px;
+    margin-right: 10px;
+}
+
+header .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
 footer{
     text-align:center; 
     font-size:0.8rem; 
     padding:16px 0; 
     background:#212121; 
     margin-top:32px;
-}
+    padding: 10px 0;
+}   
 
 footer p{
     color: #FFFFFF;
@@ -65,8 +80,57 @@ a{
     color:var(--orange)
 }
 
-.logotipo {
-    height: 60px;
-    vertical-align: right;
-    margin-right: 10px;
+/* Estilos para menu dropdown */
+.header-content nav { display: block; }
+.menu { list-style: none; margin: 0; padding: 0; display: flex; gap: 20px; align-items: center; }
+.menu > li { position: relative; }
+.dropdown-toggle {
+    background: none;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    padding: 8px 6px;
+    color: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.dropdown-toggle::after {
+    content: '▾';
+    font-size: 0.8em;
+    opacity: 0.9;
+    margin-left: 6px;
+}
+
+/* submenu */
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    background: #fff;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    padding: 6px 0;
+    display: none;
+    z-index: 50;
+}
+.submenu li { list-style: none; }
+.submenu li a {
+    display: block;
+    padding: 8px 12px;
+    color: #222;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.submenu li a:hover { background: rgba(0,0,0,0.04); }
+
+/* quando aberto */
+.menu .dropdown.open > .submenu { display: block; }
+
+/* responsividade simples: empilha no móvel */
+@media (max-width: 700px) {
+    .menu { flex-direction: column; gap: 0; }
+    .menu > li { width: 100%; }
+    .submenu { position: relative; box-shadow: none; }
 }

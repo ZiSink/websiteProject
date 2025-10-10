@@ -1,25 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt">
-	<head>
-		<meta charset="UTF-8">
-		<title>Alimentar com coração</title>
-		<link rel="stylesheet" href="index.css">
-	</head>
-	<body>
-		<header>
-			<div class="header-content">
-				<a href="index.html"><img src="Images/Logo.png" alt="Logotipo do 'Alimentar com coração'" class="logotipo"></a>
-				<nav>
-					<a href="SobreNos.html">Sobre Nós</a>
-					<a href="ComoAjudar.html">Como Ajudar</a>
-					<a href="PrecisoAjuda.html">Preciso de Ajuda</a>
-					<a href="PontosdeRecolha.html">Pontos de Recolha</a>
-				</nav>
-			</div>
-		</header>
-		<footer>
-			<p>2024</p>
-			<p>Contactos: <a href="mailto:info@grupo1.com">info@grupo1.com</a></p>
-		</footer>
-	</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Alimentar com coração</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <header>
+            <div class="header-content">
+                <a href="index.html"><img src="Images/Logo.png" alt="Logotipo do 'Alimentar com coração'" class="logotipo"></a>
+                <nav>
+                    <ul class="menu">
+                        <li class="dropdown">
+                            <button class="dropdown-toggle" aria-expanded="false">Sobre Nós</button>
+                            <ul class="submenu" aria-label="Sobre Nós submenu">
+                                <li><a href="SobreNos.html">A Nossa Missão</a></li>
+                                <li><a href="Missao.html">Missão</a></li>
+                                <li><a href="Equipe.html">Equipe</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <button class="dropdown-toggle" aria-expanded="false">Como Ajudar</button>
+                            <ul class="submenu" aria-label="Como Ajudar submenu">
+                                <li><a href="Doacoes.html">Doações</a></li>
+                                <li><a href="Voluntariado.html">Voluntariado</a></li>
+                                <li><a href="Campanhas.html">Campanhas</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <button class="dropdown-toggle" aria-expanded="false">Preciso de Ajuda</button>
+                            <ul class="submenu" aria-label="Preciso de Ajuda submenu">
+                                <li><a href="Refeicoes.html">Refeições</a></li>
+                                <li><a href="AjudaEmergencial.html">Ajuda Emergencial</a></li>
+                                <li><a href="Recursos.html">Recursos</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <button class="dropdown-toggle" aria-expanded="false">Pontos de Recolha</button>
+                            <ul class="submenu" aria-label="Pontos de Recolha submenu">
+                                <li><a href="MapaPontos.html">Mapa</a></li>
+                                <li><a href="CadastrarPonto.html">Cadastrar Ponto</a></li>
+                                <li><a href="Horarios.html">Horários</a></li>
+                            </ul>
+                        </li>
+						<a href="Noticias.html">Notícias</a>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <footer>
+            <p>© 2025 - Alimentar com Coração</p>
+        </footer>
+
+        <script>
+            // dropdown toggle simples: abre/fecha ao clicar, fecha ao clicar fora
+            document.addEventListener('click', function(e){
+                const toggle = e.target.closest('.dropdown-toggle');
+                if (toggle) {
+                    const li = toggle.parentElement;
+                    const opened = li.classList.toggle('open');
+                    toggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
+                    // fecha outros abertos
+                    document.querySelectorAll('.menu .dropdown.open').forEach(other => {
+                        if (other !== li) {
+                            other.classList.remove('open');
+                            other.querySelector('.dropdown-toggle').setAttribute('aria-expanded','false');
+                        }
+                    });
+                    return;
+                }
+                // se clicou fora, fecha todos
+                if (!e.target.closest('.menu')) {
+                    document.querySelectorAll('.menu .dropdown.open').forEach(item => {
+                        item.classList.remove('open');
+                        item.querySelector('.dropdown-toggle').setAttribute('aria-expanded','false');
+                    });
+                }
+            });
+        </script>
+    </body>
 </html>
