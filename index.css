@@ -15,16 +15,23 @@ body{
     background:var(--white)
 }
 
-/* header, footer{
-    padding:16px; 
-    background:var(--green); 
-    color:#fff
-} */
 header{
-    background:var(--green); 
+    background: #212121; 
     color:var(--white); 
     padding:16px 0;
     text-align: center;
+}
+
+footer{
+    text-align:center; 
+    font-size:0.8rem; 
+    padding:16px 0; 
+    background:#212121; 
+    margin-top:32px;
+}
+
+footer p{
+    color: #FFFFFF;
 }
 
 .container{
@@ -56,4 +63,10 @@ h1{
 
 a{
     color:var(--orange)
+}
+
+.logotipo {
+    height: 60px;
+    vertical-align: right;
+    margin-right: 10px;
 }
