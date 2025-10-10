@@ -1,5 +1,6 @@
 :root{
     --green:#2E7D32; 
+    --black-green: #1c4b1e;
     --orange:#F57C00; 
     --light:#F5F5F5; 
     --text:#1E1E1E; 
@@ -31,9 +32,9 @@ header .header-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 900px;
+    max-width: 1200px; /* aumentado de 900px para ocupar mais largura */
     margin: 0 auto;
-    padding: 0 16px;
+    padding: 0 24px;   /* ligeiro aumento do padding lateral */
 }
 
 footer{
@@ -50,8 +51,8 @@ footer p{
 }
 
 .container{
-    max-width:900px; 
-    margin:0 auto; 
+    max-width: 1200px; /* alinhado com o header para consistência */
+    margin:0 auto;
     padding:16px
 }
 
@@ -108,7 +109,7 @@ a{
     top: 100%;
     left: 0;
     min-width: 180px;
-    background: #fff;
+    background: var(--green);
     box-shadow: 0 6px 16px rgba(0,0,0,0.1);
     border-radius: 4px;
     padding: 6px 0;
@@ -119,11 +120,11 @@ a{
 .submenu li a {
     display: block;
     padding: 8px 12px;
-    color: #222;
+    color: #FFFFFF;
     text-decoration: none;
     white-space: nowrap;
 }
-.submenu li a:hover { background: rgba(0,0,0,0.04); }
+.submenu li a:hover { background: var(--black-green); }
 
 /* quando aberto */
 .menu .dropdown.open > .submenu { display: block; }
