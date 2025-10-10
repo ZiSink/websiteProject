@@ -135,3 +135,20 @@ a{
     .menu > li { width: 100%; }
     .submenu { position: relative; box-shadow: none; }
 }
+
+.header-bar{
+    width: 100%;
+    height: 8px;              /* ajuste a grossura aqui */
+    display: block;
+    /* 1) barra sólida: */
+    /* background: var(--green); */
+
+    /* 2) ou, para degradé do --green (em cima) para branco (embaixo),
+       comente a linha anterior e descomente a seguinte: */
+    background: linear-gradient(to bottom, var(--green) 0%, #ffffff 100%);
+}
+
+/* Se quiser a transição mais suave e menos abrupta (opcional): */
+.header-bar.smooth {
+    background: linear-gradient(to bottom, var(--green) 0%, rgba(46,125,50,0.75) 40%, #ffffff 100%);
+}
