@@ -1,5 +1,6 @@
 :root{
     --green:#2E7D32; 
+    --black-green: #1c4b1e;
     --orange:#F57C00; 
     --light:#F5F5F5; 
     --text:#1E1E1E; 
@@ -31,9 +32,9 @@ header .header-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 900px;
+    max-width: 1200px; /* aumentado de 900px para ocupar mais largura */
     margin: 0 auto;
-    padding: 0 16px;
+    padding: 0 24px;   /* ligeiro aumento do padding lateral */
 }
 
 footer{
@@ -50,8 +51,13 @@ footer p{
 }
 
 .container{
+<<<<<<< HEAD
     max-width:1200px; 
     margin:0 auto; 
+=======
+    max-width: 1200px; /* alinhado com o header para consistência */
+    margin:0 auto;
+>>>>>>> b0c23c2a90c91c57814fd2795b449b65bd30952e
     padding:16px
 }
 
@@ -108,7 +114,7 @@ a{
     top: 100%;
     left: 0;
     min-width: 180px;
-    background: #fff;
+    background: var(--green);
     box-shadow: 0 6px 16px rgba(0,0,0,0.1);
     border-radius: 4px;
     padding: 6px 0;
@@ -119,11 +125,11 @@ a{
 .submenu li a {
     display: block;
     padding: 8px 12px;
-    color: #222;
+    color: #FFFFFF;
     text-decoration: none;
     white-space: nowrap;
 }
-.submenu li a:hover { background: rgba(0,0,0,0.04); }
+.submenu li a:hover { background: var(--black-green); }
 
 /* quando aberto */
 .menu .dropdown.open > .submenu { display: block; }
@@ -133,4 +139,21 @@ a{
     .menu { flex-direction: column; gap: 0; }
     .menu > li { width: 100%; }
     .submenu { position: relative; box-shadow: none; }
+}
+
+.header-bar{
+    width: 100%;
+    height: 8px;              /* ajuste a grossura aqui */
+    display: block;
+    /* 1) barra sólida: */
+    /* background: var(--green); */
+
+    /* 2) ou, para degradé do --green (em cima) para branco (embaixo),
+       comente a linha anterior e descomente a seguinte: */
+    background: linear-gradient(to bottom, var(--green) 0%, #ffffff 100%);
+}
+
+/* Se quiser a transição mais suave e menos abrupta (opcional): */
+.header-bar.smooth {
+    background: linear-gradient(to bottom, var(--green) 0%, rgba(46,125,50,0.75) 40%, #ffffff 100%);
 }
