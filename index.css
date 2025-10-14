@@ -50,13 +50,10 @@ footer p{
 }
 
 .container{
-<<<<<<< HEAD
     max-width:1200px; 
     margin:0 auto; 
-=======
     max-width: 1200px; /* alinhado com o header para consistência */
     margin:0 auto;
->>>>>>> b0c23c2a90c91c57814fd2795b449b65bd30952e
     padding:16px
 }
 
