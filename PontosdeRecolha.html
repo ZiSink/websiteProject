@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa - Alimentar com Coração</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="Css/Noticias.css"> 
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="Css/Maps.css">
+
+    <!-- Leaflet CSS e JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html"><img src="Images/Logo.png" alt="Logotipo do 'Alimentar com coração'" class="logotipo"></a>
+            <nav>
+                <ul class="menu">
+                    <li class="dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false">Sobre Nós</button>
+                        <ul class="submenu" aria-label="Sobre Nós submenu">
+                            <li><a href="NossaMissao.html">A Nossa Missão</a></li>
+                            <li><a href="Contactos.html">Contactos</a></li>
+                            <li><a href="FAQ.html">FAQs</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false">Como Ajudar</button>
+                        <ul class="submenu" aria-label="Como Ajudar submenu">
+                            <li><a href="Doacoes.html">Donativos e doações</a></li>
+                            <li><a href="Voluntariado.html">Torne-se Voluntario</a></li>
+                            <li><a href="Campanhas.html">Campanhas Ativas</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false">Preciso de Ajuda</button>
+                        <ul class="submenu" aria-label="Preciso de Ajuda submenu">
+                            <li><a href="Refeicoes.html">Refeições</a></li>
+                            <li><a href="AjudaEmergencial.html">Ajuda Emergencial</a></li>
+                            <li><a href="Recursos.html">Recursos</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false">Pontos de Recolha</button>
+                        <ul class="submenu" aria-label="Pontos de Recolha submenu">
+                            <li><a href="MapaPontos.html">Mapa</a></li>
+                            <li><a href="CadastrarPonto.html">Cadastrar Ponto</a></li>
+                            <li><a href="Horarios.html">Horários</a></li>
+                        </ul>
+                    </li>
+                    <a href="Noticias.html">Notícias</a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="content">
+        <!-- Mapa -->
+        <div id="map"></div>
+
+        <!-- Painel de informação -->
+        <div id="info-panel">
+            <img src="https://via.placeholder.com/400x180?text=Seleciona+um+ponto" alt="Imagem do local">
+            <div id="info-content">
+                <h2>Seleciona um ponto no mapa</h2>
+                <p>Aqui aparecerão as informações detalhadas do local escolhido.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ficheiro JS -->
+    <script src="Js/Maps.js"></script>
+
+    <footer>
+        <p>2024</p>
+        <p>Contactos: <a href="mailto:info@grupo1.com">info@grupo1.com</a></p>
+    </footer>
+</body>
+</html>
