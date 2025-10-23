@@ -52,6 +52,8 @@ footer p{
 .container{
     max-width:1200px; 
     margin:0 auto; 
+    max-width: 1200px; /* alinhado com o header para consistência */
+    margin:0 auto;
     padding:16px
 }
 
