@@ -12,14 +12,6 @@ body.noticias-page {
     margin: 0;
 }
 
-/* Header e Footer ocupam 100% da largura */
-body.noticias-page header,
-body.noticias-page footer {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    border: none;
-}
 
 /* Container principal */
 .container {
@@ -29,22 +21,6 @@ body.noticias-page footer {
     padding: 0 20px; /* respiro lateral */
 }
 
-/* Section Header */
-.section-header {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.section-header h1 {
-    font-size: 42px;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.section-header p {
-    font-size: 18px;
-    color: #666;
-}
 
 /* Notícia Principal */
 .featured-news {
