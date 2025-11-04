@@ -5,6 +5,7 @@
     --light:#F5F5F5; 
     --text:#1E1E1E; 
     --white:#FFFFFF;
+    --black:#212121;
 }
 
 *{box-sizing:border-box}
@@ -17,7 +18,7 @@ body{
 }
 
 header{
-    background: #212121; 
+    background: var(--black); 
     color:var(--white); 
     padding:16px 0;
     text-align: center;
@@ -38,7 +39,7 @@ header .header-content {
 }
 
 .site-footer{
-    background: var(--black-green);
+    background: var(--black);
     color: var(--light);
     padding: 48px 24px 16px;
 }

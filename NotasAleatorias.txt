@@ -1,8 +1,0 @@
-IPW Website notes
-
-Imagens sempre precisam de alt
-Adicionar maps
-Tema: Website de um banco alimentar (informação sobre campanhas, pontos de recolha 
-e doações online). 
-
-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
