@@ -17,19 +17,12 @@ var headerPage = `
                         <button class="dropdown-toggle" aria-expanded="false">Como Ajudar</button>
                         <ul class="submenu" aria-label="Como Ajudar submenu">
                             <li><a href="Doacoes.html">Donativos e Doações</a></li>
-                            <li><a href="Voluntariado.html">Torne-se Voluntario</a></li>
+                            <li><a href="Voluntariado.html">Torne-se Voluntário</a></li>
                             <li><a href="Campanhas.html">Campanhas Ativas</a></li>
                         </ul>
                     </li>
 
-                    <li class="dropdown">
-                        <button class="dropdown-toggle" aria-expanded="false">Preciso de Ajuda</button>
-                        <ul class="submenu" aria-label="Preciso de Ajuda submenu">
-                            <li><a href="Refeicoes.html">Refeições</a></li>
-                            <li><a href="AjudaEmergencial.html">Ajuda Emergencial</a></li>
-                            <li><a href="Recursos.html">Recursos</a></li>
-                        </ul>
-                    </li>
+                    <a href="PrecisoAjuda.html">Preciso de Ajuda</a>
                     <a href="PontosdeRecolha.html">Pontos de Recolha</a>
                     <a href="Noticias.html">Notícias</a>
                 </ul>

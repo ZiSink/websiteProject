@@ -4,12 +4,11 @@
         <meta charset="UTF-8">
         <title>Alimentar com coração</title>
         <link rel="icon" type="image/x-icon" href="Images/minilogo.png">
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="Css/index.css">
+        <script src="Js/Layout.js"></script>
     </head>
     <body>
-        <script src="Js/Layout.js">
-            document.getElementById("header").innerHTML = headerPage;
-        </script>
+        <header id="header"></header>
 		<div class="header-bar"></div>
 		<body>
 			<ul style="align-items: center;">
@@ -48,10 +47,7 @@
 			</ul>
 		</body>
 		<div class="footer-bar"></div>
-        
-        <script src="Js/Layout.js">
-            document.getElementById("header").innerHTML = headerPage;
-        </script>
+        <footer id="footer"></footer>
 
         <script>
             // dropdown toggle simples: abre/fecha ao clicar, fecha ao clicar fora
@@ -78,6 +74,9 @@
                     });
                 }
             });
+            
+            document.getElementById("header").innerHTML = headerPage;
+            document.getElementById("footer").innerHTML = footerPage;
         </script>
     </body>
 </html>

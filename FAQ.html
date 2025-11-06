@@ -3,29 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>FAQ - Banco Alimentar</title>
-  <style>
-    :root{
-      --green:#2E7D32; --orange:#F57C00; --light:#F5F5F5; --text:#1E1E1E; --white:#FFFFFF;
-    }
-    *{box-sizing:border-box}
-    body{margin:0; font-family:Arial, Helvetica, sans-serif; color:var(--text); background:var(--white)}
-    header, footer{padding:16px; background:var(--green); color:#fff}
-    .container{max-width:900px; margin:0 auto; padding:16px}
-    h1{margin:0}
-    .faq h2{margin-top:20px; font-size:1.1rem; color:#0f2f12}
-    .faq p{margin:8px 0 0}
-    .card{background:var(--light); padding:16px; border-radius:10px; margin:12px 0}
-    a{color:var(--orange)}
-  </style>
+  <link rel="icon" type="image/x-icon" href="Images/minilogo.png">
+  <link rel="stylesheet" href="Css/index.css">
+  <script src="Js/Layout.js"></script>
 </head>
 <body>
-  <header>
-  </header>
-    <div class="container">
-      <h1>Perguntas Frequentes</h1>
-    </div>
+  <header id="header"></header>
+  <div class="header-bar"></div>
+  <div class="container">
+    <h1>Perguntas Frequentes</h1>
+  </div>
   <main class="container">
-    <!-- ====== A TUA FAQ “bem desenvolvida” vai aqui. Mantive o conteúdo como está. ====== -->
     <section class="faq">
       <div class="card">
         <h2>Como posso doar alimentos?</h2>
@@ -47,13 +35,12 @@
         <p>O pedido é feito através das instituições parceiras do Banco Alimentar.</p>
       </div>
     </section>
-    <!-- =============================================================================== -->
   </main>
-    <div class="container">
-      <p>2025</p>
-      <p>Contactos: <a href="mailto:info@grupo1.com">info@grupo1.com</a></p>
-    </div>
-  <footer>
-  </footer>
+  <div class="footer-bar"></div>
+  <footer id="footer"></footer>
+  <script>            
+      document.getElementById("header").innerHTML = headerPage;
+      document.getElementById("footer").innerHTML = footerPage;
+  </script>
 </body>
 </html>
