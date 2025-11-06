@@ -239,3 +239,31 @@ body.noticias-page {
         grid-template-columns: 1fr; /* 1 coluna em mobile */
     }
 }
+
+/* ---------- Adições para imagens (não destrói layout) ---------- */
+
+/* Faz as imagens de capa e cards preencherem o seu espaço sem distorcer */
+.news-card-image img,
+.featured-news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Ícones pequenos dentro da meta (data/autor) alinhados e com um tamanho adequado) */
+.news-meta img {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+/* Se quiseres ícones ligeiramente maiores (por ex. em mobile), podes ajustar com media queries */
+@media (max-width: 480px) {
+    .news-meta img {
+        width: 16px;
+        height: 16px;
+    }
+}
