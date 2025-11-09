@@ -5,48 +5,64 @@
         <title>Alimentar com coração</title>
         <link rel="icon" type="image/x-icon" href="Images/minilogo.png">
         <link rel="stylesheet" href="Css/index.css">
+        <link rel="stylesheet" href="Css/Layout.css">
         <script src="Js/Layout.js"></script>
     </head>
-    <body>
+    <body class="home-page">
         <header id="header"></header>
-		<div class="header-bar"></div>
-		<body>
-			<ul style="align-items: center;">
-				<li>Sobre Nós
-					<ul>
-						<li><a href="NossaMissao.html">A Nossa Missão</a></li>
-						<li><a href="Contactos.html">Contactos</a></li>
-						<li><a href="FAQ.html">FAQs</a></li>
-					</ul>
-				</li>
+        <div class="header-bar"></div>
 
-				<li>Como Ajudar
-					<ul>
-						<li><a href="Doacoes.html">Donativos e doações</a></li>
-						<li><a href="Voluntariado.html">Torne-se Voluntario</a></li>
-						<li><a href="Campanhas.html">Campanhas Ativas</a></li>
-					</ul>
-				</li>
+        <main class="container">
+            <section class="card" style="text-align:center;">
+                <p class="news-category" style="text-transform:uppercase;color:#2E7D32;font-weight:bold;margin-bottom:6px;">Banco Alimentar</p>
+                <h1 style="margin-bottom:12px;">Alimentar com Coração</h1>
+                <p style="margin-bottom:18px;">Ajudamos famílias vulneráveis através de recolhas, campanhas e voluntariado. Junte-se a nós e transforme generosidade em refeições.</p>
+                <div>
+                    <a href="Doacoes.html" class="cta" style="margin-right:12px;">Contribuir Agora</a>
+                    <a href="Voluntariado.html" class="cta secondary">Ser Voluntário</a>
+                </div>
+            </section>
 
-				<li>Preciso de Ajuda
-					<ul>
-						<li><a href="Refeicoes.html">Refeições</a></li>
-						<li><a href="AjudaEmergencial.html">Ajuda Emergencial</a></li>
-						<li><a href="Recursos.html">Recursos</a></li>
-					</ul>
-				</li>
+            <section class="card" style="display:flex;gap:16px;flex-wrap:wrap;">
+                <div style="flex:1;min-width:180px;">
+                    <h3>50 000+</h3>
+                    <p>Famílias apoiadas em 2025</p>
+                </div>
+                <div style="flex:1;min-width:180px;">
+                    <h3>2 500 t</h3>
+                    <p>Alimentos recolhidos na última campanha</p>
+                </div>
+                <div style="flex:1;min-width:180px;">
+                    <h3>3 000</h3>
+                    <p>Voluntários ativos</p>
+                </div>
+            </section>
 
-				<li>Pontos de Recolha
-					<ul>
-						<li><a href="MapaPontos.html">Mapa</a></li>
-						<li><a href="CadastrarPonto.html">Cadastrar Ponto</a></li>
-						<li><a href="Horarios.html">Horários</a></li>
-					</ul>
-				</li>
-				<a href="Noticias.html">Notícias</a>
-			</ul>
-		</body>
-		<div class="footer-bar"></div>
+            <section class="card" style="display:grid;gap:12px;">
+                <a href="PontosdeRecolha.html">Pontos de Recolha</a>
+                <a href="Campanhas.html">Campanhas em Curso</a>
+                <a href="PrecisoAjuda.html">Preciso de Ajuda</a>
+                <a href="Noticias.html">Ver Todas as Notícias</a>
+            </section>
+
+            <section class="card">
+                <h2 style="margin-bottom:8px;">Destaques Recentes</h2>
+                <article style="margin-bottom:12px;">
+                    <h3>Recolha de Alimentos angaria 2.500 toneladas</h3>
+                    <small>8 de Outubro, 2025 · Equipa Alimentar com Coração</small>
+                    <p>A mega campanha nacional garantiu apoio alimentar para mais de 50 mil famílias carenciadas. Saiba como participar na próxima edição.</p>
+                    <a href="Noticias.html">Ler notícia completa →</a>
+                </article>
+                <article>
+                    <h3>Jantar Solidário reúne comunidade em Lisboa</h3>
+                    <small>5 de Outubro, 2025</small>
+                    <p>O jantar anual devolve todas as receitas à compra de bens essenciais. Reserve o seu lugar e ajude-nos a encher as dispensas de quem mais precisa.</p>
+                    <a href="Noticias.html">Ver agenda →</a>
+                </article>
+            </section>
+        </main>
+
+        <div class="footer-bar"></div>
         <footer id="footer"></footer>
 
         <script>

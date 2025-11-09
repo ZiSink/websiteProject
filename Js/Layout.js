@@ -39,7 +39,7 @@ var footerPage = `<footer class="site-footer">
                 <div class="footer-links">
                     <h3>Explorar</h3>
                     <ul>
-                        <li><a href="ComoAjudar.html">Como Ajudar</a></li>
+                        <li><a href="Voluntariado.html">Ser Voluntário</a></li>
                         <li><a href="PrecisoAjuda.html">Preciso de Ajuda</a></li>
                         <li><a href="PontosdeRecolha.html">Pontos de Recolha</a></li>
                         <li><a href="Noticias.html">Notícias</a></li>
@@ -48,7 +48,7 @@ var footerPage = `<footer class="site-footer">
                 <div class="footer-contact">
                     <h3>Contactos</h3>
                     <ul>
-                        <li><a href="mailto:contacto@alimentarcomcoracao.org">contacto@alimentarcomcoracao.org</a></li>
+                        <li><a href="mailto:alimentarccoracao@sapo.pt">alimentarccoracao@sapo.pt</a></li>
                         <li><a href="tel:+351210000000">+351 210 000 000</a></li>
                         <li><a href="Contactos.html">Fale connosco</a></li>
                     </ul>
