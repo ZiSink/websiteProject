@@ -1,3 +1,6 @@
+/* ----------------------------- Header and Footer CSS ----------------------------- */
+
+/* ----------------------------- Header ----------------------------- */
 header{
     background: var(--black); 
     color:var(--white); 
@@ -9,10 +12,90 @@ header .header-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1200px; /* aumentado de 900px para ocupar mais largura */
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 24px;   /* ligeiro aumento do padding lateral */
+    padding: 0 24px;
 }
+
+.logotipo{
+    height: 60px;
+    width: 250px;
+    margin-right: 100px;
+}
+
+/* Menu Dropdown */
+.header-content nav { display: block; }
+.menu { list-style: none; margin: 0; padding: 0; display: flex; gap: 20px; align-items: center; }
+.menu > li { position: relative; }
+.dropdown-toggle {
+    background: none;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    padding: 8px 6px;
+    color: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    z-index: 800;
+}
+
+.dropdown-toggle a{
+    border-radius: var(--white);
+}
+
+.dropdown-toggle::after {
+    content: '▾';
+    font-size: 0.8em;
+    opacity: 0.9;
+    margin-left: 6px;
+}
+
+/* Submenu */
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    background: var(--green);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    padding: 6px 0;
+    display: none;
+    z-index: 50;
+}
+
+.submenu li { list-style: none; }
+.submenu li a {
+    display: block;
+    padding: 8px 12px;
+    color: #FFFFFF;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.submenu li a:hover { background: var(--black-green); }
+
+.menu .dropdown.open > .submenu { display: block; }
+
+@media (max-width: 700px) {
+    .menu { flex-direction: column; gap: 0; }
+    .menu > li { width: 100%; }
+    .submenu { position: relative; box-shadow: none; }
+}
+
+/* Header Bar */
+.header-bar{
+    width: 100%;
+    height: 30px;
+    display: block;
+    background: linear-gradient(to bottom, var(--green) 0%, #ffffff 100%);
+}
+
+.header-bar.smooth {
+    background: linear-gradient(to bottom, var(--green) 0%, rgba(46,125,50,0.75) 40%, #ffffff 100%);
+}
+
+/* ----------------------------- Footer ----------------------------- */
 
 .site-footer{
     background: var(--black);
@@ -83,75 +166,6 @@ header .header-content {
     text-align: center;
     font-size: 0.85rem;
     color: rgba(245,245,245,0.8);
-}
-
-/* Estilos para menu dropdown */
-.header-content nav { display: block; }
-.menu { list-style: none; margin: 0; padding: 0; display: flex; gap: 20px; align-items: center; }
-.menu > li { position: relative; }
-.dropdown-toggle {
-    background: none;
-    border: none;
-    font: inherit;
-    cursor: pointer;
-    padding: 8px 6px;
-    color: inherit;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.dropdown-toggle a{
-    border-radius: var(--white);
-}
-
-.dropdown-toggle::after {
-    content: '▾';
-    font-size: 0.8em;
-    opacity: 0.9;
-    margin-left: 6px;
-}
-
-/* submenu */
-.submenu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    min-width: 180px;
-    background: var(--green);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-    border-radius: 4px;
-    padding: 6px 0;
-    display: none;
-    z-index: 50;
-}
-.submenu li { list-style: none; }
-.submenu li a {
-    display: block;
-    padding: 8px 12px;
-    color: #FFFFFF;
-    text-decoration: none;
-    white-space: nowrap;
-}
-.submenu li a:hover { background: var(--black-green); }
-
-.menu .dropdown.open > .submenu { display: block; }
-
-@media (max-width: 700px) {
-    .menu { flex-direction: column; gap: 0; }
-    .menu > li { width: 100%; }
-    .submenu { position: relative; box-shadow: none; }
-}
-
-.header-bar{
-    width: 100%;
-    height: 30px;
-    display: block;
-    background: linear-gradient(to bottom, var(--green) 0%, #ffffff 100%);
-}
-
-.header-bar.smooth {
-    background: linear-gradient(to bottom, var(--green) 0%, rgba(46,125,50,0.75) 40%, #ffffff 100%);
 }
 
 .footer-bar{
