@@ -36,17 +36,9 @@ var footerPage = `<footer class="site-footer">
                     <img src="Images/Logo.png" alt="Logotipo Alimentar com Coração" class="footer-logo">
                     <p>Unimos corações para combater a fome através de recolhas solidárias, apoio alimentar e iniciativas comunitárias.</p>
                 </div>
-                <div class="footer-links">
-                    <h3>Explorar</h3>
-                    <ul>
-                        <li><a href="Voluntariado.html">Ser Voluntário</a></li>
-                        <li><a href="PrecisoAjuda.html">Preciso de Ajuda</a></li>
-                        <li><a href="PontosdeRecolha.html">Pontos de Recolha</a></li>
-                        <li><a href="Noticias.html">Notícias</a></li>
-                    </ul>
-                </div>
                 <div class="footer-contact">
                     <h3>Contactos</h3>
+                    <div class="footer-social-bar"></div>
                     <ul>
                         <li><a href="mailto:alimentarccoracao@sapo.pt">alimentarccoracao@sapo.pt</a></li>
                         <li><a href="tel:+351210000000">+351 210 000 000</a></li>
@@ -55,11 +47,10 @@ var footerPage = `<footer class="site-footer">
                 </div>
                 <div class="footer-social">
                     <h3>Junte-se a nós</h3>
+                    <div class="footer-social-bar"></div>
                     <p>Siga as nossas campanhas e partilhe esperança.</p>
                     <ul class="social-list">
-                        <li><a href="redeSocial.html">Facebook</a></li>
-                        <li><a href="redeSocial.html">Instagram</a></li>
-                        <li><a href="redeSocial.html">LinkedIn</a></li>
+                        <li><a href="redeSocial.html">Nossa Rede Social</a></li>
                     </ul>
                 </div>
             </div>

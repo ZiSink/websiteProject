@@ -1,6 +1,7 @@
 /* ----------------------------- Header and Footer CSS ----------------------------- */
 
 /* ----------------------------- Header ----------------------------- */
+
 header{
     background: var(--black); 
     color:var(--white); 
@@ -24,6 +25,7 @@ header .header-content {
 }
 
 /* Menu Dropdown */
+
 .header-content nav { display: block; }
 .menu { list-style: none; margin: 0; padding: 0; display: flex; gap: 20px; align-items: center; }
 .menu > li { position: relative; }
@@ -52,6 +54,7 @@ header .header-content {
 }
 
 /* Submenu */
+
 .submenu {
     position: absolute;
     top: 100%;
@@ -77,16 +80,12 @@ header .header-content {
 
 .menu .dropdown.open > .submenu { display: block; }
 
-@media (max-width: 700px) {
-    .menu { flex-direction: column; gap: 0; }
-    .menu > li { width: 100%; }
-    .submenu { position: relative; box-shadow: none; }
-}
 
 /* Header Bar */
+
 .header-bar{
     width: 100%;
-    height: 30px;
+    height: 20px;
     display: block;
     background: linear-gradient(to bottom, var(--green) 0%, #ffffff 100%);
 }
@@ -170,9 +169,21 @@ header .header-content {
 
 .footer-bar{
     width: 100%;
-    height: 30px;
+    height: 20px;
     display: block;
     background: linear-gradient(to top, var(--green) 0%, #ffffff 100%);
+}
+
+.footer-social-bar{
+    background-color: var(--green);
+}
+
+/* ----------------------------- Footer ----------------------------- */
+
+@media (max-width: 700px) {
+    .menu { flex-direction: column; gap: 0; }
+    .menu > li { width: 100%; }
+    .submenu { position: relative; box-shadow: none; }
 }
 
 @media (max-width: 600px){
