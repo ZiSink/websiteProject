@@ -1,0 +1,20 @@
+.missao-page .container {
+    max-width: 1100px;
+    padding: 30px 20px;
+}
+
+.missao-page ul {
+    margin-left: 20px;
+    line-height: 1.6;
+}
+
+.valores {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.valores > div {
+    flex: 1;
+    min-width: 200px;
+}

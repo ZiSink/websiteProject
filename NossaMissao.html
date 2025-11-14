@@ -1,21 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt">
-    <head>
-        <meta charset="UTF-8">
-        <title>Alimentar com coração</title>
-        <link rel="icon" type="image/x-icon" href="Images/minilogo.png">
-        <link rel="stylesheet" href="Css/index.css">
-        <link rel="stylesheet" href="Css/Layout.css">
-        <script src="Js/Layout.js"></script>
-    </head>
-    <body>
-        <header id="header"></header>
-		<div class="header-bar"></div>
+<head>
+    <meta charset="UTF-8">
+    <title>A Nossa Missão - Alimentar com Coração</title>
+    <link rel="icon" type="image/x-icon" href="Images/minilogo.png">
+    
+    <link rel="stylesheet" href="Css/NossaMissao.css">
+    <link rel="stylesheet" href="Css/index.css">
+    <link rel="stylesheet" href="Css/Layout.css">
+    
 
-		<div class="footer-bar"></div>
-        <footer id="footer"></footer>
-        <script>   
-            // dropdown toggle simples: abre/fecha ao clicar, fecha ao clicar fora
+    <script src="Js/Layout.js" defer></script>
+</head>
+
+<body class="missao-page">
+    <header id="header"></header>
+    <div class="header-bar"></div>
+
+    <main class="container">
+        <section class="card">
+            <p class="news-category">Sobre Nós</p>
+            <h1>A Nossa Missão</h1>
+            <p>O projeto <strong>Alimentar com Coração</strong> existe para apoiar famílias vulneráveis através de campanhas de recolha, distribuição alimentar e iniciativas de solidariedade.</p>
+        </section>
+
+        <section class="card">
+            <h2>O que fazemos</h2>
+            <ul>
+                <li>Organização de recolhas de alimentos.</li>
+                <li>Distribuição para famílias e instituições.</li>
+                <li>Campanhas sazonais e de emergência.</li>
+                <li>Combate ao desperdício alimentar.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Valores</h2>
+            <div class="valores">
+                <div>
+                    <h3>Solidariedade</h3>
+                    <p>Estamos unidos por quem mais precisa.</p>
+                </div>
+                <div>
+                    <h3>Dignidade</h3>
+                    <p>Respeito em cada gesto e entrega.</p>
+                </div>
+                <div>
+                    <h3>Transparência</h3>
+                    <p>Prestamos contas de tudo o que recebemos.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="footer-bar"></div>
+    <footer id="footer"></footer>
+
+    <script>
+        // dropdown toggle simples: abre/fecha ao clicar, fecha ao clicar fora
             document.addEventListener('click', function(e){
                 const toggle = e.target.closest('.dropdown-toggle');
                 if (toggle) {
@@ -39,9 +81,10 @@
                     });
                 }
             });
-                     
-            document.getElementById("header").innerHTML = headerPage;
-            document.getElementById("footer").innerHTML = footerPage;
-        </script>
-    </body>
+        document.addEventListener('DOMContentLoaded', () => {
+      if (window.headerPage) document.getElementById("header").innerHTML = headerPage;
+      if (window.footerPage) document.getElementById("footer").innerHTML = footerPage;
+    });
+    </script>
+</body>
 </html>
