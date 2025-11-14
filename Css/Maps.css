@@ -1,44 +1,69 @@
 /* === Estilos gerais === */
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  padding: 0;
-  background-color: #f8f9fa;
+  background: #f6f7fb;
+  color: #1e1e1e;
 }
 
-/* Área principal com mapa e painel lado a lado */
+/* Área principal */
 .content {
-  display: flex;
-  height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px 80px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.content::before {
+  content: "Escolha um ponto no mapa para descobrir horários, contactos e parceiros desta rede de recolha.";
+  grid-column: 1 / -1;
+  margin-bottom: 8px;
+  padding: 18px 22px;
+  border-radius: 18px;
+  background: linear-gradient(120deg, rgba(46,125,50,0.15), rgba(46,125,50,0.05));
+  border: 1px solid rgba(46,125,50,0.25);
+  font-size: 0.95rem;
+  color: #1c4b1e;
+  line-height: 1.5;
+}
+
+/* === Mapa === */
+#map {
+  position: relative;
+  min-height: 520px;
+  height: 100%;
+  width: 100%;
+  border-radius: 26px;
   overflow: hidden;
+  box-shadow: 0 35px 60px rgba(13, 38, 22, 0.2);
+  border: 1px solid rgba(28, 75, 30, 0.15);
 }
 
-/* === Mapa (lado esquerdo) === */
-#map {
-  flex: 2;
-  border-radius: 15px 0 0 15px;
-  margin: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-}
-#map {
-  height: 80vh;      /* altura visível do mapa */
-  width: 100%;       /* ocupa toda a largura possível */
-  border-radius: 15px 0 0 15px;
-  margin: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+#map::after {
+  content: "Navegue e aproxime para localizar pontos próximos.";
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #0e2d1f;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-
-/* === Painel de informação (lado direito) === */
+/* === Painel de informação === */
 #info-panel {
-  flex: 1;
-  background-color: white;
-  border-radius: 0 15px 15px 0;
-  margin: 15px 15px 15px 0;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  background: #fff;
+  border-radius: 26px;
+  box-shadow: 0 30px 55px rgba(6, 22, 12, 0.2);
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+  overflow: hidden;
+  border: 1px solid rgba(10, 30, 15, 0.1);
 }
 
 /* Imagem do local */
@@ -51,18 +76,18 @@ body {
 
 /* Conteúdo textual */
 #info-content {
-  padding: 20px;
+  padding: 26px;
 }
 
 #info-content h2 {
-  margin: 0;
-  font-size: 1.4em;
-  color: #333;
+  margin: 0 0 12px;
+  font-size: 1.5rem;
+  color: #0d331f;
 }
 
 #info-content p {
   margin: 8px 0;
-  color: #555;
+  color: #4a5663;
   line-height: 1.4;
 }
 
@@ -79,15 +104,15 @@ body {
 /* === Responsivo para telemóvel === */
 @media (max-width: 900px) {
   .content {
-    flex-direction: column;
-  }
-
-  #map, #info-panel {
-    margin: 10px;
-    border-radius: 10px;
+    grid-template-columns: 1fr;
+    padding: 40px 16px 60px;
   }
 
   #map {
-    height: 50vh;
+    min-height: 380px;
+  }
+
+  #info-panel img {
+    height: 160px;
   }
 }

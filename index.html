@@ -6,59 +6,135 @@
         <link rel="icon" type="image/x-icon" href="Images/minilogo.png">
         <link rel="stylesheet" href="Css/index.css">
         <link rel="stylesheet" href="Css/Layout.css">
-        <script src="Js/Layout.js"></script>
+        <script src="Js/Layout.js" defer></script>
     </head>
     <body class="home-page">
         <header id="header"></header>
         <div class="header-bar"></div>
 
-        <main class="container">
-            <section class="card" style="text-align:center;">
-                <p class="news-category" style="text-transform:uppercase;color:#2E7D32;font-weight:bold;margin-bottom:6px;">Banco Alimentar</p>
-                <h1 style="margin-bottom:12px;">Alimentar com Coração</h1>
-                <p style="margin-bottom:18px;">Ajudamos famílias vulneráveis através de recolhas, campanhas e voluntariado. Junte-se a nós e transforme generosidade em refeições.</p>
+        <main class="home-layout">
+            <section class="hero">
+                <div class="hero-content">
+                    <p class="hero-badge">Banco Alimentar • Rede comunitária</p>
+                    <h1>Transforme solidariedade em refeições para quem mais precisa</h1>
+                    <p class="hero-text">
+                        Recolhemos alimentos, distribuímos cabazes e acompanhamos famílias em situação de vulnerabilidade com o apoio de
+                        centenas de voluntários, empresas e vizinhos atentos.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="Doacoes.html" class="btn primary">Contribuir agora</a>
+                        <a href="Voluntariado.html" class="btn ghost">Ser voluntário</a>
+                    </div>
+                    <div class="hero-meta">
+                        <div>
+                            <span>Próxima campanha</span>
+                            14–15 Dezembro · Hipermercados e plataforma digital
+                        </div>
+                        <div>
+                            <span>Cabazes semanais</span>
+                            1 200 cabazes entregues com apoio de 35 instituições parceiras
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-panel">
+                    <div class="panel-head">
+                        <p>Impacto imediato</p>
+                        <strong>Últimos 30 dias</strong>
+                    </div>
+                    <ul class="panel-list">
+                        <li>
+                            <span>5 200</span>
+                            Famílias receberam apoio alimentar direto
+                        </li>
+                        <li>
+                            <span>72 t</span>
+                            Produtos recolhidos em supermercados e online
+                        </li>
+                        <li>
+                            <span>860</span>
+                            Voluntários ativos em distribuição e triagem
+                        </li>
+                    </ul>
+                    <p class="panel-note">Os dados são atualizados semanalmente com relatórios das equipas locais.</p>
+                </div>
+            </section>
+
+            <section class="stats-grid">
+                <article class="stat-card">
+                    <span>50 000+</span>
+                    Famílias apoiadas em 2025 através de cabazes completos.
+                </article>
+                <article class="stat-card">
+                    <span>2 500 t</span>
+                    Alimentos angariados na última campanha nacional.
+                </article>
+                <article class="stat-card">
+                    <span>3 200</span>
+                    Voluntários que se revezam semanalmente nas operações.
+                </article>
+                <article class="stat-card">
+                    <span>42 municípios</span>
+                    Cobertura da rede Alimentar com Coração em todo o país.
+                </article>
+            </section>
+
+            <section class="action-grid">
+                <a class="action-card" href="Doacoes.html">
+                    <h3>Doe alimentos ou valores</h3>
+                    <p>IBAN, donativos digitais e sugestões de bens essenciais.</p>
+                    <span class="action-link">Quero doar →</span>
+                </a>
+                <a class="action-card" href="Voluntariado.html">
+                    <h3>Torne-se voluntário</h3>
+                    <p>Ajude na recolha, triagem e entrega de cabazes em horários flexíveis.</p>
+                    <span class="action-link">Ver oportunidades →</span>
+                </a>
+                <a class="action-card" href="PontosdeRecolha.html">
+                    <h3>Entregue no ponto mais próximo</h3>
+                    <p>Consulte o mapa de supermercados e parceiros que recebem donativos.</p>
+                    <span class="action-link">Consultar mapa →</span>
+                </a>
+                <a class="action-card" href="PrecisoAjuda.html">
+                    <h3>Precisa de apoio?</h3>
+                    <p>Preencha o formulário para avaliarmos o seu pedido com a nossa equipa social.</p>
+                    <span class="action-link">Pedir ajuda →</span>
+                </a>
+            </section>
+
+            <section class="news-section">
+                <div class="news-header">
+                    <div>
+                        <p class="eyebrow">Destaques recentes</p>
+                        <h2>Histórias que inspiram</h2>
+                    </div>
+                    <a href="Noticias.html" class="btn ghost small">Ver todas</a>
+                </div>
+                <div class="news-list">
+                    <article class="news-item">
+                        <h3>Recolha nacional angaria 1 850 toneladas</h3>
+                        <p>Uma operação conjunta em mais de 600 lojas garantiu o reforço dos stocks para os meses de inverno.</p>
+                        <a href="Noticias.html" class="news-link">Ler notícia completa →</a>
+                    </article>
+                    <article class="news-item">
+                        <h3>Jantar solidário reúne comunidade em Lisboa</h3>
+                        <p>Evento anual que converte receitas em donativos e aproxima parceiros de quem precisa.</p>
+                        <a href="Noticias.html" class="news-link">Ver agenda →</a>
+                    </article>
+                    <article class="news-item">
+                        <h3>Papel por Alimentos continua a crescer</h3>
+                        <p>Programa de reciclagem converte 72 toneladas em bens essenciais entregues nas instituições.</p>
+                        <a href="Noticias.html" class="news-link">Saiba como participar →</a>
+                    </article>
+                </div>
+            </section>
+
+            <section class="cta-banner">
                 <div>
-                    <a href="Doacoes.html" class="cta" style="margin-right:12px;">Contribuir Agora</a>
-                    <a href="Voluntariado.html" class="cta secondary">Ser Voluntário</a>
+                    <p class="eyebrow">Juntos alimentamos esperança</p>
+                    <h2>Conheça os projetos locais e partilhe esta rede de cuidado.</h2>
+                    <p>Divulgue a página, convide um amigo para ser voluntário ou organize uma recolha na sua escola/empresa.</p>
                 </div>
-            </section>
-
-            <section class="card" style="display:flex;gap:16px;flex-wrap:wrap;">
-                <div style="flex:1;min-width:180px;">
-                    <h3>50 000+</h3>
-                    <p>Famílias apoiadas em 2025</p>
-                </div>
-                <div style="flex:1;min-width:180px;">
-                    <h3>2 500 t</h3>
-                    <p>Alimentos recolhidos na última campanha</p>
-                </div>
-                <div style="flex:1;min-width:180px;">
-                    <h3>3 000</h3>
-                    <p>Voluntários ativos</p>
-                </div>
-            </section>
-
-            <section class="card" style="display:grid;gap:12px;">
-                <a href="PontosdeRecolha.html">Pontos de Recolha</a>
-                <a href="Campanhas.html">Campanhas em Curso</a>
-                <a href="PrecisoAjuda.html">Preciso de Ajuda</a>
-                <a href="Noticias.html">Ver Todas as Notícias</a>
-            </section>
-
-            <section class="card">
-                <h2 style="margin-bottom:8px;">Destaques Recentes</h2>
-                <article style="margin-bottom:12px;">
-                    <h3>Recolha de Alimentos angaria 2.500 toneladas</h3>
-                    <small>8 de Outubro, 2025 · Equipa Alimentar com Coração</small>
-                    <p>A mega campanha nacional garantiu apoio alimentar para mais de 50 mil famílias carenciadas. Saiba como participar na próxima edição.</p>
-                    <a href="Noticias.html">Ler notícia completa →</a>
-                </article>
-                <article>
-                    <h3>Jantar Solidário reúne comunidade em Lisboa</h3>
-                    <small>5 de Outubro, 2025</small>
-                    <p>O jantar anual devolve todas as receitas à compra de bens essenciais. Reserve o seu lugar e ajude-nos a encher as dispensas de quem mais precisa.</p>
-                    <a href="Noticias.html">Ver agenda →</a>
-                </article>
+                <a href="Campanhas.html" class="btn primary">Ver campanhas em curso</a>
             </section>
         </main>
 
@@ -91,8 +167,10 @@
                 }
             });
             
-            document.getElementById("header").innerHTML = headerPage;
-            document.getElementById("footer").innerHTML = footerPage;
+            document.addEventListener('DOMContentLoaded', () => {
+                if (window.headerPage) document.getElementById("header").innerHTML = headerPage;
+                if (window.footerPage) document.getElementById("footer").innerHTML = footerPage;
+            });
         </script>
     </body>
 </html>

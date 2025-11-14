@@ -2,14 +2,28 @@
 
 /* ----------------------------- Header ----------------------------- */
 
-header{
-    background: var(--black); 
-    color:var(--white); 
-    padding:16px 0;
-    text-align: center;
+#header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-header .header-content {
+.site-header{
+    background: var(--black); 
+    color:var(--white); 
+    padding:24px 0;
+    text-align: center;
+    width: 100%;
+    transition: padding 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.site-header.compact{
+    padding: 12px 0;
+    background: var(--black);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.site-header .header-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -22,12 +36,19 @@ header .header-content {
     height: 60px;
     width: 250px;
     margin-right: 100px;
+    transition: transform 0.3s ease, height 0.3s ease;
+}
+
+.site-header.compact .logotipo{
+    transform: scale(0.9);
 }
 
 /* Menu Dropdown */
 
 .header-content nav { display: block; }
 .menu { list-style: none; margin: 0; padding: 0; display: flex; gap: 20px; align-items: center; }
+
+.site-header.compact .menu { gap: 14px; }
 .menu > li { position: relative; }
 .dropdown-toggle {
     background: none;

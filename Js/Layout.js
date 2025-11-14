@@ -1,5 +1,5 @@
 var headerPage = `
-<header>
+<header class="site-header">
         <div class="header-content">
             <a href="index.html"><img src="Images/Logo.png" alt="Logotipo do 'Alimentar com coração'" class="logotipo"></a>
             <nav>
@@ -58,3 +58,19 @@ var footerPage = `<footer class="site-footer">
                 <p>© 2025 - Alimentar com Coração. Todos os direitos reservados.</p>
             </div>
         </footer>`;
+
+(function () {
+    function updateHeaderState() {
+        var header = document.querySelector('.site-header');
+        if (!header) {
+            return;
+        }
+
+        var shouldCompact = (window.scrollY || window.pageYOffset) > 60;
+        header.classList.toggle('compact', shouldCompact);
+    }
+
+    window.addEventListener('scroll', updateHeaderState, { passive: true });
+    window.addEventListener('load', updateHeaderState);
+    document.addEventListener('DOMContentLoaded', updateHeaderState);
+})();
