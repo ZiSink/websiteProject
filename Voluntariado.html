@@ -1,21 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt">
-    <head>
-        <meta charset="UTF-8">
-        <title>Alimentar com coração</title>
-        <link rel="icon" type="image/x-icon" href="Images/minilogo.png">
-        <link rel="stylesheet" href="Css/index.css">
-        <link rel="stylesheet" href="Css/Layout.css">
-        <script src="Js/Layout.js"></script>
-    </head>
-    <body>
-        <header id="header"></header>
-		<div class="header-bar"></div>
+<head>
+    <meta charset="UTF-8">
+    <title>Voluntariado</title>
+    
+    <link rel="stylesheet" href="Css/Voluntariado.css">
+    <link rel="stylesheet" href="Css/index.css">
+    <link rel="stylesheet" href="Css/Layout.css">
+    
 
-		<div class="footer-bar"></div>
-        <footer id="footer"></footer>
-        <script>   
-            // dropdown toggle simples: abre/fecha ao clicar, fecha ao clicar fora
+    <script src="Js/Layout.js" defer></script>
+</head>
+
+<body class="voluntariado-page">
+    <header id="header"></header>
+    <div class="header-bar"></div>
+
+    <main class="container">
+        <section class="card">
+            <h1>Voluntariado</h1>
+            <p>Junte-se à nossa equipa e faça a diferença.</p>
+
+            <ul>
+                <li>Recolhas de alimentos</li>
+                <li>Organização e separação de bens</li>
+                <li>Campanhas sazonais</li>
+                <li>Apoio logístico</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Formulário (decorativo)</h2>
+            <form>
+                <label>Nome<br><input type="text"></label>
+                <label>Email<br><input type="email"></label>
+                <label>Disponibilidade<br><input type="text"></label>
+                <button type="button" class="cta">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <div class="footer-bar"></div>
+    <footer id="footer"></footer>
+<script>
+        // dropdown toggle simples: abre/fecha ao clicar, fecha ao clicar fora
             document.addEventListener('click', function(e){
                 const toggle = e.target.closest('.dropdown-toggle');
                 if (toggle) {
@@ -39,9 +67,10 @@
                     });
                 }
             });
-                     
-            document.getElementById("header").innerHTML = headerPage;
-            document.getElementById("footer").innerHTML = footerPage;
-        </script>
-    </body>
+        document.addEventListener('DOMContentLoaded', () => {
+      if (window.headerPage) document.getElementById("header").innerHTML = headerPage;
+      if (window.footerPage) document.getElementById("footer").innerHTML = footerPage;
+    });
+    </script>
+</body>
 </html>

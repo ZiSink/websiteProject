@@ -4,14 +4,141 @@
         <meta charset="UTF-8">
         <title>Alimentar com coração</title>
         <link rel="icon" type="image/x-icon" href="Images/minilogo.png">
+        <link rel="stylesheet" href="Css/PrecisoAjuda.css">
         <link rel="stylesheet" href="Css/index.css">
         <link rel="stylesheet" href="Css/Layout.css">
-        <script src="Js/Layout.js"></script>
+        <script src="Js/Layout.js" defer></script>
+        <script src="Js/PopupPrecisoAjuda.js" defer></script>
     </head>
-    <body>
+    <body class="preciso-ajuda-page">
         <header id="header"></header>
 		<div class="header-bar"></div>
-        
+        <main class="preciso-ajuda">
+            <section class="intro">
+                <p class="eyebrow">Preciso de ajuda</p>
+                <h1>Conte connosco para atravessar um momento difícil</h1>
+                <p>
+                    O formulário abaixo permite-nos conhecer melhor a sua situação e encaminhá-lo para a resposta mais adequada.
+                    Os dados recolhidos são apenas utilizados pela equipa do projeto <strong>Alimentar com Coração</strong> para avaliação do pedido.
+                </p>
+                <ul>
+                    <li>Preencha todos os campos obrigatórios com a maior clareza possível.</li>
+                    <li>Anote contactos atualizados para que possamos responder rapidamente.</li>
+                    <li>Descreva brevemente as despesas essenciais e outras ajudas que já recebe.</li>
+                </ul>
+            </section>
+
+            <section class="form-wrapper">
+                <div class="form-card">
+                    <h2>Formulário de Apoio Alimentar</h2>
+                    <p class="form-helper">
+                        Verificamos cada pedido individualmente. Responderemos por email ou telefone no prazo máximo de 5 dias úteis.
+                    </p>
+                    <form class="ajuda-form">
+                        <div class="form-grid">
+                            <label class="form-field">
+                                <span>Nome completo*</span>
+                                <input type="text" name="nome" placeholder="Escreva o seu nome" required>
+                            </label>
+                            <label class="form-field">
+                                <span>Data de nascimento*</span>
+                                <input type="date" name="nascimento" required>
+                            </label>
+                            <label class="form-field">
+                                <span>NIF</span>
+                                <input type="text" name="nif" placeholder="123 456 789" maxlength="9">
+                            </label>
+                            <label class="form-field">
+                                <span>Localidade*</span>
+                                <input type="text" name="localidade" placeholder="Cidade ou freguesia" required>
+                            </label>
+                            <label class="form-field">
+                                <span>Email*</span>
+                                <input type="email" name="email" placeholder="nome@email.com" required>
+                            </label>
+                            <label class="form-field">
+                                <span>Contacto telefónico*</span>
+                                <input type="tel" name="telefone" placeholder="+351 9XX XXX XXX" required>
+                            </label>
+                        </div>
+
+                        <label class="form-field">
+                            <span>Situação profissional atual*</span>
+                            <select name="situacao" required>
+                                <option value="" disabled selected>Selecione a opção</option>
+                                <option>Desempregada/o</option>
+                                <option>Empregada/o (tempo inteiro)</option>
+                                <option>Empregada/o (tempo parcial)</option>
+                                <option>Trabalhadora/or independente</option>
+                                <option>Estudante</option>
+                                <option>Outro</option>
+                            </select>
+                        </label>
+
+                        <div class="form-grid">
+                            <label class="form-field">
+                                <span>Nº de pessoas no agregado*</span>
+                                <input type="number" name="agregado" min="1" placeholder="Ex.: 4" required>
+                            </label>
+                            <label class="form-field">
+                                <span>Rendimento mensal total*</span>
+                                <input type="text" name="rendimento" placeholder="Ex.: 750€" required>
+                            </label>
+                            <label class="form-field">
+                                <span>Despesas essenciais mensais</span>
+                                <input type="text" name="despesas" placeholder="Renda, medicamentos, transportes...">
+                            </label>
+                            <label class="form-field">
+                                <span>Apoios que já recebe</span>
+                                <input type="text" name="apoios" placeholder="Ex.: RSI, apoio familiar, outro">
+                            </label>
+                        </div>
+
+                        <label class="form-field">
+                            <span>Explique a sua situação*</span>
+                            <textarea name="justificacao" rows="5" placeholder="Conte-nos o que mudou e como podemos ajudar" required></textarea>
+                        </label>
+
+                        <div class="upload-hint">
+                            Pode anexar comprovativos (rendimentos, despesas, etc.) quando for contactada/o pela nossa equipa.
+                        </div>
+
+                        <label class="checkbox-field">
+                            <input type="checkbox" required>
+                            <span>Declaro que li os <button type="button" class="terms-trigger">Termos &amp; Condições</button>.</span>
+                        </label>
+
+                        <button type="submit" class="submit-btn">Enviar pedido</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <div id="popup-overlay" aria-hidden="true">
+            <div id="popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+                <button class="close-popup" aria-label="Fechar popup">&times;</button>
+                <h2 id="popup-title"></h2>
+                <img id="popup-image" src="" alt="">
+                <div id="popup-text"></div>
+            </div>
+        </div>
+
+        <div id="terms-content" hidden>
+            <p>
+                Os pedidos submetidos através deste formulário destinam-se exclusivamente a famílias em situação de fragilidade alimentar
+                residente em território nacional. Recolhemos apenas os dados estritamente necessários para avaliar o pedido e organizar a resposta.
+            </p>
+            <p>
+                Ao enviar o formulário autoriza a equipa do Alimentar com Coração a contactar os serviços sociais locais e as instituições parceiras,
+                sempre com o objetivo de confirmar as informações fornecidas e agilizar o apoio. Nenhuma informação é partilhada com entidades comerciais.
+            </p>
+            <p>
+                O apoio concedido é temporário, avaliado caso a caso e pode consistir em cabazes de bens essenciais, vales de compra ou encaminhamento
+                para programas parceiros. A submissão do formulário não garante a atribuição imediata de ajuda. Em caso de dúvida, contacte-nos através
+                do email apoio@alimentarcoracao.pt.
+            </p>
+        </div>
+
 		<div class="footer-bar"></div>
         <footer id="footer"></footer>
         <script>        
@@ -40,8 +167,10 @@
                 }
             });
                 
-            document.getElementById("header").innerHTML = headerPage;
-            document.getElementById("footer").innerHTML = footerPage;
+            document.addEventListener('DOMContentLoaded', () => {
+                if (window.headerPage) document.getElementById("header").innerHTML = headerPage;
+                if (window.footerPage) document.getElementById("footer").innerHTML = footerPage;
+            });
         </script>
     </body>
 </html>

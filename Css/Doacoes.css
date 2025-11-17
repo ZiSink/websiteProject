@@ -1,0 +1,10 @@
+.doacoes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.doacoes-grid > div {
+    flex: 1;
+    min-width: 200px;
+}

@@ -1,21 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt">
-    <head>
-        <meta charset="UTF-8">
-        <title>Alimentar com coração</title>
-        <link rel="icon" type="image/x-icon" href="Images/minilogo.png">
-        <link rel="stylesheet" href="Css/index.css">
-        <link rel="stylesheet" href="Css/Layout.css">
-        <script src="Js/Layout.js"></script>
-    </head>
-    <body>
-        <header id="header"></header>
-		<div class="header-bar"></div>
+<head>
+    <meta charset="UTF-8">
+    <title>Doações</title>
+    
+    <link rel="stylesheet" href="Css/Doacoes.css">
+    <link rel="stylesheet" href="Css/index.css">
+    <link rel="stylesheet" href="Css/Layout.css">
+    
 
-		<div class="footer-bar"></div>
-        <footer id="footer"></footer>
-        <script>  
-            // dropdown toggle simples: abre/fecha ao clicar, fecha ao clicar fora
+    <script src="Js/Layout.js" defer></script>
+</head>
+
+<body class="donativos-page">
+    <header id="header"></header>
+    <div class="header-bar"></div>
+
+    <main class="container">
+        <section class="card">
+            <h1>Donativos e Doações</h1>
+            <p>Ajude-nos a apoiar centenas de famílias.</p>
+
+            <div class="doacoes-grid">
+                <div>
+                    <h3>Doação Monetária</h3>
+                    <p>IBAN: <strong>PT50 0000 0000 0000 0000 0000</strong></p>
+                </div>
+
+                <div>
+                    <h3>Alimentos</h3>
+                    <p>Entregue alimentos nos pontos de recolha.</p>
+                    <a href="PontosdeRecolha.html" class="cta">Ver Pontos</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="footer-bar"></div>
+    <footer id="footer"></footer>
+
+<script>
+        // dropdown toggle simples: abre/fecha ao clicar, fecha ao clicar fora
             document.addEventListener('click', function(e){
                 const toggle = e.target.closest('.dropdown-toggle');
                 if (toggle) {
@@ -39,9 +64,10 @@
                     });
                 }
             });
-                      
-            document.getElementById("header").innerHTML = headerPage;
-            document.getElementById("footer").innerHTML = footerPage;
-        </script>
-    </body>
+        document.addEventListener('DOMContentLoaded', () => {
+      if (window.headerPage) document.getElementById("header").innerHTML = headerPage;
+      if (window.footerPage) document.getElementById("footer").innerHTML = footerPage;
+    });
+    </script>
+</body>
 </html>
