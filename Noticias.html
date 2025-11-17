@@ -4,30 +4,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Notícias - Alimentar com Coração</title>
+
+  <!-- Estilos da página e layout -->
   <link rel="icon" type="image/x-icon" href="Images/minilogo.png">
   <link rel="stylesheet" href="Css/Noticias.css">
   <link rel="stylesheet" href="Css/index.css">
   <link rel="stylesheet" href="Css/Layout.css">
+
+  <!-- Carrega o header e footer automaticamente -->
   <script src="Js/Layout.js" defer></script>
 </head>
+
 <body class="noticias-page">
+  
+  <!-- Header será preenchido via JavaScript (Layout.js) -->
   <header id="header"></header>
   <div class="header-bar"></div>
 
   <div class="container">
+
     <div class="section-header">
       <h1>Notícias e Eventos</h1>
       <p>Fique a par das nossas iniciativas e impacto na comunidade</p><br>
     </div>
 
-    <!-- Notícia Principal -->
+    <!-- ============================ -->
+    <!--      NOTÍCIA PRINCIPAL       -->
+    <!-- ============================ -->
     <article class="featured-news">
+
       <div class="featured-news-image">
         <img src="Images/noticiaprincipal.jpg" alt="Imagem da notícia principal">
       </div>
+
       <div class="featured-news-content">
         <span class="news-category">Campanha</span>
+
         <h2>Recolha Nacional angaria 1.850 toneladas de alimentos</h2>
+
+        <!-- Dados da notícia (data e autor) -->
         <div class="news-meta">
           <span>
             <img src="Images/Noticia.png" alt="Ícone calendário">
@@ -38,58 +53,78 @@
             Equipa Alimentar com Coração
           </span>
         </div>
-        <p class="preview-text">A última campanha nacional terminou com 1.850 toneladas recolhidas, graças ao esforço de milhares de voluntários em todo o país...</p>
+
+        <!-- Este texto aparece sempre -->
+        <p class="preview-text">
+          A última campanha nacional terminou com 1.850 toneladas recolhidas, graças ao esforço de milhares de voluntários...
+        </p>
+
+        <!-- Texto completo fica escondido até o popup abrir -->
         <p class="full-text" style="display:none;">
           A Campanha de Recolha Nacional realizada pelo projeto “Alimentar com Coração” encerrou com um resultado extremamente positivo: 1.850 toneladas de alimentos angariadas em dois dias.
-          Mais de 7.000 voluntários estiveram presentes em cerca de 600 superfícies comerciais, incentivando a população a doar produtos essenciais como leite, arroz, azeite, enlatados e bens de higiene.
-          Este resultado permite reforçar o apoio a mais de 55.000 pessoas acompanhadas mensalmente pelas instituições parceiras.
-          As doações digitais também aumentaram 12% face à última campanha, consolidando o hábito de contribuir através do site e app.
-          Agradecemos a todos os que participaram e provaram, uma vez mais, que a solidariedade continua viva em Portugal.
+          Mais de 7.000 voluntários estiveram presentes em cerca de 600 superfícies comerciais...
         </p>
+
+        <!-- Botão que ativa o popup -->
         <a href="#" class="read-more-btn">Ler Notícia Completa →</a>
       </div>
+
     </article>
 
-    <!-- Grid de Notícias Secundárias -->
+    <!-- ============================ -->
+    <!--  GRELHA DE NOTÍCIAS SECUNDÁRIAS -->
+    <!-- ============================ -->
     <div class="news-grid">
 
-      <!-- Notícia 1 -->
+      <!-- NOTÍCIA 1 -->
       <article class="news-card">
+
         <div class="news-card-image event">
           <img src="Images/Noticia.png" alt="Evento - Jantar Solidário">
         </div>
+
         <div class="news-card-content">
           <span class="news-category">Evento</span>
-          <h3>Jantar Solidário reúne comunidade em Lisboa</h3>
-          <p class="preview-text">No próximo sábado, dia 15 de Outubro, realizamos o nosso Jantar Solidário anual. Todas as receitas revertem para a compra de alimentos.</p>
 
+          <h3>Jantar Solidário reúne comunidade em Lisboa</h3>
+
+          <!-- Pré-visualização -->
+          <p class="preview-text">
+            No próximo sábado, dia 15 de Outubro, realizamos o nosso Jantar Solidário anual...
+          </p>
+
+          <!-- Texto completo para o popup -->
           <p class="full-text" style="display:none;">
-            O “Jantar Solidário 2025” superou todas as expectativas ao reunir mais de 320 participantes numa noite marcada pela união, solidariedade e espírito comunitário.
-            O evento decorreu no Pavilhão Multiusos de Lisboa e contou com a presença de voluntários, parceiros, figuras públicas e famílias apoiadas pelo projeto.
-            Durante o jantar, foram partilhados testemunhos emocionantes e angariados fundos para apoiar a logística alimentar do próximo trimestre.
+            O “Jantar Solidário 2025” superou todas as expectativas ao reunir mais de 320 participantes...
           </p>
 
           <div class="news-card-footer">
             <span class="news-date">5 de Outubro, 2025</span>
+
+            <!-- Abre o popup -->
             <a href="#" class="read-more-link">Ler mais →</a>
           </div>
         </div>
       </article>
 
-      <!-- Notícia 2 -->
+      <!-- NOTÍCIA 2 -->
       <article class="news-card">
+
         <div class="news-card-image campaign">
           <img src="Images/Reciclagem.png" alt="Campanha - Papel por Alimentos">
         </div>
+
         <div class="news-card-content">
           <span class="news-category">Campanha</span>
+
           <h3>Papel por Alimentos: Ajude o planeta e quem precisa</h3>
-          <p class="preview-text">A nossa campanha de reciclagem continua ativa! Traga o seu papel usado e ajude-nos a converter resíduos em alimentos para famílias necessitadas.</p>
+
+          <p class="preview-text">
+            A nossa campanha de reciclagem continua ativa! Traga o seu papel usado e ajude-nos a converter resíduos...
+          </p>
 
           <p class="full-text" style="display:none;">
-            O programa “Papel por Alimentos” registou 72 toneladas de papel recolhido este mês, graças à participação de escolas e empresas.
-            Este material foi convertido em alimentos essenciais que serão distribuídos pelas instituições parceiras.
-            A iniciativa reforça a ligação entre sustentabilidade ambiental e combate à fome nas comunidades locais.
+            O programa “Papel por Alimentos” registou 72 toneladas de papel recolhido este mês...
           </p>
 
           <div class="news-card-footer">
@@ -99,20 +134,24 @@
         </div>
       </article>
 
-      <!-- Notícia 3 -->
+      <!-- NOTÍCIA 3 -->
       <article class="news-card">
+
         <div class="news-card-image impact">
           <img src="Images/Coracao.png" alt="Impacto - Famílias apoiadas">
         </div>
+
         <div class="news-card-content">
           <span class="news-category">Impacto</span>
+
           <h3>5.000 famílias apoiadas em Setembro</h3>
-          <p class="preview-text">Graças à generosidade dos nossos parceiros e voluntários, conseguimos apoiar mais de 5.000 famílias durante o mês de Setembro, um recorde histórico.</p>
+
+          <p class="preview-text">
+            Graças à generosidade dos nossos parceiros e voluntários, conseguimos apoiar mais de 5.000 famílias...
+          </p>
 
           <p class="full-text" style="display:none;">
-            Durante o mês de Setembro, o projeto “Alimentar com o Coração” apoiou 5.000 famílias.
-            Foram distribuídos cabazes com produtos essenciais e reforçada a assistência a famílias com crianças pequenas.
-            O aumento deve-se ao reforço de parceiros e ao empenho dos voluntários na logística de triagem e distribuição.
+            Durante o mês de Setembro, o projeto apoiou 5.000 famílias com cabazes alimentares...
           </p>
 
           <div class="news-card-footer">
@@ -122,33 +161,51 @@
         </div>
       </article>
 
-    </div>
-  </div>
+    </div> <!-- fim da grelha -->
+  </div> <!-- fim container -->
 
   <div class="footer-bar"></div>
+
+  <!-- Footer preenchido automaticamente -->
   <footer id="footer"></footer>
 
-  <!-- POPUP (colocado antes dos scripts) -->
+  <!-- ============================ -->
+  <!--           POPUP              -->
+  <!-- ============================ -->
+  <!-- O popup é controlado por PopupNoticias.js -->
   <div id="popup-overlay">
     <div id="popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+
+      <!-- Botão para fechar -->
       <button class="close-popup" aria-label="Fechar popup">&times;</button>
+
+      <!-- Estes 3 elementos são preenchidos dinamicamente -->
       <h2 id="popup-title"></h2>
       <img id="popup-image" src="" alt="">
       <div id="popup-text"></div>
     </div>
   </div>
 
-  <!-- JS: primeiro Layout (deferred acima), depois Popup -->
+  <!-- Script responsável por abrir o popup ao clicar em "Ler mais" -->
   <script src="Js/PopupNoticias.js" defer></script>
 
   <script>
-    // dropdown toggle simples: abre/fecha ao clicar, fecha ao clicar fora
+    /* 
+      Sistema do dropdown do menu:
+      - Abre quando clicamos na opção
+      - Fecha se clicarmos fora
+      - Garante que só um dropdown fica aberto de cada vez
+    */
     document.addEventListener('click', function(e){
       const toggle = e.target.closest('.dropdown-toggle');
+
       if (toggle) {
         const li = toggle.parentElement;
         const opened = li.classList.toggle('open');
+
         toggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
+
+        // Fecha outros dropdowns abertos
         document.querySelectorAll('.menu .dropdown.open').forEach(other => {
           if (other !== li) {
             other.classList.remove('open');
@@ -157,6 +214,8 @@
         });
         return;
       }
+
+      // Clicar fora fecha tudo
       if (!e.target.closest('.menu')) {
         document.querySelectorAll('.menu .dropdown.open').forEach(item => {
           item.classList.remove('open');
@@ -165,7 +224,10 @@
       }
     });
 
-    // preencher header/footer (assumindo que headerPage/footerPage vêm do Layout.js)
+    /*
+      Assim que a página carrega:
+      - Preenche o header e footer com o HTML vindo do Layout.js
+    */
     document.addEventListener('DOMContentLoaded', () => {
       if (window.headerPage) document.getElementById("header").innerHTML = headerPage;
       if (window.footerPage) document.getElementById("footer").innerHTML = footerPage;

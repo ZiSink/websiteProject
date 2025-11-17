@@ -1,13 +1,13 @@
-// === Inicialização do mapa ===
+// inicializa o mapa centrado em Lisboa
 const map = L.map('map').setView([38.7169, -9.1399], 12);
 
-// Camada base (OpenStreetMap - gratuito)
+// adiciona o mapa base do OpenStreetMap
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
   attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
 }).addTo(map);
 
-// === Dados dos pontos ===
+// lista dos pontos que queremos mostrar no mapa
 const pontos = [
   {
     nome: "Instituto Politécnico de Setúbal",
@@ -44,15 +44,16 @@ const pontos = [
   }
 ];
 
-// Seleciona o painel
+// painel onde vamos mostrar info quando clicamos num ponto
 const infoPanel = document.getElementById("info-panel");
 
-// === Criação dos marcadores ===
+// percorre todos os pontos e cria um marcador para cada
 pontos.forEach(p => {
+
   const marker = L.marker([p.lat, p.lng]).addTo(map);
 
+  // quando clicamos no marcador, atualiza o painel
   marker.on('click', () => {
-    // Atualiza o conteúdo do painel
     infoPanel.innerHTML = `
       <img src="${p.imagem}" alt="${p.nome}" alt="${p.alimentos}">
       <div id="info-content">
