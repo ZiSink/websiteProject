@@ -1,3 +1,4 @@
+/* Paleta base e cores transversais da identidade visual */
 :root{
     --green:#2E7D32; 
     --black-green: #1c4b1e;
@@ -10,13 +11,13 @@
 
 *{box-sizing:border-box}
 
+/* Estilos base do documento e containers reutilizáveis */
 body{
     margin:0; 
     font-family:Arial, Helvetica, sans-serif; 
     color:var(--text); 
     background:var(--white)
 }
-
 
 .container{
     max-width:1200px; 
@@ -47,11 +48,13 @@ h1{
     margin:12px 0
 }
 
+/* Links globais mantêm estilo claro para fundo escuro */
 a{
     color:var(--white);
     text-decoration:none;
 }
 
+/* Layout geral da página inicial */
 .home-page{
     background:#f6f7fb;
 }
@@ -65,6 +68,7 @@ a{
     gap:32px;
 }
 
+/* Hero principal com gradiente e destaque de métricas */
 .hero{
     display:grid;
     gap:30px;
@@ -101,6 +105,7 @@ a{
     margin-bottom:26px;
 }
 
+/* Botões utilitários usados pelo hero e CTA */
 .btn{
     display:inline-flex;
     align-items:center;
@@ -147,6 +152,7 @@ a{
     opacity:0.8;
 }
 
+/* Painel lateral com indicadores recentes */
 .hero-panel{
     background:#fff;
     border-radius:26px;
@@ -197,12 +203,14 @@ a{
     color:#5a6471;
 }
 
+/* Cartões de impacto resumido logo após o hero */
 .stats-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
     gap:18px;
 }
 
+/* Card individual das estatísticas */
 .stat-card{
     background:#fff;
     padding:26px;
@@ -219,12 +227,14 @@ a{
     margin-bottom:6px;
 }
 
+/* Grelha com ações principais (doar, voluntariado, etc.) */
 .action-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
     gap:18px;
 }
 
+/* Cartões clicáveis com micro-CTAs */
 .action-card{
     display:flex;
     flex-direction:column;
@@ -254,6 +264,7 @@ a{
     color:var(--green);
 }
 
+/* Bloco editorial com destaques do blog/notícias */
 .news-section{
     background:#fff;
     border-radius:28px;
@@ -280,12 +291,14 @@ a{
     margin:0 0 8px;
 }
 
+/* Lista responsiva de notícias */
 .news-list{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
     gap:20px;
 }
 
+/* Estrutura de cada notícia resumida */
 .news-item{
     border:1px solid #e0e5ef;
     border-radius:18px;
@@ -312,6 +325,7 @@ a{
     color:var(--orange);
 }
 
+/* Chamada final para ação com destaque em moldura */
 .cta-banner{
     background:linear-gradient(110deg, #fff, rgba(255,255,255,0.6));
     border:2px dashed rgba(46,125,50,0.4);
@@ -329,6 +343,7 @@ a{
     margin:8px 0;
 }
 
+/* Ajustes responsivos principais */
 @media (max-width:720px){
     .hero{
         padding:36px;

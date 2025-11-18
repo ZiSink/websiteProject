@@ -1,8 +1,10 @@
+/* Paleta clara exclusiva da página de pedidos de apoio */
 .preciso-ajuda-page {
   background: #f7f8fc;
   color: #1f2a3d;
 }
 
+/* Grelha principal divide introdução e formulário */
 .preciso-ajuda {
   max-width: 1100px;
   margin: 0 auto;
@@ -11,6 +13,7 @@
   gap: 40px;
 }
 
+/* Cartão inicial com instruções e contexto */
 .intro {
   background: #fff;
   border-radius: 18px;
@@ -18,6 +21,7 @@
   box-shadow: 0 20px 45px rgba(8, 26, 36, 0.08);
 }
 
+/* Subtítulo pequeno acima do título principal */
 .intro .eyebrow {
   font-size: 0.85rem;
   letter-spacing: 0.3em;
@@ -27,18 +31,21 @@
   margin-bottom: 10px;
 }
 
+/* Título responsivo */
 .intro h1 {
   font-size: clamp(1.8rem, 3vw, 2.6rem);
   margin-bottom: 15px;
   color: #0d3150;
 }
 
+/* Parágrafos explicativos */
 .intro p {
   font-size: 1.05rem;
   line-height: 1.6;
   margin-bottom: 20px;
 }
 
+/* Lista de dicas rápidas */
 .intro ul {
   margin: 0;
   padding-left: 20px;
@@ -46,11 +53,13 @@
   line-height: 1.5;
 }
 
+/* Envelope que centraliza o cartão do formulário */
 .form-wrapper {
   display: flex;
   justify-content: center;
 }
 
+/* Cartão branco que contém o formulário */
 .form-card {
   background: #fff;
   border-radius: 18px;
@@ -59,29 +68,34 @@
   box-shadow: 0 30px 65px rgba(8, 26, 36, 0.1);
 }
 
+/* Cabeçalho do formulário */
 .form-card h2 {
   font-size: 1.8rem;
   margin-bottom: 10px;
   color: #0d3150;
 }
 
+/* Texto auxiliar abaixo do título */
 .form-helper {
   margin-bottom: 30px;
   color: #56627a;
 }
 
+/* Formulário usa layout em coluna */
 .ajuda-form {
   display: flex;
   flex-direction: column;
   gap: 25px;
 }
 
+/* Campos distribuídos em grelha fluida */
 .form-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 20px;
 }
 
+/* Campo individual com label e input alinhados */
 .form-field {
   display: flex;
   flex-direction: column;
@@ -90,6 +104,7 @@
   color: #253047;
 }
 
+/* Inputs, selects e textareas partilham acabamento suave */
 .form-field input,
 .form-field select,
 .form-field textarea {
@@ -101,6 +116,7 @@
   transition: border 0.2s, box-shadow 0.2s;
 }
 
+/* Destaque laranja no foco */
 .form-field input:focus,
 .form-field select:focus,
 .form-field textarea:focus {
@@ -109,11 +125,13 @@
   box-shadow: 0 0 0 3px rgba(255, 140, 66, 0.15);
 }
 
+/* Área de texto permite redimensionar verticalmente */
 .form-field textarea {
   resize: vertical;
   min-height: 140px;
 }
 
+/* Nota informativa sobre anexos */
 .upload-hint {
   font-size: 0.9rem;
   color: #5c6680;
@@ -122,6 +140,7 @@
   padding: 15px;
 }
 
+/* Linha de confirmação dos termos */
 .checkbox-field {
   display: flex;
   gap: 10px;
@@ -130,12 +149,14 @@
   color: #27314a;
 }
 
+/* Caixa de seleção maior para acessibilidade */
 .checkbox-field input {
   margin-top: 4px;
   width: 18px;
   height: 18px;
 }
 
+/* Botão-inline que abre popup dos termos */
 .terms-trigger {
   background: none;
   border: none;
@@ -146,11 +167,13 @@
   text-decoration: underline;
 }
 
+/* Estado hover/focus reforça cor */
 .terms-trigger:focus,
 .terms-trigger:hover {
   color: #e6762a;
 }
 
+/* Botão de envio destacado com gradiente */
 .submit-btn {
   align-self: flex-start;
   background: linear-gradient(120deg, #ff8c42, #ffb347);
@@ -165,6 +188,7 @@
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
+/* Pequena animação ao pairar */
 .submit-btn:hover {
   transform: translateY(-1px);
   box-shadow: 0 20px 35px rgba(255, 140, 66, 0.4);

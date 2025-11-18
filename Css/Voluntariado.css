@@ -1,12 +1,15 @@
+/* Largura controlada para o conteúdo de voluntariado */
 .voluntariado-page .container {
     max-width: 900px;
 }
 
+/* Campos do formulário aparecem em bloco para facilitar leitura */
 form label {
     display: block;
     margin-bottom: 10px;
 }
 
+/* Inputs ocupam toda a largura disponível */
 form input {
     width: 100%;
     padding: 10px;

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rede Social - Banco Alimentar</title>
   <style>
+    /* Layout rápido para a página simulada de rede social */
     body { font-family: Arial; background: #f6f7f9; margin:0; padding:20px;}
     .container { max-width: 700px; margin:0 auto;}
     .card { background:white; border-radius:12px; box-shadow:0 1px 3px rgba(0,0,0,0.1); padding:16px; margin-bottom:20px;}
@@ -21,12 +22,14 @@
 <div class="container">
   <h2>Rede Social - Banco Alimentar</h2>
 
+  <!-- Área onde o utilizador cria um novo post -->
   <div class="card">
     <textarea id="postText" placeholder="Partilha uma novidade..."></textarea>
     <input id="postImage" placeholder="URL de imagem (opcional)">
     <button onclick="createPost()">Publicar</button>
   </div>
 
+  <!-- Feed dinâmico preenchido via JavaScript -->
   <div id="feed"></div>
 </div>
 

@@ -11,9 +11,11 @@
         <script src="Js/PopupPrecisoAjuda.js" defer></script>
     </head>
     <body class="preciso-ajuda-page">
+        <!-- Header injetado e faixa de transição -->
         <header id="header"></header>
 		<div class="header-bar"></div>
         <main class="preciso-ajuda">
+            <!-- Texto introdutório com instruções para o formulário -->
             <section class="intro">
                 <p class="eyebrow">Preciso de ajuda</p>
                 <h1>Conte connosco para atravessar um momento difícil</h1>
@@ -27,7 +29,7 @@
                     <li>Descreva brevemente as despesas essenciais e outras ajudas que já recebe.</li>
                 </ul>
             </section>
-
+            <!-- Formulário completo recolhe dados pessoais e contexto -->
             <section class="form-wrapper">
                 <div class="form-card">
                     <h2>Formulário de Apoio Alimentar</h2>
@@ -114,6 +116,7 @@
             </section>
         </main>
 
+        <!-- Popup reutiliza o mesmo markup de notícias para mostrar termos -->
         <div id="popup-overlay" aria-hidden="true">
             <div id="popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
                 <button class="close-popup" aria-label="Fechar popup">&times;</button>
@@ -123,6 +126,7 @@
             </div>
         </div>
 
+        <!-- Conteúdo oculto serve de base para preencher o popup -->
         <div id="terms-content" hidden>
             <p>
                 Os pedidos submetidos através deste formulário destinam-se exclusivamente a famílias em situação de fragilidade alimentar
@@ -140,6 +144,7 @@
         </div>
 
 		<div class="footer-bar"></div>
+        <!-- Footer padrão -->
         <footer id="footer"></footer>
         <script>        
             // dropdown toggle simples: abre/fecha ao clicar, fecha ao clicar fora

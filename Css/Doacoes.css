@@ -1,9 +1,11 @@
+/* Grelha das opções de doação (monetário vs alimentos) */
 .doacoes-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
 }
 
+/* Cada bloco adapta largura mas respeita largura mínima */
 .doacoes-grid > div {
     flex: 1;
     min-width: 200px;
