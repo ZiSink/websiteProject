@@ -11,10 +11,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // função para abrir popup
   function openPopup({ title='', image='', text='' }) {
-    popupTitle.innerText = title; // título da notícia
-    popupImage.src = image || 'Images/default.jpg'; // imagem ou default
+    popupTitle.innerText = title; 
+    popupImage.src = image || 'Images/default.jpg';
     popupImage.alt = title;
-    popupText.innerText = text || ''; // texto completo
+    popupText.innerText = text || ''; 
     overlay.classList.add('show'); // mostra o popup
     // trava scroll da página enquanto popup aberto
     document.documentElement.style.overflow = 'hidden';
