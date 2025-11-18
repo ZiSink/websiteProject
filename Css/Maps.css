@@ -1,23 +1,23 @@
 /* === estilos gerais da página === */
 body {
-  font-family: Arial, Helvetica, sans-serif; /* fonte simples e limpa */
+  font-family: Arial, Helvetica, sans-serif; 
   margin: 0;
-  background: #f6f7fb; /* cor de fundo clarinha */
-  color: #1e1e1e; /* texto escuro */
+  background: #f6f7fb;
+  color: #1e1e1e; 
 }
 
 /* área principal: mapa + painel info */
 .content {
   max-width: 1200px;
-  margin: 0 auto; /* centraliza na tela */
+  margin: 0 auto;
   padding: 60px 20px 80px;
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr); /* 2 colunas: mapa maior + painel menor */
+  grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr); /* 2 colunas: mapa maior e painel menor */
   gap: 24px;
   align-items: stretch;
 }
 
-/* mensagem acima do grid explicativa */
+/* mensagem explicativa acima do grid */
 .content::before {
   content: "Escolha um ponto no mapa para descobrir horários, contactos e parceiros desta rede de recolha.";
   grid-column: 1 / -1; /* ocupa as 2 colunas */
@@ -39,11 +39,11 @@ body {
   width: 100%;
   border-radius: 26px;
   overflow: hidden;
-  box-shadow: 0 35px 60px rgba(13, 38, 22, 0.2); /* sombra bacana */
+  box-shadow: 0 35px 60px rgba(13, 38, 22, 0.2); /* sombra */
   border: 1px solid rgba(28, 75, 30, 0.15);
 }
 
-/* dica sobre como usar o mapa */
+/* dica como usar o mapa */
 #map::after {
   content: "Navegue e aproxime para localizar pontos próximos.";
   position: absolute;
@@ -76,7 +76,7 @@ body {
   border-radius: 15px 15px 0 0;
 }
 
-/* conteúdo textual do painel */
+/* conteúdo text do painel */
 #info-content {
   padding: 26px;
 }
@@ -84,7 +84,7 @@ body {
 #info-content h2 {
   margin: 0 0 12px;
   font-size: 1.5rem;
-  color: #0d331f; /* título mais escuro */
+  color: #0d331f; 
 }
 
 #info-content p {
@@ -108,15 +108,15 @@ body {
 /* === RESPONSIVO PARA TELEMÓVEL === */
 @media (max-width: 900px) {
   .content {
-    grid-template-columns: 1fr; /* só uma coluna em mobile */
+    grid-template-columns: 1fr; /* só uma coluna tele */
     padding: 40px 16px 60px;
   }
 
   #map {
-    min-height: 380px; /* mapa menor em mobile */
+    min-height: 380px; /* mapa menor tele */
   }
 
   #info-panel img {
-    height: 160px; /* imagem menor em mobile */
+    height: 160px; /* imagem menor tele */
   }
 }

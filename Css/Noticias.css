@@ -227,10 +227,10 @@ body.noticias-page {
     .featured-news-image { height: 280px; font-size: 60px; }
     .featured-news-content { padding: 25px; }
     .featured-news-content h2 { font-size: 28px; }
-    .news-grid { grid-template-columns: 1fr; } /* mobile = 1 coluna */
+    .news-grid { grid-template-columns: 1fr; } /* tele = 1 coluna */
 }
 
-/* imagens dentro de cards e capa preenchem espaço sem distorcer */
+/* imagens dentro de cards e capa preenchem espaço sem distorcer nada */
 .news-card-image img,
 .featured-news-image img {
     width: 100%;
