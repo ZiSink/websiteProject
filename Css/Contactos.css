@@ -1,21 +1,11 @@
-/* Limita largura da página de contactos para melhor leitura */
-.contactos-page .container {
-    max-width: 900px;
-    padding: 30px 20px;
+.contact-panels .info-card{
+    gap:14px;
 }
 
-/* Campos do formulário aparecem empilhados */
-.contact-form label {
-    display: block;
-    margin-bottom: 10px;
+.contact-form-card .cta{
+    margin-top:8px;
 }
 
-/* Inputs ocupam toda a largura com cantos arredondados */
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    margin-top: 6px;
+.contactos-page .map-embed{
+    margin-top:12px;
 }

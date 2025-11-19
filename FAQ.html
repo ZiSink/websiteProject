@@ -6,36 +6,109 @@
   <link rel="icon" type="image/x-icon" href="Images/minilogo.png">
   <link rel="stylesheet" href="Css/index.css">
   <link rel="stylesheet" href="Css/Layout.css">
-  <script src="Js/Layout.js"></script>
+  <script src="Js/Layout.js" defer></script>
 </head>
-<body>
+<body class="content-page faq-page">
   <!-- Header e barra vertical replicam a navegação comum -->
   <header id="header"></header>
   <div class="header-bar"></div>
-  <div class="container">
-    <h1>Perguntas Frequentes</h1>
-  </div>
-  <main class="container">
-    <!-- Lista de perguntas em cartões simples -->
-    <section class="faq">
-      <div class="card">
-        <h2>Como posso doar alimentos?</h2>
-        <p>Podes entregar alimentos não perecíveis nos pontos de recolha do Banco Alimentar.</p>
+  <main class="content-layout">
+    <!-- Hero com resumo do que o visitante encontra -->
+    <section class="content-hero">
+      <p class="eyebrow">FAQ</p>
+      <h1>Respostas rápidas às perguntas mais frequentes</h1>
+      <p class="lead">
+        Reunimos as dúvidas mais comuns da comunidade para que encontre soluções imediatas. Se precisar de mais detalhes,
+        contacte a equipa ou visite a página <a class="link-inline" href="PrecisoAjuda.html">PrecisoAjuda</a>.
+      </p>
+      <div class="inline-stats">
+        <div>
+          <span>Atualização</span>
+          <strong>Mensal</strong>
+          <p>Revisamos cada resposta com base nas campanhas em curso.</p>
+        </div>
+        <div>
+          <span>Tempo médio de resposta</span>
+          <strong>48 h úteis</strong>
+          <p>Para questões recebidas via formulário de contacto.</p>
+        </div>
       </div>
+    </section>
 
-      <div class="card">
-        <h2>Posso ser voluntário?</h2>
-        <p>Sim! Basta inscreveres-te nas campanhas ou contactar o Banco Alimentar da tua região.</p>
+    <!-- Destaque das principais categorias -->
+    <section class="info-grid">
+      <article class="info-card">
+        <h3>Doações e donativos</h3>
+        <p>Inclui informações sobre IBAN, bens essenciais e entregas em lojas parceiras.</p>
+      </article>
+      <article class="info-card">
+        <h3>Voluntariado</h3>
+        <p>Descubra como participar nas recolhas, turnos de triagem e ações pontuais.</p>
+      </article>
+      <article class="info-card">
+        <h3>Apoio alimentar</h3>
+        <p>Saiba como pedir ajuda e quais os documentos necessários para avaliação.</p>
+      </article>
+    </section>
+
+    <section class="faq-list">
+      <details class="faq-item" open>
+        <summary>Como posso doar alimentos?</summary>
+        <div class="faq-answer">
+          Entregue alimentos não perecíveis nos nossos pontos de recolha ou durante as campanhas em hipermercados.
+          Consulte os <a class="link-inline" href="PontosdeRecolha.html">Pontos de Recolha</a> para encontrar o local mais próximo.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Que bens são prioritários?</summary>
+        <div class="faq-answer">
+          Mantimentos básicos como arroz, massa, azeite, leite, conservas e leguminosas secas.
+          Também aceitamos produtos de higiene e infantis quando devidamente embalados.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Posso doar dinheiro em vez de bens?</summary>
+        <div class="faq-answer">
+          Sim. Utilize o IBAN indicado na página <a class="link-inline" href="Doacoes.html">Doações</a> ou vales digitais.
+          Emitimos recibo para efeitos fiscais quando solicitado.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Como posso ser voluntário?</summary>
+        <div class="faq-answer">
+          Escolha uma campanha ou disponibilidade semanal na página <a class="link-inline" href="Voluntariado.html">Voluntariado</a>.
+          Terá acesso a sessões de acolhimento e materiais de apoio antes do primeiro turno.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Posso pedir ajuda alimentar diretamente?</summary>
+        <div class="faq-answer">
+          Sim. Preencha o formulário da página <a class="link-inline" href="PrecisoAjuda.html">PrecisoAjuda</a> com os seus dados
+          e encaminharemos para a instituição mais próxima para avaliação social.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Como garantem a transparência na distribuição?</summary>
+        <div class="faq-answer">
+          Trabalhamos com instituições parceiras certificadas, com relatórios semanais de entregas. Publicamos resumos de impacto
+          trimestrais e disponibilizamos visitas à operação mediante marcação.
+        </div>
+      </details>
+    </section>
+
+    <section class="callout-panel">
+      <div>
+        <h2>Ainda tem dúvidas específicas?</h2>
+        <p>A nossa equipa responde rapidamente via email ou telefone. Partilhe o máximo de detalhes possível.</p>
       </div>
-
-      <div class="card">
-        <h2>Que alimentos são mais úteis?</h2>
-        <p>Arroz, massa, leite, azeite, enlatados e leguminosas são sempre bem-vindos.</p>
-      </div>
-
-      <div class="card">
-        <h2>Como posso pedir ajuda alimentar?</h2>
-        <p>O pedido é feito através das instituições parceiras do Banco Alimentar.</p>
+      <div class="hero-actions">
+        <a href="Contactos.html" class="btn primary">Falar connosco</a>
+        <a href="PrecisoAjuda.html" class="cta secondary">Pedir apoio</a>
       </div>
     </section>
   </main>
@@ -68,8 +141,10 @@
         }
     });
                    
-    document.getElementById("header").innerHTML = headerPage;
-    document.getElementById("footer").innerHTML = footerPage;
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.headerPage) document.getElementById("header").innerHTML = headerPage;
+      if (window.footerPage) document.getElementById("footer").innerHTML = footerPage;
+    });
   </script>
 </body>
 </html>

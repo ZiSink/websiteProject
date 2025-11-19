@@ -1,24 +1,15 @@
-/* Mantém secções de missão centradas e com boa margem */
-.missao-page .container {
-    max-width: 1100px;
-    padding: 30px 20px;
+/* Hero da missão com toque de gradiente */
+.mission-hero{
+    background:linear-gradient(135deg, rgba(46,125,50,0.12), #ffffff);
+    border-color:rgba(46,125,50,0.25);
 }
 
-/* Listas do que fazemos usam espaçamento confortável */
-.missao-page ul {
-    margin-left: 20px;
-    line-height: 1.6;
+/* Cartões mantêm altura equilibrada nas áreas de atuação */
+.mission-pillars .info-card{
+    min-height:200px;
 }
 
-/* Blocos de valores alinhados em grelha flex */
-.valores {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-}
-
-/* Cada valor cresce igualmente mas nunca fica demasiado estreito */
-.valores > div {
-    flex: 1;
-    min-width: 200px;
+/* Valores usam destaque extra */
+.value-card{
+    background:#ffffff;
 }
