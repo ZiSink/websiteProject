@@ -1,12 +1,12 @@
-/* Grelha das opções de doação (monetário vs alimentos) */
-.doacoes-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
+.donation-options .info-card{
+    min-height:210px;
 }
 
-/* Cada bloco adapta largura mas respeita largura mínima */
-.doacoes-grid > div {
-    flex: 1;
-    min-width: 200px;
+.donation-options .info-card strong{
+    font-size:1.4rem;
+    color:var(--black-green);
+}
+
+.donativos-page .callout-panel .btn{
+    margin-right:10px;
 }

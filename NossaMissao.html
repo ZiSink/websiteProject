@@ -13,46 +13,107 @@
     <script src="Js/Layout.js" defer></script>
 </head>
 
-<body class="missao-page">
+<body class="content-page missao-page">
     <!-- Header comum e gradiente de transição -->
     <header id="header"></header>
     <div class="header-bar"></div>
 
-    <main class="container">
-        <!-- Bloco principal que apresenta missão e contexto -->
-        <section class="card">
-            <p class="news-category">Sobre Nós</p>
-            <h1>A Nossa Missão</h1>
-            <p>O projeto <strong>Alimentar com Coração</strong> existe para apoiar famílias vulneráveis através de campanhas de recolha, distribuição alimentar e iniciativas de solidariedade.</p>
+    <main class="content-layout">
+        <!-- Destaque apresenta a missão e visão -->
+        <section class="content-destaque mission-destaque">
+            <p class="eyebrow">Sobre nós</p>
+            <h1>A nossa missão é alimentar com coração quem enfrenta tempos difíceis</h1>
+            <p class="lead">
+                O projeto <strong>Alimentar com Coração</strong> mobiliza voluntários, empresas e vizinhos atentos para reunir alimentos,
+                montar cabazes completos e acompanhar famílias que atravessam um período de vulnerabilidade social.
+            </p>
+            <ul class="check-list">
+                <li>Organizamos recolhas semanais e campanhas nacionais com forte presença comunitária.</li>
+                <li>Apoiamos instituições locais para chegar a quem está isolado ou sem rede familiar.</li>
+                <li>Convertimos cada donativo em cabazes equilibrados, ajustados ao agregado familiar.</li>
+            </ul>
+            <div class="inline-stats">
+                <div>
+                    <span>Famílias acompanhadas</span>
+                    <strong>1 200/mês</strong>
+                    <p>Cabazes entregues com visitas regulares das equipas sociais.</p>
+                </div>
+                <div>
+                    <span>Campanhas anuais</span>
+                    <strong>24 ações</strong>
+                    <p>Incluem recolhas em hipermercados, escolas e empresas.</p>
+                </div>
+                <div>
+                    <span>Rede de parceiros</span>
+                    <strong>35 entidades</strong>
+                    <p>IPSS, juntas de freguesia e empresas que asseguram logística.</p>
+                </div>
+            </div>
         </section>
 
-        <!-- Lista das áreas de atuação -->
-        <section class="card">
-            <h2>O que fazemos</h2>
-            <ul>
-                <li>Organização de recolhas de alimentos.</li>
-                <li>Distribuição para famílias e instituições.</li>
-                <li>Campanhas sazonais e de emergência.</li>
-                <li>Combate ao desperdício alimentar.</li>
+        <!-- Áreas principais de atuação -->
+        <section class="info-grid mission-pillars">
+            <article class="info-card">
+                <h3>Recolha e triagem</h3>
+                <p>Recebemos donativos em pontos físicos, recolhemos excedentes e triamos tudo de acordo com critérios de qualidade.</p>
+            </article>
+            <article class="info-card">
+                <h3>Distribuição próxima</h3>
+                <p>Trabalhamos com instituições parceiras para entregar cabazes adaptados à dimensão e necessidades de cada agregado.</p>
+            </article>
+            <article class="info-card">
+                <h3>Campanhas solidárias</h3>
+                <p>Organizamos campanhas sazonais, respostas de emergência e iniciativas de sensibilização em escolas e empresas.</p>
+            </article>
+            <article class="info-card">
+                <h3>Combate ao desperdício</h3>
+                <p>Transformamos excedentes alimentares em refeições seguras, reduzindo perdas e garantindo apoio rápido.</p>
+            </article>
+        </section>
+
+        <!-- Explicação da jornada de impacto -->
+        <section class="info-card mission-commitment">
+            <h2>Como concretizamos a missão diariamente</h2>
+            <ul class="steps-list">
+                <li>
+                    <strong>Escutamos as necessidades locais</strong>
+                    Trabalhamos lado a lado com juntas de freguesia e IPSS para mapear famílias e urgências específicas.
+                </li>
+                <li>
+                    <strong>Mobilizamos recursos e voluntários</strong>
+                    Definimos metas de recolha, envolvemos parceiros logísticos e coordenamos equipas de voluntários em turnos flexíveis.
+                </li>
+                <li>
+                    <strong>Prestamos contas com transparência</strong>
+                    Monitorizamos cada cabaz distribuído e partilhamos relatórios regulares com doadores e entidades públicas.
+                </li>
             </ul>
         </section>
 
-        <!-- Cartões de valores centrais -->
-        <section class="card">
-            <h2>Valores</h2>
-            <div class="valores">
-                <div>
-                    <h3>Solidariedade</h3>
-                    <p>Estamos unidos por quem mais precisa.</p>
-                </div>
-                <div>
-                    <h3>Dignidade</h3>
-                    <p>Respeito em cada gesto e entrega.</p>
-                </div>
-                <div>
-                    <h3>Transparência</h3>
-                    <p>Prestamos contas de tudo o que recebemos.</p>
-                </div>
+        <!-- Valores centrais -->
+        <section class="values-grid">
+            <article class="value-card">
+                <h3>Solidariedade</h3>
+                <p>Ligamos quem tem vontade de ajudar a quem precisa de apoio imediato e contínuo.</p>
+            </article>
+            <article class="value-card">
+                <h3>Dignidade</h3>
+                <p>Garantimos atendimento respeitoso e confidencial, preservando a autonomia das famílias.</p>
+            </article>
+            <article class="value-card">
+                <h3>Transparência</h3>
+                <p>Prestamos contas de cada euro e quilo doado com relatórios acessíveis e auditorias independentes.</p>
+            </article>
+        </section>
+
+        <section class="callout-panel">
+            <div>
+                <h2>Partilhe esta missão com a sua comunidade</h2>
+                <p>Doe, seja voluntário ou organize uma recolha no seu bairro. Cada gesto aproxima-nos do objetivo de nenhuma mesa ficar vazia.</p>
+            </div>
+            <div class="destaque-actions">
+                <a href="Doacoes.html" class="btn primary">Quero doar</a>
+                <a href="Voluntariado.html" class="cta secondary">Ser voluntário</a>
             </div>
         </section>
     </main>

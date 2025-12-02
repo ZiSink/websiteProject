@@ -1,18 +1,11 @@
-/* Largura controlada para o conteúdo de voluntariado */
-.voluntariado-page .container {
-    max-width: 900px;
+.volunteer-destaque .destaque-actions{
+    gap:14px;
 }
 
-/* Campos do formulário aparecem em bloco para facilitar leitura */
-form label {
-    display: block;
-    margin-bottom: 10px;
+.volunteer-areas .info-card{
+    min-height:190px;
 }
 
-/* Inputs ocupam toda a largura disponível */
-form input {
-    width: 100%;
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
+.volunteer-process .info-card{
+    gap:16px;
 }

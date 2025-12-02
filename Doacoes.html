@@ -12,28 +12,105 @@
     <script src="Js/Layout.js" defer></script>
 </head>
 
-<body class="donativos-page">
+<body class="content-page donativos-page">
     <!-- Header padrão carregado via Layout.js -->
     <header id="header"></header>
     <div class="header-bar"></div>
 
-    <main class="container">
-        <!-- Cartão introdutório que resume formas de contribuir -->
-        <section class="card">
-            <h1>Donativos e Doações</h1>
-            <p>Ajude-nos a apoiar centenas de famílias.</p>
-
-            <div class="doacoes-grid">
+    <main class="content-layout">
+        <!-- Destaque destaca as principais formas de contribuir -->
+        <section class="content-destaque donation-destaque">
+            <p class="eyebrow">Como ajudar</p>
+            <h1>Transforme solidariedade em refeições completas</h1>
+            <p class="lead">
+                Cada donativo financeiro ou alimentar reforça os cabazes entregues todas as semanas.
+                Escolha a modalidade que melhor se adapta à sua realidade e acompanhe o impacto.
+            </p>
+            <div class="inline-stats">
                 <div>
-                    <h3>Doação Monetária</h3>
-                    <p>IBAN: <strong>PT50 0000 0000 0000 0000 0000</strong></p>
+                    <span>IBAN</span>
+                    <strong>PT50 0000 0000 0000 0000 0000</strong>
+                    <p>Envie o comprovativo para receber recibo de donativo.</p>
                 </div>
-
                 <div>
-                    <h3>Alimentos</h3>
-                    <p>Entregue alimentos nos pontos de recolha.</p>
-                    <a href="PontosdeRecolha.html" class="cta">Ver Pontos</a>
+                    <span>Doações digitais</span>
+                    <strong>MB Way / Referência</strong>
+                    <p>Disponível durante campanhas sazonais e recolhas online.</p>
                 </div>
+                <div>
+                    <span>Entrega física</span>
+                    <strong>42 locais</strong>
+                    <p>Supermercados e parceiros logísticos em todo o país.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cartões com tipos de donativo -->
+        <section class="info-grid donation-options">
+            <article class="info-card">
+                <h3>Transferência bancária</h3>
+                <p>Efetue uma transferência com o valor pretendido. Envie o comprovativo para <a class="link-inline" href="mailto:alimentarccoracao@sapo.pt">alimentarccoracao@sapo.pt</a>.</p>
+                <strong>IBAN: PT50 0000 0000 0000 0000 0000</strong>
+                <p>SWIFT/BIC: BCOMPTPL</p>
+            </article>
+            <article class="info-card">
+                <h3>Vales digitais ou MB Way</h3>
+                <p>Durante as campanhas nacionais disponibilizamos referência MB, MB Way e QR Code.</p>
+                <p>Ideal para empresas e grupos que pretendem consolidar vários contributos.</p>
+            </article>
+            <article class="info-card">
+                <h3>Entrega de alimentos</h3>
+                <p>Arroz, massa, azeite, leite, conservas, bolachas e produtos de higiene são prioritários.</p>
+                <a href="PontosdeRecolha.html" class="cta secondary">Ver pontos de recolha</a>
+            </article>
+        </section>
+
+        <section class="split-panel">
+            <article class="info-card">
+                <h2>Como doar alimentos</h2>
+                <ul class="steps-list">
+                    <li>
+                        <strong>1. Escolha bens essenciais</strong>
+                        Prefira alimentos não perecíveis em embalagens fechadas e com validade superior a 2 meses.
+                    </li>
+                    <li>
+                        <strong>2. Entregue num parceiro</strong>
+                        Consulte os pontos oficiais e verifique horários de recolha ou campanhas em loja.
+                    </li>
+                    <li>
+                        <strong>3. Solicite comprovativo</strong>
+                        Emitimos recibo para empresas ou particulares que necessitem do documento fiscal.
+                    </li>
+                </ul>
+            </article>
+            <article class="info-card">
+                <h2>Transparência garantida</h2>
+                <ul class="check-list">
+                    <li>Relatórios trimestrais de impacto partilhados com voluntários e parceiros.</li>
+                    <li>Cabazes personalizados com base no agregado familiar e necessidades nutricionais.</li>
+                    <li>Auditorias independentes e acompanhamento por entidades locais.</li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="info-card">
+            <h2>Campanhas em destaque</h2>
+            <p>Além das recolhas nacionais, promovemos ações temáticas em escolas, empresas e comunidades locais.</p>
+            <ul class="check-list">
+                <li>Campanha de inverno – reforço de produtos proteicos e higiene.</li>
+                <li>Papel por Alimentos – transforme resíduos em cabazes completos.</li>
+                <li>Corridas solidárias – convertidas em vales digitais de alimentação.</li>
+            </ul>
+        </section>
+
+        <section class="callout-panel">
+            <div>
+                <h2>Precisa da nossa equipa para ativar uma iniciativa?</h2>
+                <p>Podemos apoiar com materiais, registos fiscais e comunicação para envolver mais pessoas.</p>
+            </div>
+            <div class="destaque-actions">
+                <a href="Contactos.html" class="btn primary">Falar com a equipa</a>
+                <a href="Voluntariado.html" class="cta secondary">Ser voluntário</a>
             </div>
         </section>
     </main>

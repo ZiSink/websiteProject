@@ -12,34 +12,135 @@
     <script src="Js/Layout.js" defer></script>
 </head>
 
-<body class="voluntariado-page">
+<body class="content-page voluntariado-page">
     <!-- Cabeçalho partilhado e barra decorativa -->
     <header id="header"></header>
     <div class="header-bar"></div>
 
-    <main class="container">
-        <!-- Secção com resumo das áreas onde voluntários atuam -->
-        <section class="card">
-            <h1>Voluntariado</h1>
-            <p>Junte-se à nossa equipa e faça a diferença.</p>
-
-            <ul>
-                <li>Recolhas de alimentos</li>
-                <li>Organização e separação de bens</li>
-                <li>Campanhas sazonais</li>
-                <li>Apoio logístico</li>
-            </ul>
+    <main class="content-layout">
+        <!-- Destaque motiva a inscrição -->
+        <section class="content-destaque volunteer-destaque">
+            <p class="eyebrow">Voluntariado</p>
+            <h1>Transforme algumas horas em refeições para centenas de famílias</h1>
+            <p class="lead">
+                Procuramos pessoas disponíveis para recolher, organizar e entregar alimentos em diferentes turnos semanais.
+                Fornecemos formação, seguro e acompanhamento contínuo.
+            </p>
+            <div class="inline-stats">
+                <div>
+                    <span>Turnos flexíveis</span>
+                    <strong>3 h mín./semana</strong>
+                    <p>Em lojas, armazéns ou distribuição de cabazes.</p>
+                </div>
+                <div>
+                    <span>Voluntários ativos</span>
+                    <strong>860 pessoas</strong>
+                    <p>Distribuídas por 42 municípios da rede.</p>
+                </div>
+                <div>
+                    <span>Formação inicial</span>
+                    <strong>Online + presencial</strong>
+                    <p>Inclui boas práticas de segurança alimentar.</p>
+                </div>
+            </div>
+            <div class="destaque-actions">
+                <a href="Campanhas.html" class="btn primary">Ver campanhas ativas</a>
+                <a href="Contactos.html" class="cta secondary">Falar com a equipa</a>
+            </div>
         </section>
 
-        <!-- Formulário meramente ilustrativo para captar interesse -->
-        <section class="card">
-            <h2>Formulário (decorativo)</h2>
-            <form>
-                <label>Nome<br><input type="text"></label>
-                <label>Email<br><input type="email"></label>
-                <label>Disponibilidade<br><input type="text"></label>
-                <button type="button" class="cta">Enviar</button>
-            </form>
+        <!-- Áreas disponíveis -->
+        <section class="info-grid volunteer-areas">
+            <article class="info-card">
+                <h3>Recolha em loja</h3>
+                <p>Receba donativos nos pontos de recolha e informe os clientes sobre prioridades.</p>
+                <ul class="check-list">
+                    <li>Turnos de 3 horas nos principais hipermercados.</li>
+                    <li>Equipamento e colete fornecidos pela equipa.</li>
+                </ul>
+            </article>
+            <article class="info-card">
+                <h3>Triagem e logística</h3>
+                <p>Organize, pese e prepare os cabazes no armazém central.</p>
+                <ul class="check-list">
+                    <li>Horários pós-laborais e aos sábados.</li>
+                    <li>Actividade perfeita para equipas empresariais.</li>
+                </ul>
+            </article>
+            <article class="info-card">
+                <h3>Distribuição de cabazes</h3>
+                <p>Apoie as entregas em instituições e diretamente nas casas das famílias.</p>
+                <ul class="check-list">
+                    <li>Necessário cartão de condução (opcional).</li>
+                    <li>Acompanhamento feito sempre em dupla.</li>
+                </ul>
+            </article>
+            <article class="info-card">
+                <h3>Comunicação e sensibilização</h3>
+                <p>Ajude-nos a divulgar campanhas online e organizar eventos solidários.</p>
+                <ul class="check-list">
+                    <li>Ideal para quem gosta de conteúdo digital.</li>
+                    <li>Atuação remota com reuniões quinzenais.</li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- Formulário ilustrativo e processo -->
+        <section class="split-panel volunteer-process">
+            <article class="info-card">
+                <h2>Inscreva-se (formulário ilustrativo)</h2>
+                <form class="content-form">
+                    <label>Nome completo
+                        <input type="text" name="nome" placeholder="O seu nome">
+                    </label>
+                    <label>Email
+                        <input type="email" name="email" placeholder="nome@email.com">
+                    </label>
+                    <label>Disponibilidade semanal
+                        <input type="text" name="disponibilidade" placeholder="Ex.: sábados de manhã">
+                    </label>
+                    <label>Área preferida
+                        <select name="area">
+                            <option value="" disabled selected>Selecione</option>
+                            <option>Recolha em loja</option>
+                            <option>Triagem e logística</option>
+                            <option>Distribuição</option>
+                            <option>Comunicação</option>
+                        </select>
+                    </label>
+                    <button type="button" class="cta">Quero ajudar</button>
+                </form>
+                <p class="form-note">(Formulário ilustrativo — os dados não são enviados.)</p>
+            </article>
+
+            <article class="info-card">
+                <h2>Como funciona o processo</h2>
+                <ul class="steps-list">
+                    <li>
+                        <strong>1. Candidatura</strong>
+                        Recebemos os dados básicos e entramos em contacto para validar disponibilidade.
+                    </li>
+                    <li>
+                        <strong>2. Sessão de acolhimento</strong>
+                        Partilhamos boas práticas de segurança, logística e comunicação.
+                    </li>
+                    <li>
+                        <strong>3. Primeiro turno acompanhado</strong>
+                        Um voluntário experiente estará consigo nas primeiras horas de atividade.
+                    </li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="callout-panel">
+            <div>
+                <h2>Tem um grupo de amigos ou empresa interessado?</h2>
+                <p>Organizamos turnos personalizados para equipas e fornecemos materiais de comunicação.</p>
+            </div>
+            <div class="destaque-actions">
+                <a href="Contactos.html" class="btn primary">Agendar sessão</a>
+                <a href="Doacoes.html" class="cta secondary">Outras formas de ajudar</a>
+            </div>
         </section>
     </main>
 

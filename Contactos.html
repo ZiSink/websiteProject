@@ -12,35 +12,90 @@
     <script src="Js/Layout.js" defer></script>
 </head>
 
-<body class="contactos-page">
+<body class="content-page contactos-page">
     <!-- Header e barra em gradiente tratados pelo Layout.js -->
     <header id="header"></header>
     <div class="header-bar"></div>
 
-    <main class="container">
-        <!-- Secção principal com formulário de contacto -->
-        <section class="card">
-            <h1>Contactos</h1>
-            <p>Entre em contacto connosco para esclarecimentos, sugestões ou parcerias.</p>
-
-            <form class="contact-form">
-                <label>Nome<br><input type="text" required></label>
-                <label>Email<br><input type="email" required></label>
-                <label>Mensagem<br><textarea rows="6" required></textarea></label>
-                <button type="button" class="cta">Enviar</button>
-            </form>
-            <p style="color:#777;font-size:14px;margin-top:10px;">(Formulário ilustrativo — não envia dados)</p>
+    <main class="content-layout">
+        <!-- Destaque fornece resumo dos canais de contacto -->
+        <section class="content-destaque contact-destaque">
+            <p class="eyebrow">Contactos</p>
+            <h1>Estamos disponíveis para esclarecer dúvidas e criar parcerias</h1>
+            <p class="lead">
+                Quer colaborar, organizar uma recolha ou pedir apoio? Responderemos assim que possível através da equipa de apoio
+                comunitário do projeto <strong>Alimentar com Coração</strong>.
+            </p>
+            <div class="inline-stats">
+                <div>
+                    <span>Telefone geral</span>
+                    <strong>+351 21 000 0000</strong>
+                    <p>Segunda a sábado · 09h00 às 19h00.</p>
+                </div>
+                <div>
+                    <span>Email</span>
+                    <strong>alimentarccoracao@sapo.pt</strong>
+                    <p>Recebe pedidos de apoio, donativos e propostas de voluntariado.</p>
+                </div>
+                <div>
+                    <span>Morada</span>
+                    <strong>Rua Exemplo 123</strong>
+                    <p>Lisboa · Atendimento com marcação prévia.</p>
+                </div>
+            </div>
         </section>
 
-        <!-- Cartão secundário com contactos diretos e mapa -->
-        <section class="card">
-            <h2>Outros contactos</h2>
-            <p><strong>Telefone:</strong> +351 21 000 0000</p>
-            <p><strong>Email:</strong> geral@alimentarcomcoracao.pt</p>
-            <p><strong>Morada:</strong> Rua Exemplo 123, Lisboa</p>
+        <section class="split-panel contact-panels">
+            <article class="info-card contact-form-card">
+                <h2>Envie-nos uma mensagem</h2>
+                <p>Preencha o formulário e entraremos em contacto no prazo máximo de 48 horas úteis.</p>
+                <form class="content-form">
+                    <label>Nome completo
+                        <input type="text" name="nome" placeholder="O seu nome" required>
+                    </label>
+                    <label>Email
+                        <input type="email" name="email" placeholder="nome@email.com" required>
+                    </label>
+                    <label>Mensagem
+                        <textarea name="mensagem" placeholder="Como podemos ajudar?" required></textarea>
+                    </label>
+                    <button type="button" class="cta">Enviar mensagem</button>
+                </form>
+                <p class="form-note">(Formulário ilustrativo — não envia dados reais.)</p>
+            </article>
 
-            <iframe src="https://www.google.com/maps?q=lisboa&output=embed"
-                    style="width:100%;height:250px;border:0;"></iframe>
+            <article class="info-card contact-direct">
+                <h2>Contactos diretos</h2>
+                <ul class="contact-list">
+                    <li>
+                        <span>Email geral</span>
+                        <a href="mailto:alimentarccoracao@sapo.pt">alimentarccoracao@sapo.pt</a>
+                    </li>
+                    <li>
+                        <span>Telefone</span>
+                        <a href="tel:+351210000000">+351 21 000 0000</a>
+                    </li>
+                    <li>
+                        <span>Morada</span>
+                        Rua Exemplo 123, 1100-000 Lisboa
+                    </li>
+                </ul>
+                <div class="map-embed small">
+                    <iframe src="https://www.google.com/maps?q=lisboa&output=embed" loading="lazy" title="Mapa de Lisboa"></iframe>
+                </div>
+                <p class="form-note">Disponível para visitas e recolhas mediante agendamento prévio.</p>
+            </article>
+        </section>
+
+        <section class="callout-panel">
+            <div>
+                <h2>Quer organizar uma iniciativa local?</h2>
+                <p>Contacte-nos para montar campanhas conjuntas em empresas, escolas ou associações de moradores.</p>
+            </div>
+            <div class="destaque-actions">
+                <a href="Doacoes.html" class="btn primary">Ver formas de doar</a>
+                <a href="Voluntariado.html" class="cta secondary">Ser voluntário</a>
+            </div>
         </section>
     </main>
 
