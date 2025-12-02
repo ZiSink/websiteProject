@@ -1,5 +1,5 @@
-/* Hero da missão com toque de gradiente */
-.mission-hero{
+/* Destaque da missão com toque de gradiente */
+.mission-destaque{
     background:linear-gradient(135deg, rgba(46,125,50,0.12), #ffffff);
     border-color:rgba(46,125,50,0.25);
 }
