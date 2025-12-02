@@ -67,17 +67,18 @@ a{
     flex-direction:column;
     gap:32px;
 }
-/* HERO ORIGINAL DO TEU OUTRO PROJETO — ADAPTADO PARA O BANCO ALIMENTAR */
-#hero {
+#hero { 
     position: relative;
     height: 80vh;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     color: white;
-    background: url('../Images/fundo-hero.png') center center / cover no-repeat;
-    background-color: #000; /* fallback */
+    background: url('../Images/fundo-hero.png') no-repeat center center;
+    background-size: 100% 100%; /* aumenta para preencher sem cortes, mas distorce */
+    background-color: #000;
     overflow: hidden;
+    padding: 0;
 }
 
 /* A diagonal escura da esquerda */
