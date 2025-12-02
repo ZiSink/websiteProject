@@ -141,10 +141,27 @@
         }
     });
                    
-    document.addEventListener('DOMContentLoaded', () => {
-      if (window.headerPage) document.getElementById("header").innerHTML = headerPage;
-      if (window.footerPage) document.getElementById("footer").innerHTML = footerPage;
-    });
+    // document.addEventListener('DOMContentLoaded', () => {
+    //   if (window.headerPage) document.getElementById("header").innerHTML = headerPage;
+    //   if (window.footerPage) document.getElementById("footer").innerHTML = footerPage;
+    // });
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+    // Verifica se existe a variável global headerPage
+    if (window.headerPage) {
+        var headerElement = document.getElementById("header");
+        headerElement.innerHTML = window.headerPage;
+    }
+
+    // Verifica se existe a variável global footerPage
+    if (window.footerPage) {
+        var footerElement = document.getElementById("footer");
+        footerElement.innerHTML = window.footerPage;
+    }
+
+  });
+
   </script>
 </body>
 </html>
