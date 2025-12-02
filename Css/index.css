@@ -67,6 +67,71 @@ a{
     flex-direction:column;
     gap:32px;
 }
+/* HERO ORIGINAL DO TEU OUTRO PROJETO — ADAPTADO PARA O BANCO ALIMENTAR */
+#hero {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: url('../Images/fundo-hero.png') center center / cover no-repeat;
+    background-color: #000; /* fallback */
+    overflow: hidden;
+}
+
+/* A diagonal escura da esquerda */
+.diagonal-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    clip-path: polygon(0 0, 100% 0, 70% 100%, 0 100%);
+}
+
+/* Container do texto */
+.content-container {
+    position: relative;
+    max-width: 600px;
+    padding: 20px;
+    z-index: 2;
+}
+
+/* Títulos */
+#hero h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+#hero h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Parágrafo */
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+/* Botão */
+.btn-explore {
+    display: inline-block;
+    background: #E53935;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.btn-explore:hover {
+    background: #b71c1c;
+}
 
 /* Destaque principal com gradiente e destaque de métricas */
 .destaque{
