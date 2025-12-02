@@ -67,7 +67,17 @@ a{
     flex-direction:column;
     gap:32px;
 }
-
+#hero {
+    position: relative;
+    height: 80vh; /* Menor altura */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: url('../img/fundo.jpg') center center / cover no-repeat;
+    background-color: #FFDDDD;
+    overflow: hidden; /* Para esconder partes excedentes */
+}
 /* Hero principal com gradiente e destaque de métricas */
 .hero{
     display:grid;
