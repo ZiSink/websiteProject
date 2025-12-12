@@ -1,148 +1,176 @@
-/* === estilos gerais da página === */
 body {
-  font-family: Arial, Helvetica, sans-serif; 
-  margin: 0;
-  background: #f6f7fb;
-  color: #1e1e1e; 
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background: #f6f7fb;
+    color: #1e1e1e;
 }
 
-/* área principal: mapa + painel info */
+/* Grid principal */
 .content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 60px 20px 80px;
-  display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr); /* 2 colunas: mapa maior e painel menor */
-  gap: 24px;
-  align-items: stretch;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* mensagem explicativa acima do grid */
-.content::before {
-  content: "Escolha um ponto no mapa para descobrir horários, contactos e parceiros desta rede de recolha.";
-  grid-column: 1 / -1; /* ocupa as 2 colunas */
-  margin-bottom: 8px;
-  padding: 18px 22px;
-  border-radius: 18px;
-  background: linear-gradient(120deg, rgba(46,125,50,0.15), rgba(46,125,50,0.05));
-  border: 1px solid rgba(46,125,50,0.25);
-  font-size: 0.95rem;
-  color: #1c4b1e;
-  line-height: 1.5;
-}
-
-/* === MAPA === */
-#map {
-  position: relative;
-  min-height: 520px;
-  height: 100%;
-  width: 100%;
-  border-radius: 26px;
-  overflow: hidden;
-  box-shadow: 0 35px 60px rgba(13, 38, 22, 0.2); /* sombra */
-  border: 1px solid rgba(28, 75, 30, 0.15);
-}
-
-/* dica como usar o mapa */
-#map::after {
-  content: "Navegue e aproxime para localizar pontos próximos.";
-  position: absolute;
-  top: 18px;
-  left: 18px;
-  background: rgba(255, 255, 255, 0.92);
-  color: #0e2d1f;
-  padding: 10px 16px;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-/* === PAINEL DE INFORMAÇÃO === */
-#info-panel {
-  background: #fff;
-  border-radius: 26px;
-  box-shadow: 0 30px 55px rgba(6, 22, 12, 0.2);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  border: 1px solid rgba(10, 30, 15, 0.1);
-}
-
-/* imagem do local no painel */
-#info-panel img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover; /* cobre o espaço sem distorcer */
-  border-radius: 15px 15px 0 0;
-}
-
-/* conteúdo text do painel */
-#info-content {
-  padding: 26px;
-}
-
-#info-content h2 {
-  margin: 0 0 12px;
-  font-size: 1.5rem;
-  color: #0d331f; 
-}
-
-#info-content p {
-  margin: 8px 0;
-  color: #4a5663; /* texto secundário */
-  line-height: 1.4;
-}
-
-/* ícones antes do texto tipo morada, horário, telefone */
-.info-icon {
-  margin-right: 8px;
-  color: #2b7a78;
-}
-
-/* destaque para horários ou infos importantes */
-.info-highlight {
-  color: #008000;
-  font-weight: 600;
-}
-
-/* === RESPONSIVO PARA TELEMÓVEL === */
-@media (max-width: 900px) {
-  .content {
-    grid-template-columns: 1fr; /* só uma coluna tele */
-    padding: 40px 16px 60px;
-  }
-
-  #map {
-    min-height: 380px; /* mapa menor tele */
-  }
-
-  #info-panel img {
-    height: 160px; /* imagem menor tele */
-  }
-}
+/* Barra de pesquisa sobre o mapa */
 #mapSearch {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  z-index: 9999;
-
-  width: 220px;
-  padding: 10px 14px;
-
-  border-radius: 14px;
-  border: 1px solid rgba(0,0,0,0.2);
-
-  background: white;
-  font-size: 0.9rem;
-
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  outline: none;
-
-  transition: 0.2s ease-in-out;
+    width: 80%;
+    max-width: 600px;
+    padding: 12px 16px;
+    margin: 0 auto 10px auto;
+    display: block;
+    border-radius: 14px;
+    border: 1px solid rgba(0,0,0,0.2);
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    outline: none;
 }
 
 #mapSearch:focus {
-  box-shadow: 0 4px 20px rgba(0, 150, 50, 0.3);
-  border-color: #3a8d43;
+    box-shadow: 0 4px 20px rgba(0,150,50,0.3);
+    border-color: #3a8d43;
 }
 
+/* Mensagem inicial */
+#mapMessage {
+    text-align: center;
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.95);
+    color: #1c4b1e;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    font-weight: 500;
+}
+
+/* Grid mapa + painel info */
+.map-info-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+/* Mapa */
+#map {
+    width: 100%;
+    height: 520px;
+    border-radius: 26px;
+    border: 1px solid rgba(28, 75, 30, 0.15);
+    box-shadow: 0 35px 60px rgba(13,38,22,0.2);
+}
+
+/* Painel lateral */
+#info-panel {
+    background: #fff;
+    border-radius: 26px;
+    box-shadow: 0 30px 55px rgba(6,22,12,0.2);
+    overflow: hidden;
+    border: 1px solid rgba(10,30,15,0.1);
+}
+
+#info-panel img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+#info-content {
+    padding: 20px;
+}
+
+#info-content h2 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+    color: #0d331f;
+}
+
+#info-content p {
+    margin: 6px 0;
+    color: #4a5663;
+    line-height: 1.4;
+}
+
+.info-icon {
+    margin-right: 8px;
+    color: #2b7a78;
+}
+
+.info-highlight {
+    color: #008000;
+    font-weight: 600;
+}
+
+
+/* Lista de resultados abaixo da grid */
+#searchResults {
+    margin-top: 20px;
+}
+
+#searchResults h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #1c4b1e;
+}
+
+#resultList {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    max-height: 250px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+/* Cartões individuais com rebordo gradiente */
+.result-item {
+    position: relative;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    border-radius: 14px;
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Gradiente do rebordo */
+.result-item::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 17px; /* borda externa */
+    background: linear-gradient(120deg, #ff8c42, #ffb347);
+    z-index: -1;
+}
+
+/* Fundo gradiente ao passar o rato */
+.result-item:hover {
+    background: linear-gradient(120deg, #ff8c42, #ffb347);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 140, 66, 0.3);
+}
+
+.result-item:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Responsivo */
+@media (max-width: 900px){
+    .map-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #map {
+        height: 380px;
+    }
+
+    #info-panel img {
+        height: 160px;
+    }
+}
