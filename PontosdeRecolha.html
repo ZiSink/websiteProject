@@ -1,44 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapa - Alimentar com Coração</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapa - Alimentar com Coração</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="Css/Noticias.css"> 
-    <link rel="stylesheet" href="Css/index.css">
-    <link rel="stylesheet" href="Css/Layout.css">
-    <link rel="stylesheet" href="Css/Maps.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="Js/Layout.js"></script>
+<!-- CSS -->
+<link rel="stylesheet" href="Css/index.css">
+<link rel="stylesheet" href="Css/Layout.css">
+<link rel="stylesheet" href="Css/Maps.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+<!-- JS Leaflet -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js" defer></script>
+<script src="Js/Layout.js" defer></script>
 </head>
+<body class="home-page">
+<header id="header"></header>
+<div class="header-bar"></div>
 
-<body>
-    <header id="header"></header>
+<main class="content">
 
-    <div class="header-bar"></div>
+    <!-- BARRA DE PESQUISA -->
+    <input type="text" id="mapSearch" placeholder="Pesquisar localidade, rua..." />
 
-    <!-- ============================= -->
-    <!-- CONTEÚDO PRINCIPAL DA PÁGINA -->
-    <!-- ============================= -->
+    <!-- MENSAGEM INICIAL -->
+    <div id="mapMessage">
+        Escolha um ponto no mapa para descobrir horários, contactos e parceiros desta rede de recolha.
+    </div>
 
-    <div class="content">
-        
-        <div id="map">
-            <input type="text" id="mapSearch" placeholder="Pesquisar..." />
-        </div>
+    <!-- GRID: Mapa à esquerda, painel à direita -->
+    <div class="map-info-grid">
+        <div id="map"></div>
 
-
-        <!-- PAINEL DE INFORMAÇÃO -->
-        
         <div id="info-panel">
-
-            <!-- Imagem que muda conforme o ponto selecionado -->
             <img src="https://via.placeholder.com/400x180?text=Seleciona+um+ponto" alt="Imagem do local">
-
-            <!-- Texto que será trocado tambem -->
             <div id="info-content">
                 <h2>Seleciona um ponto no mapa</h2>
                 <p>Aqui aparecerão as informações detalhadas do local escolhido.</p>
@@ -46,51 +42,48 @@
         </div>
     </div>
 
-    <script src="Js/Maps.js"></script>
-    <div class="footer-bar"></div>
+    <!-- LISTA DE RESULTADOS ABAIXO -->
+    <section id="searchResults">
+        <h3>Resultados da pesquisa</h3>
+        <div id="resultList"></div>
+    </section>
 
-    <footer id="footer"></footer>
+</main>
 
-    <script>  
-        /* ==========================================================
-           SISTEMA DO DROPDOWN DO MENU (abre e fecha ao clicar)
-           ========================================================== */
-        
-        document.addEventListener('click', function(e){
-            
-            // Verifica se clicou num botão de dropdown
-            const toggle = e.target.closest('.dropdown-toggle');
-            
-            if (toggle) {
-                const li = toggle.parentElement;
-                const opened = li.classList.toggle('open');
+<div class="footer-bar"></div>
+<footer id="footer"></footer>
 
-                // Atualiza atributo de acessibilidade
-                toggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
+<script src="Js/Maps.js" defer></script>
 
-                // Fecha outros dropdowns abertos
-                document.querySelectorAll('.menu .dropdown.open').forEach(other => {
-                    if (other !== li) {
-                        other.classList.remove('open');
-                        other.querySelector('.dropdown-toggle').setAttribute('aria-expanded','false');
-                    }
-                });
-
-                return;
-            }
-
-            // Se clicar fora do menu, fecha todos os dropdowns
-            if (!e.target.closest('.menu')) {
-                document.querySelectorAll('.menu .dropdown.open').forEach(item => {
-                    item.classList.remove('open');
-                    item.querySelector('.dropdown-toggle').setAttribute('aria-expanded','false');
-                });
+<script>
+document.addEventListener('click', function(e){
+    const toggle = e.target.closest('.dropdown-toggle');
+    if(toggle){
+        const li = toggle.parentElement;
+        const opened = li.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
+        document.querySelectorAll('.menu .dropdown.open').forEach(other => {
+            if(other !== li){
+                other.classList.remove('open');
+                other.querySelector('.dropdown-toggle').setAttribute('aria-expanded','false');
             }
         });
-                    
-        // Carrega conteúdo do HEADER e FOOTER a partir do Layout.js
-        document.getElementById("header").innerHTML = headerPage;
-        document.getElementById("footer").innerHTML = footerPage;
-    </script>
+        return;
+    }
+    if(!e.target.closest('.menu')){
+        document.querySelectorAll('.menu .dropdown.open').forEach(item => {
+            item.classList.remove('open');
+            item.querySelector('.dropdown-toggle').setAttribute('aria-expanded','false');
+        });
+    }
+});
+
+// Carrega HEADER e FOOTER
+document.addEventListener('DOMContentLoaded', () => {
+    if(window.headerPage) document.getElementById("header").innerHTML = headerPage;
+    if(window.footerPage) document.getElementById("footer").innerHTML = footerPage;
+});
+</script>
+
 </body>
 </html>
