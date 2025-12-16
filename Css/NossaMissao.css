@@ -1,7 +1,7 @@
 /* Destaque da missão com toque de gradiente */
-.mission-destaque{
-    background:linear-gradient(135deg, rgba(46,125,50,0.12), #ffffff);
-    border-color:rgba(46,125,50,0.25);
+.content-destaque.mission-destaque {
+    position: relative; /* 🔴 ESSENCIAL */
+    padding-bottom: 220px; /* espaço para as bolinhas */
 }
 
 /* Cartões mantêm altura equilibrada nas áreas de atuação */
@@ -12,4 +12,82 @@
 /* Valores usam destaque extra */
 .value-card{
     background:#ffffff;
+}
+/* ===============================
+   FIX ABSOLUTO – IMAGENS DA EQUIPA
+================================ */
+
+/* container da missão */
+.content-destaque.mission-destaque {
+    position: relative;
+    padding-bottom: 260px;
+}
+
+/* equipa dentro do container */
+.equipa-container {
+    position: absolute;
+    bottom: -130px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+/* grid */
+.equipa-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px 40px;
+    justify-items: center;
+}
+
+/* 2 em cima */
+.equipa-grid .membro:nth-child(1) { grid-column: 1 / 2; }
+.equipa-grid .membro:nth-child(2) { grid-column: 3 / 4; }
+
+/* membro */
+.membro {
+    text-align: center;
+    width: 220px;
+}
+
+/* bolinha */
+.membro .foto {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;   /* 🔴 chave */
+    background: #eaeaea;
+}
+
+/* IMAGEM — ISOLADA DE TODO O CSS GLOBAL */
+.membro .foto img {
+    position: absolute;   /* 🔴 chave */
+    top: 0;
+    left: 0;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+    max-width: none !important;
+    max-height: none !important;
+
+    display: block !important;
+}
+
+/* texto */
+.membro h3 {
+    margin-top: 16px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.membro p {
+    margin-top: 6px;
+    font-size: 15px;
+    color: #444;
 }
