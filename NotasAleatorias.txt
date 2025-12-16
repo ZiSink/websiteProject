@@ -1,5 +1,0 @@
---Pagina de noticias (adicionar um popup para cada noticia)
-
---Pagina preciso de ajuda (ter a pagina do formulario de
-como pedir apio e o popup de condiçoes e regulamentos
-que tem que aceitar antes de seguir para o formulario)
