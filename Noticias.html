@@ -5,246 +5,196 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Notícias - Alimentar com Coração</title>
 
-  <!-- Estilos da página e layout -->
   <link rel="icon" type="image/x-icon" href="Images/minilogo.png">
   <link rel="stylesheet" href="Css/Noticias.css">
   <link rel="stylesheet" href="Css/index.css">
   <link rel="stylesheet" href="Css/Layout.css">
 
-  <!-- Carrega o header e footer automaticamente -->
   <script src="Js/Layout.js" defer></script>
 </head>
 
 <body class="noticias-page">
-  
-  <!-- Header será preenchido via JavaScript (Layout.js) -->
-  <header id="header"></header>
-  <div class="header-bar"></div>
 
-  <div class="container">
+<header id="header"></header>
+<div class="header-bar"></div>
 
-    <div class="section-header">
-      <h1>Notícias e Eventos</h1>
-      <p>Fique a par das nossas iniciativas e impacto na comunidade</p><br>
-    </div>
-    
-    <!-- ============================ -->
-    <!--      NOTÍCIA PRINCIPAL       -->
-    <!-- ============================ -->
-    <article class="featured-news">
+<div class="container">
 
-      <div class="featured-news-image">
-        <img src="Images/noticiaprincipal.jpg" alt="Imagem da notícia principal">
-      </div>
-
-      <div class="featured-news-content">
-        <span class="news-category">Campanha</span>
-
-        <h2>Recolha Nacional angaria 1.850 toneladas de alimentos</h2>
-
-        <!-- Dados da notícia (data e autor) -->
-        <div class="news-meta">
-          <span>
-            <img src="Images/Noticia.png" alt="Ícone calendário">
-            8 de Outubro, 2025
-          </span>
-          <span>
-            <img src="Images/Icon_Autor.png" alt="Ícone autor">
-            Equipa Alimentar com Coração
-          </span>
-        </div>
-
-        <!-- Este texto aparece sempre -->
-        <p class="preview-text">
-          A última campanha nacional terminou com 1.850 toneladas recolhidas, graças ao esforço de milhares de voluntários...
-        </p>
-
-        <!-- Texto completo fica escondido até o popup abrir -->
-        <p class="full-text" style="display:none;">
-          A Campanha de Recolha Nacional realizada pelo projeto “Alimentar com Coração” encerrou com um resultado extremamente positivo: 1.850 toneladas de alimentos angariadas em dois dias.
-          Mais de 7.000 voluntários estiveram presentes em cerca de 600 superfícies comerciais...
-        </p>
-
-        <!-- Botão que ativa o popup -->
-        <a href="#" class="read-more-btn">Ler Notícia Completa →</a>
-      </div>
-
-    </article>
-
-    <!-- ============================ -->
-    <!--  GRELHA DE NOTÍCIAS SECUNDÁRIAS -->
-    <!-- ============================ -->
-    <div class="news-grid">
-
-      <!-- NOTÍCIA 1 -->
-      <article class="news-card">
-
-        <div class="news-card-image event">
-          <img src="Images/Noticia.png" alt="Evento - Jantar Solidário">
-        </div>
-
-        <div class="news-card-content">
-          <span class="news-category">Evento</span>
-
-          <h3>Jantar Solidário reúne comunidade em Lisboa</h3>
-
-          <!-- Pré-visualização -->
-          <p class="preview-text">
-            No próximo sábado, dia 15 de Outubro, realizamos o nosso Jantar Solidário anual...
-          </p>
-
-          <!-- Texto completo para o popup -->
-          <p class="full-text" style="display:none;">
-            O “Jantar Solidário 2025” superou todas as expectativas ao reunir mais de 320 participantes no Centro Comunitário de Lisboa. O evento, organizado com o objetivo de angariar fundos para reforçar os cabazes alimentares distribuídos mensalmente, contou com a presença de famílias, voluntários, parceiros e vários membros da comunidade local.
-
-A noite foi marcada por um ambiente caloroso e de partilha, com momentos musicais, testemunhos de beneficiários e o habitual sorteio solidário. Graças ao contributo de todos, foram angariados mais de 12.000€, que serão integralmente destinados ao apoio de famílias em situação de vulnerabilidade.
-
-A organização agradece a todos os que participaram, doaram ou contribuíram de alguma forma para tornar esta iniciativa um sucesso e reforça o compromisso de continuar a promover ações que aproximem a comunidade e façam a diferença no quotidiano de quem mais precisa.
-          </p>
-
-          <div class="news-card-footer">
-            <span class="news-date">5 de Outubro, 2025</span>
-
-            <!-- Abre o popup -->
-            <a href="#" class="read-more-link">Ler mais →</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- NOTÍCIA 2 -->
-      <article class="news-card">
-
-        <div class="news-card-image campaign">
-          <img src="Images/Reciclagem.png" alt="Campanha - Papel por Alimentos">
-        </div>
-
-        <div class="news-card-content">
-          <span class="news-category">Campanha</span>
-
-          <h3>Papel por Alimentos: Ajude o planeta e quem precisa</h3>
-
-          <p class="preview-text">
-            A nossa campanha de reciclagem continua ativa! Traga o seu papel usado e ajude-nos a converter resíduos...
-          </p>
-
-          <p class="full-text" style="display:none;">
-            O programa “Papel por Alimentos” registou um total de 72 toneladas de papel recolhido ao longo do último mês, um marco que demonstra o empenho crescente da comunidade na reciclagem e na solidariedade. Todo o papel entregue é convertido em bens alimentares essenciais, permitindo reforçar o apoio prestado às famílias acompanhadas pela instituição.
-
-Além de contribuir para a redução do impacto ambiental, esta campanha desempenha um papel crucial na resposta às necessidades sociais que continuam a aumentar. Empresas, escolas e particulares têm participado ativamente, fazendo desta iniciativa uma verdadeira força coletiva.
-
-A campanha mantém-se ativa e todos são convidados a participar: basta entregar papel usado — revistas, jornais, documentos ou cartões — nos pontos de recolha autorizados. Cada quilo conta e pode transformar-se em ajuda real para quem mais precisa.
-          </p>
-
-          <div class="news-card-footer">
-            <span class="news-date">2 de Outubro, 2025</span>
-            <a href="#" class="read-more-link">Ler mais →</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- NOTÍCIA 3 -->
-      <article class="news-card">
-
-        <div class="news-card-image impact">
-          <img src="Images/Coracao.png" alt="Impacto - Famílias apoiadas">
-        </div>
-
-        <div class="news-card-content">
-          <span class="news-category">Impacto</span>
-
-          <h3>5.000 famílias apoiadas em Setembro</h3>
-
-          <p class="preview-text">
-            Graças à generosidade dos nossos parceiros e voluntários, conseguimos apoiar mais de 5.000 famílias...
-          </p>
-
-          <p class="full-text" style="display:none;">
-            Durante o mês de Setembro, o projeto apoiou 5.000 famílias através da entrega de cabazes alimentares e outros bens essenciais. Este resultado só foi possível graças à colaboração contínua de voluntários, parceiros empresariais e doadores individuais, que têm reforçado a resposta social num período especialmente exigente.
-
-Os cabazes distribuídos incluíram produtos básicos como arroz, massa, leite, enlatados e frescos, garantindo que as famílias acompanhadas pudessem manter uma alimentação digna e equilibrada. Em paralelo, a equipa de voluntários prestou apoio complementar, como encaminhamento social e acompanhamento personalizado.
-
-A instituição reafirma o seu compromisso de continuar a trabalhar diariamente para garantir que ninguém fica para trás, reforçando redes de solidariedade e promovendo soluções que ofereçam mais estabilidade e esperança às famílias beneficiárias.
-          </p>
-
-          <div class="news-card-footer">
-            <span class="news-date">1 de Outubro, 2025</span>
-            <a href="#" class="read-more-link">Ler mais →</a>
-          </div>
-        </div>
-      </article>
-
-    </div> <!-- fim da grelha -->
-  </div> <!-- fim container -->
-
-  <div class="footer-bar"></div>
-
-  <!-- Footer preenchido automaticamente -->
-  <footer id="footer"></footer>
-
-  <!-- ============================ -->
-  <!--           POPUP              -->
-  <!-- ============================ -->
-  <!-- O popup é controlado por PopupNoticias.js -->
-  <div id="popup-overlay">
-    <div id="popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
-
-      <!-- Botão para fechar -->
-      <button class="close-popup" aria-label="Fechar popup">&times;</button>
-
-      <!-- Estes 3 elementos são preenchidos dinamicamente -->
-      <h2 id="popup-title"></h2>
-      <img id="popup-image" src="" alt="">
-      <div id="popup-text"></div>
-    </div>
+  <div class="section-header">
+    <h1>Notícias e Eventos</h1>
+    <p>Fique a par das nossas iniciativas e impacto na comunidade</p><br>
   </div>
 
-  <!-- Script responsável por abrir o popup ao clicar em "Ler mais" -->
-  <script src="Js/PopupNoticias.js" defer></script>
+  <!-- NOTÍCIA PRINCIPAL (MANTIDA) -->
+  <article class="featured-news">
+    <div class="featured-news-image">
+      <img src="Images/noticiaprincipal.jpg" alt="Imagem da notícia principal">
+    </div>
 
-  <script>
-    /* 
-      Sistema do dropdown do menu:
-      - Abre ao clicar na opção
-      - Fecha se clicar fora
-      - Garante que só um dropdown fica aberto de cada vez
-    */
-    document.addEventListener('click', function(e){
-      const toggle = e.target.closest('.dropdown-toggle');
+    <div class="featured-news-content">
+      <span class="news-category">Campanha</span>
 
-      if (toggle) {
-        const li = toggle.parentElement;
-        const opened = li.classList.toggle('open');
+      <h2>Recolha Nacional angaria 1.850 toneladas de alimentos</h2>
 
-        toggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
+      <div class="news-meta">
+        <span>
+          <img src="Images/Noticia.png" alt="">
+          8 de Outubro, 2025
+        </span>
+        <span>
+          <img src="Images/Icon_Autor.png" alt="">
+          Equipa Alimentar com Coração
+        </span>
+      </div>
 
-        // Fecha outros dropdowns abertos
-        document.querySelectorAll('.menu .dropdown.open').forEach(other => {
-          if (other !== li) {
-            other.classList.remove('open');
-            other.querySelector('.dropdown-toggle').setAttribute('aria-expanded','false');
-          }
-        });
-        return;
-      }
+      <p class="preview-text">
+        A última campanha nacional terminou com 1.850 toneladas recolhidas, graças ao esforço de milhares de voluntários...
+      </p>
 
-      // Clicar fora fecha tudo
-      if (!e.target.closest('.menu')) {
-        document.querySelectorAll('.menu .dropdown.open').forEach(item => {
-          item.classList.remove('open');
-          item.querySelector('.dropdown-toggle').setAttribute('aria-expanded','false');
-        });
+      <p class="full-text" style="display:none;">
+        A Campanha de Recolha Nacional realizada pelo projeto “Alimentar com Coração” encerrou com um resultado extremamente positivo: 1.850 toneladas de alimentos angariadas em dois dias.
+        Mais de 7.000 voluntários estiveram presentes em cerca de 600 superfícies comerciais...
+      </p>
+
+      <a href="#" class="read-more-btn">Ler Notícia Completa →</a>
+    </div>
+  </article>
+
+  <!-- GRELHA DE NOTÍCIAS -->
+  <div class="news-grid">
+
+    <!-- NOTÍCIA 1 -->
+    <article class="news-card">
+      <div class="news-card-image campaign">
+        <img src="" alt="" aria-hidden="true">
+      </div>
+
+      <div class="news-card-content">
+        <span class="news-category">Campanha</span>
+
+        <h3>Campanha de Recolha de Alimentos mobiliza comunidade em novembro</h3>
+
+        <p class="preview-text">
+          No último fim de semana de novembro, a nossa campanha de recolha de alimentos contou com forte adesão da comunidade.
+        </p>
+
+        <p class="full-text" style="display:none;">
+          A campanha de recolha de alimentos promovida pelo projeto “Alimentar com o Coração” decorreu no final de novembro,
+          mobilizando voluntários e parceiros locais em vários pontos de recolha. A iniciativa teve como objetivo reforçar
+          os cabazes alimentares destinados a famílias em situação de vulnerabilidade.
+
+          O espírito solidário voltou a marcar presença, com centenas de doações de bens essenciais. Esta campanha revelou,
+          mais uma vez, a importância do envolvimento comunitário na resposta às necessidades sociais que continuam a crescer.
+        </p>
+
+        <div class="news-card-footer">
+          <span class="news-date">30 de Novembro, 2025</span>
+          <a href="#" class="read-more-link">Ler mais →</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- NOTÍCIA 2 -->
+    <article class="news-card">
+      <div class="news-card-image campaign">
+        <img src="" alt="" aria-hidden="true">
+      </div>
+
+      <div class="news-card-content">
+        <span class="news-category">Parceria</span>
+
+        <h3>Mercadona junta-se ao Alimentar com o Coração em campanha solidária</h3>
+
+        <p class="preview-text">
+          A Mercadona voltou a apoiar uma campanha solidária, permitindo donativos convertidos em alimentos essenciais.
+        </p>
+
+        <p class="full-text" style="display:none;">
+          Durante a mais recente campanha solidária, os supermercados Mercadona associaram-se ao projeto “Alimentar com o Coração”,
+          possibilitando aos clientes contribuir através de donativos em caixa. Os valores angariados serão convertidos em bens
+          alimentares essenciais para apoiar famílias acompanhadas pela instituição.
+
+          Este tipo de parceria tem sido fundamental para reforçar o impacto social das campanhas, promovendo a responsabilidade
+          social e a solidariedade entre empresas e comunidade.
+        </p>
+
+        <div class="news-card-footer">
+          <span class="news-date">7 de Dezembro, 2025</span>
+          <a href="#" class="read-more-link">Ler mais →</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- NOTÍCIA 3 -->
+    <article class="news-card">
+      <div class="news-card-image impact">
+        <img src="" alt="" aria-hidden="true">
+      </div>
+
+      <div class="news-card-content">
+        <span class="news-category">Campanha</span>
+
+        <h3>Recolha de alimentos regista ligeira descida, mas solidariedade mantém-se</h3>
+
+        <p class="preview-text">
+          A campanha mais recente registou uma pequena quebra face ao ano anterior, refletindo o atual contexto económico.
+        </p>
+
+        <p class="full-text" style="display:none;">
+          A última campanha de recolha de alimentos do “Alimentar com o Coração” registou uma descida de cerca de 2,8% face
+          à edição anterior. Apesar disso, milhares de voluntários e doadores continuaram a participar ativamente,
+          demonstrando que a solidariedade permanece forte.
+
+          Os alimentos recolhidos serão distribuídos através das instituições parceiras, garantindo apoio contínuo
+          às famílias que mais necessitam. A organização reforça que o apoio pode continuar ao longo do ano através
+          de donativos e ações solidárias.
+        </p>
+
+        <div class="news-card-footer">
+          <span class="news-date">4 de Dezembro, 2025</span>
+          <a href="#" class="read-more-link">Ler mais →</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</div>
+
+<div class="footer-bar"></div>
+<footer id="footer"></footer>
+
+<script src="Js/PopupNoticias.js" defer></script>
+
+<script>
+document.addEventListener('click', function(e){
+  const toggle = e.target.closest('.dropdown-toggle');
+  if (toggle) {
+    const li = toggle.parentElement;
+    const opened = li.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
+
+    document.querySelectorAll('.menu .dropdown.open').forEach(other => {
+      if (other !== li) {
+        other.classList.remove('open');
+        other.querySelector('.dropdown-toggle').setAttribute('aria-expanded','false');
       }
     });
+    return;
+  }
 
-    /*
-      Assim que a página carrega:
-      - Preenche o header e footer com o HTML vindo do Layout.js
-    */
-    document.addEventListener('DOMContentLoaded', () => {
-      if (window.headerPage) document.getElementById("header").innerHTML = headerPage;
-      if (window.footerPage) document.getElementById("footer").innerHTML = footerPage;
+  if (!e.target.closest('.menu')) {
+    document.querySelectorAll('.menu .dropdown.open').forEach(item => {
+      item.classList.remove('open');
+      item.querySelector('.dropdown-toggle').setAttribute('aria-expanded','false');
     });
-  </script>
+  }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.headerPage) document.getElementById("header").innerHTML = headerPage;
+  if (window.footerPage) document.getElementById("footer").innerHTML = footerPage;
+});
+</script>
 
 </body>
 </html>

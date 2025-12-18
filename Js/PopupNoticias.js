@@ -1,34 +1,44 @@
-// espera o HTML carregar
 document.addEventListener('DOMContentLoaded', function () {
 
-  // elementos do popup
+  // Seleciona elementos do popup
   const overlay = document.getElementById('popup-overlay');
   const popup = document.getElementById('popup');
   const popupTitle = document.getElementById('popup-title');
   const popupImage = document.getElementById('popup-image');
   const popupText = document.getElementById('popup-text');
-  const closeBtn = document.querySelector('.close-popup');
+  const closeBtn = popup ? popup.querySelector('.close-popup') : null;
 
-  // função para abrir popup
-  function openPopup({ title='', image='', text='' }) {
-    popupTitle.innerText = title; 
-    popupImage.src = image || 'Images/default.jpg';
-    popupImage.alt = title;
-    popupText.innerText = text || ''; 
-    overlay.classList.add('show'); // mostra o popup
-    // trava scroll da página enquanto popup aberto
+  if (!overlay || !popup || !popupTitle || !popupText) return;
+
+  // Função para abrir popup
+  function openPopup(title, image, text) {
+    popupTitle.innerText = title || '';
+
+    if (image) {
+      popupImage.src = image;
+      popupImage.alt = title;
+      popupImage.style.display = 'block';
+    } else {
+      popupImage.style.display = 'none';
+    }
+
+    popupText.innerText = text || '';
+
+    overlay.classList.add('show');
+
+    // trava scroll da página
     document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
   }
 
-  // função para fechar popup
+  // Função para fechar popup
   function closePopup() {
     overlay.classList.remove('show');
     document.documentElement.style.overflow = '';
     document.body.style.overflow = '';
   }
 
-  // delegação: clicar em "ler mais" abre popup
+  // Clique no botão "Ler mais"
   document.body.addEventListener('click', function (e) {
     const btn = e.target.closest('.read-more-link, .read-more-btn');
     if (!btn) return;
@@ -38,32 +48,30 @@ document.addEventListener('DOMContentLoaded', function () {
     const article = btn.closest('article');
     if (!article) return;
 
-    // título pode ser h2 (featured) ou h3 (cards)
+    // Título: h2 (featured-news) ou h3 (cards)
     const titleNode = article.querySelector('h2, h3');
     const title = titleNode ? titleNode.innerText.trim() : '';
 
-    // pega imagem do artigo
-    const imgNode = article.querySelector('.news-card-image img, .featured-news-image img, img');
+    // Imagem: pega primeira img do artigo
+    const imgNode = article.querySelector('img');
     const image = imgNode ? imgNode.src : '';
 
-    // texto completo: se não houver .full-text usa preview
+    // Texto completo
     const fullNode = article.querySelector('.full-text');
-    const previewNode = article.querySelector('.preview-text') || article.querySelector('.featured-news-content p');
-    const text = fullNode ? fullNode.innerText.trim() : (previewNode ? previewNode.innerText.trim() : '');
+    const text = fullNode ? fullNode.innerText.trim() : '';
 
-    // abre popup com os dados
-    openPopup({ title, image, text });
+    openPopup(title, image, text);
   });
 
-  // fechar com botão X
+  // Fechar popup ao clicar no X
   closeBtn && closeBtn.addEventListener('click', closePopup);
 
-  // fechar clicando fora do popup (overlay)
+  // Fechar popup ao clicar fora do conteúdo
   overlay.addEventListener('click', function (e) {
     if (e.target === overlay) closePopup();
   });
 
-  // fechar com tecla Esc
+  // Fechar popup com tecla Esc
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && overlay.classList.contains('show')) closePopup();
   });
