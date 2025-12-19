@@ -42,13 +42,15 @@
             <div><span>Campanhas anuais</span><strong>24 ações</strong></div>
             <div><span>Rede de parceiros</span><strong>35 entidades</strong></div>
         </div>
-<br></br>
-<br></br>
-<h1>A Nossa Equipa</h1>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
+
+       <br></br> 
+       <br></br> 
+       <h1>Direção</h1> 
+       <br></br> 
+       <br></br> 
+       <br></br> 
+       <br></br>
+
         <!-- EQUIPA EM PIRÂMIDE -->
         <div class="equipa-piramide">
 
@@ -58,37 +60,43 @@
                     <div class="foto">
                         <img src="Images/equipa1.jpg" alt="Fred Morrison">
                     </div>
-                    <h3>Fred Morrison</h3>
-                    <p>Contador-auditor</p>
+                    <h3>Inês Baltazar</h3>
+                    <p>Co-Presidente</p>
                 </div>
 
                 <div class="membro">
                     <div class="foto">
-                        <img src="Images/equipa2.jpg" alt="Ann Smith">
+                        <img src="Images/equipa2.png" alt="Ann Smith">
                     </div>
-                    <h3>Ann Smith</h3>
-                    <p>Vice-presidente</p>
+                    <h3>Zivile Sinkeviciene</h3>
+                    <p>Co-Presidente</p>
                 </div>
             </div>
 
             <!-- LINHA DE BAIXO -->
             <div class="linha linha-base">
                 <div class="membro">
-                    <div class="foto"></div>
-                    <h3>Nome</h3>
-                    <p>Cargo</p>
+                    <div class="foto">
+                        <img src="Images/equipa3.jpg" alt="Membro da equipa">
+                    </div>
+                    <h3>Rodrigo Sebastião</h3>
+                    <p>Coordenador de Operações</p>
                 </div>
 
                 <div class="membro">
-                    <div class="foto"></div>
-                    <h3>Nome</h3>
-                    <p>Cargo</p>
+                    <div class="foto">
+                        <img src="Images/equipa4.jpg" alt="Membro da equipa">
+                    </div>
+                    <h3>Sofia Almeida</h3>
+                    <p>Responsável pelo Voluntariado e Ação Social</p>
                 </div>
 
                 <div class="membro">
-                    <div class="foto"></div>
-                    <h3>Nome</h3>
-                    <p>Cargo</p>
+                    <div class="foto">
+                        <img src="Images/equipa5.jpg" alt="Membro da equipa">
+                    </div>
+                    <h3>João Ribeiro</h3>
+                    <p>Responsável Administrativo e Financeiro</p>
                 </div>
             </div>
 
@@ -125,34 +133,37 @@
 <footer id="footer"></footer>
 
 <script>
-        // dropdown toggle simples: abre/fecha ao clicar, fecha ao clicar fora
-            document.addEventListener('click', function(e){
-                const toggle = e.target.closest('.dropdown-toggle');
-                if (toggle) {
-                    const li = toggle.parentElement;
-                    const opened = li.classList.toggle('open');
-                    toggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
-                    // fecha outros abertos
-                    document.querySelectorAll('.menu .dropdown.open').forEach(other => {
-                        if (other !== li) {
-                            other.classList.remove('open');
-                            other.querySelector('.dropdown-toggle').setAttribute('aria-expanded','false');
-                        }
-                    });
-                    return;
-                }
-                // se clicou fora, fecha todos
-                if (!e.target.closest('.menu')) {
-                    document.querySelectorAll('.menu .dropdown.open').forEach(item => {
-                        item.classList.remove('open');
-                        item.querySelector('.dropdown-toggle').setAttribute('aria-expanded','false');
-                    });
-                }
-            });
-        document.addEventListener('DOMContentLoaded', () => {
-      if (window.headerPage) document.getElementById("header").innerHTML = headerPage;
-      if (window.footerPage) document.getElementById("footer").innerHTML = footerPage;
-    });
-    </script>
+document.addEventListener('click', function(e){
+    const toggle = e.target.closest('.dropdown-toggle');
+    if (toggle) {
+        const li = toggle.parentElement;
+        const opened = li.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
+        document.querySelectorAll('.menu .dropdown.open').forEach(other => {
+            if (other !== li) {
+                other.classList.remove('open');
+                other.querySelector('.dropdown-toggle')
+                    .setAttribute('aria-expanded','false');
+            }
+        });
+        return;
+    }
+    if (!e.target.closest('.menu')) {
+        document.querySelectorAll('.menu .dropdown.open').forEach(item => {
+            item.classList.remove('open');
+            item.querySelector('.dropdown-toggle')
+                .setAttribute('aria-expanded','false');
+        });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.headerPage)
+        document.getElementById("header").innerHTML = headerPage;
+    if (window.footerPage)
+        document.getElementById("footer").innerHTML = footerPage;
+});
+</script>
+
 </body>
 </html>
