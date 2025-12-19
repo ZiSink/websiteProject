@@ -2,39 +2,91 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Campanhas Ativas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campanhas Ativas - Alimentar com Coração</title>
+    <link rel="icon" type="image/x-icon" href="Images/minilogo.png">
     
     <link rel="stylesheet" href="Css/Campanhas.css">
     <link rel="stylesheet" href="Css/index.css">
     <link rel="stylesheet" href="Css/Layout.css">
-    
 
     <script src="Js/Layout.js" defer></script>
 </head>
 
-<body class="campanhas-page">
+<body class="content-page campanhas-page">
     <!-- Cabeçalho reutilizado e faixa decorativa -->
     <header id="header"></header>
     <div class="header-bar"></div>
 
-    <main class="container">
-        <!-- Introdução à listagem de campanhas -->
-        <section class="card">
-            <h1>Campanhas Ativas</h1>
-            <p>Conheça as iniciativas em curso.</p>
+    <main class="content-layout">
+        <!-- Introdução às iniciativas em curso -->
+        <section class="content-destaque campanhas-intro">
+            <p class="eyebrow">Campanhas</p>
+            <h1>Campanhas ativas</h1>
+            <p class="lead">Conheça as ações a decorrer e veja como pode apoiar com tempo, bens ou divulgação.</p>
+            <div class="inline-stats">
+                <div>
+                    <span>Próxima recolha</span>
+                    <strong>14–15 Dezembro</strong>
+                    <p>Supermercados parceiros e plataforma online.</p>
+                </div>
+                <div>
+                    <span>Objetivo</span>
+                    <strong>2 000 cabazes</strong>
+                    <p>Refazer stocks para famílias acompanhadas.</p>
+                </div>
+                <div>
+                    <span>Voluntariado</span>
+                    <strong>300 vagas</strong>
+                    <p>Turnos de recolha em loja e triagem.</p>
+                </div>
+            </div>
         </section>
 
-        <!-- Blocos individuais por campanha com datas e descrição -->
-        <section class="card">
-            <h2>Recolha de Verão</h2>
-            <p>1 Junho – 30 Setembro</p>
-            <p>Recolha nacional de alimentos não perecíveis.</p>
+        <!-- Listagem das campanhas com datas e ações rápidas -->
+        <section class="info-grid campaigns-grid">
+            <article class="info-card campaign-card">
+                <div class="campaign-meta">
+                    <span class="campaign-tag">Recolha nacional</span>
+                    <span class="campaign-date">1 Junho – 30 Setembro</span>
+                </div>
+                <h3>Recolha de Verão</h3>
+                <p>Recolha de alimentos não perecíveis em lojas e pontos parceiros.</p>
+                <ul class="campaign-points">
+                    <li>Prioridade: arroz, massa, azeite, leite e conservas.</li>
+                    <li>Entrega direta em loja ou através dos pontos de recolha.</li>
+                </ul>
+                <div class="campaign-actions">
+                    <a class="cta secondary" href="Doacoes.html">Quero doar</a>
+                    <a class="cta" href="Voluntariado.html">Ser voluntário</a>
+                </div>
+            </article>
+
+            <article class="info-card campaign-card">
+                <div class="campaign-meta">
+                    <span class="campaign-tag">Cabazes</span>
+                    <span class="campaign-date">Novembro – Dezembro</span>
+                </div>
+                <h3>Natal Solidário</h3>
+                <p>Cabazes alimentares para famílias com crianças.</p>
+                <ul class="campaign-points">
+                    <li>Inclui bens festivos e produtos de higiene.</li>
+                    <li>Entrega acompanhada por técnicos locais.</li>
+                </ul>
+                <div class="campaign-actions">
+                    <a class="cta secondary" href="Doacoes.html">Apoiar cabaz</a>
+                    <a class="cta" href="Voluntariado.html">Reforçar equipas</a>
+                </div>
+            </article>
         </section>
 
-        <section class="card">
-            <h2>Natal Solidário</h2>
-            <p>Novembro – Dezembro</p>
-            <p>Cabazes alimentares para famílias com crianças.</p>
+        <section class="info-card campanhas-apoio">
+            <h2>Como participar</h2>
+            <ul class="check-list">
+                <li>Doe bens prioritários ou transfira por IBAN/MB Way durante a campanha ativa.</li>
+                <li>Inscreva-se como voluntário para recolha em loja, triagem ou distribuição.</li>
+                <li>Divulgue nas redes sociais e convide colegas a contribuir com um cabaz digital.</li>
+            </ul>
         </section>
     </main>
 

@@ -2,6 +2,11 @@ var headerPage = `
 <header class="site-header">
         <div class="header-content">
             <a href="index.html"><img src="Images/Logo.png" alt="Logotipo do 'Alimentar com coração'" class="logotipo"></a>
+            <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav>
                 <ul class="menu">
                     <li class="dropdown">
@@ -73,4 +78,53 @@ var footerPage = `<footer class="site-footer">
     window.addEventListener('scroll', updateHeaderState, { passive: true });
     window.addEventListener('load', updateHeaderState);
     document.addEventListener('DOMContentLoaded', updateHeaderState);
+})();
+
+(function () {
+    function closeMobileNav() {
+        var nav = document.querySelector('.site-header nav');
+        var toggle = document.querySelector('.nav-toggle');
+        if (nav) {
+            nav.classList.remove('open');
+        }
+        if (toggle) {
+            toggle.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+        }
+        document.querySelectorAll('.menu .dropdown.open').forEach(function (item) {
+            item.classList.remove('open');
+            var dropdownToggle = item.querySelector('.dropdown-toggle');
+            if (dropdownToggle) {
+                dropdownToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+
+    document.addEventListener('click', function (e) {
+        var navToggle = e.target.closest('.nav-toggle');
+        if (navToggle) {
+            var header = navToggle.closest('.site-header');
+            var nav = header ? header.querySelector('nav') : null;
+            if (!nav) return;
+            var isOpen = nav.classList.toggle('open');
+            navToggle.classList.toggle('open', isOpen);
+            navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            return;
+        }
+
+        if (e.target.closest('.menu a')) {
+            closeMobileNav();
+            return;
+        }
+
+        if (!e.target.closest('.site-header')) {
+            closeMobileNav();
+        }
+    });
+
+    window.addEventListener('resize', function () {
+        if (window.innerWidth > 900) {
+            closeMobileNav();
+        }
+    });
 })();
