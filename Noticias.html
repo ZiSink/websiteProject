@@ -25,40 +25,48 @@
     <p>Fique a par das nossas iniciativas e impacto na comunidade</p><br>
   </div>
 
-  <!-- NOTÍCIA PRINCIPAL (MANTIDA) -->
-  <article class="featured-news">
-    <div class="featured-news-image">
-      <img src="Images/noticiaprincipal.jpg" alt="Imagem da notícia principal">
+<!-- NOTÍCIA PRINCIPAL -->
+<article class="featured-news">
+  <div class="featured-news-image">
+    <img src="Images/Logo.png" alt="Imagem da notícia principal">
+  </div>
+
+  <div class="featured-news-content">
+    <span class="news-category">Campanha</span>
+
+    <h2>Natal Solidário</h2>
+
+    <div class="news-meta">
+      <span>
+        <img src="Images/minilogo.png" alt="">
+        19 de Dezembro, 2025
+      </span>
+      <span>
+        <img src="Images/minilogo.png" alt="">
+        Equipa Alimentar com Coração
+      </span>
     </div>
 
-    <div class="featured-news-content">
-      <span class="news-category">Campanha</span>
+    <p class="preview-text">
+      Cabazes alimentares para famílias com crianças. Inclui bens festivos e produtos de higiene.
+      A entrega será acompanhada por técnicos locais.
+    </p>
 
-      <h2>Recolha Nacional angaria 1.850 toneladas de alimentos</h2>
+    <p class="full-text" style="display:none;">
+      O projeto “Natal Solidário” da Alimentar com Coração tem como objetivo garantir que famílias em situação de vulnerabilidade 
+      recebam cabazes alimentares completos para as festividades. Cada cabaz inclui produtos essenciais e festivos, bem como artigos de higiene, 
+      entregues com acompanhamento de técnicos locais que asseguram que todas as necessidades sejam atendidas de forma adequada.
+      Esta iniciativa reforça a solidariedade e o espírito de partilha durante a época natalícia.
+    </p>
 
-      <div class="news-meta">
-        <span>
-          <img src="Images/Noticia.png" alt="">
-          8 de Outubro, 2025
-        </span>
-        <span>
-          <img src="Images/Icon_Autor.png" alt="">
-          Equipa Alimentar com Coração
-        </span>
-      </div>
+<div style="display:flex; gap:15px; flex-wrap:wrap; margin-top:15px;">
+  <a href="#" class="read-more-btn">Ler Notícia Completa →</a>
+  <a href="Campanhas.html" class="campaign-btn">Ver Campanha</a>
+</div>
 
-      <p class="preview-text">
-        A última campanha nacional terminou com 1.850 toneladas recolhidas, graças ao esforço de milhares de voluntários...
-      </p>
+  </div>
+</article>
 
-      <p class="full-text" style="display:none;">
-        A Campanha de Recolha Nacional realizada pelo projeto “Alimentar com Coração” encerrou com um resultado extremamente positivo: 1.850 toneladas de alimentos angariadas em dois dias.
-        Mais de 7.000 voluntários estiveram presentes em cerca de 600 superfícies comerciais...
-      </p>
-
-      <a href="#" class="read-more-btn">Ler Notícia Completa →</a>
-    </div>
-  </article>
 
   <!-- GRELHA DE NOTÍCIAS -->
   <div class="news-grid">
@@ -66,7 +74,7 @@
     <!-- NOTÍCIA 1 -->
     <article class="news-card">
       <div class="news-card-image campaign">
-        <img src="" alt="" aria-hidden="true">
+        <img src="Images/noticia2.png" alt="" aria-hidden="true">
       </div>
 
       <div class="news-card-content">
@@ -97,7 +105,7 @@
     <!-- NOTÍCIA 2 -->
     <article class="news-card">
       <div class="news-card-image campaign">
-        <img src="" alt="" aria-hidden="true">
+        <img src="Images/noticia3.png" alt="" aria-hidden="true">
       </div>
 
       <div class="news-card-content">
@@ -128,7 +136,7 @@
     <!-- NOTÍCIA 3 -->
     <article class="news-card">
       <div class="news-card-image impact">
-        <img src="" alt="" aria-hidden="true">
+        <img src="Images/noticia4.png" alt="" aria-hidden="true">
       </div>
 
       <div class="news-card-content">
@@ -162,6 +170,16 @@
 
 <div class="footer-bar"></div>
 <footer id="footer"></footer>
+
+<!-- POPUP DE NOTÍCIAS -->
+<div id="popup-overlay">
+  <div id="popup">
+    <button class="close-popup">&times;</button>
+    <h2 id="popup-title"></h2>
+    <img id="popup-image" src="" alt="" style="display:none;">
+    <div id="popup-text"></div>
+  </div>
+</div>
 
 <script src="Js/PopupNoticias.js" defer></script>
 
