@@ -1,0 +1,11 @@
+A Nossa Missão:
+    Adicionar uma fotografia de cada uma e gerar mais 3 pessoas por baixo como uma equipa principal que gere o banco alimentar
+
+Noticias:
+    Implementar as notícias que a Inês encontrou
+
+Campanhas:
+    Implementar a notícia dos emails da universidade como campanhas ativas
+
+Mapa:
+    Desenvolver o pop-up quando não é encontrado nenhum ponto onde foi pesquisado
