@@ -149,6 +149,13 @@
   color: #27314a;
 }
 
+/* Alinha o texto com o checkbox */
+.checkbox-label {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
 /* Caixa de seleção maior para acessibilidade */
 .checkbox-field input {
   margin-top: 4px;
