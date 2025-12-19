@@ -56,3 +56,17 @@
 .campanhas-apoio {
     gap: 14px;
 }
+.campaign-card .campaign-image {
+    width: 100%;
+    height: 180px; /* altura padrão */
+    overflow: hidden;
+    border-radius: 15px 15px 0 0; /* arredonda topo do card */
+    margin-bottom: 15px;
+}
+
+.campaign-card .campaign-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* mantém proporção e corta o que ultrapassar */
+    display: block;
+}

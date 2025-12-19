@@ -55,6 +55,22 @@ let markers = [];
 let circleProximidade = null;
 
 // ===============================
+// FUNÇÃO PARA MINIPOPUP
+// ===============================
+function showMiniPopup(message, duration = 3000) {
+    let popup = document.getElementById("miniPopup");
+    if (!popup) {
+        popup = document.createElement("div");
+        popup.id = "miniPopup";
+        popup.className = "mini-popup";
+        document.body.appendChild(popup);
+    }
+    popup.textContent = message;
+    popup.classList.add("show");
+    setTimeout(() => popup.classList.remove("show"), duration);
+}
+
+// ===============================
 // CRIA OS MARCADORES INICIAIS
 // ===============================
 function criarMarcadores() {
@@ -94,35 +110,23 @@ searchInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
         const query = searchInput.value.trim();
 
-        // ✅ Se input estiver vazio → cancelar pesquisa e mostrar todos os pontos
+        // Se input vazio → mostrar todos os pontos
         if (query.length === 0) {
-            // Remove círculo de proximidade se existir
             if (circleProximidade) {
                 circleProximidade.remove();
                 circleProximidade = null;
             }
-
-            // Recria todos os marcadores
             criarMarcadores();
-
-            // Limpa lista de resultados
             resultList.innerHTML = "";
-
-            // Mostra a mensagem inicial
             mapMessage.style.display = "block";
-
-            // Sai da função para não chamar pesquisarLocal()
             return;
         }
 
-        // Se o input tiver menos de 2 caracteres, não faz nada
         if (query.length < 2) return;
 
-        // Pesquisa normal
         pesquisarLocal(query);
     }
 });
-
 
 async function pesquisarLocal(texto) {
     const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(texto)}&limit=1`;
@@ -130,7 +134,7 @@ async function pesquisarLocal(texto) {
     const data = await res.json();
 
     if (!data || data.length === 0) {
-        alert("⚠️ Nenhum local encontrado.");
+        showMiniPopup("⚠️ Nenhum local encontrado.");
         return;
     }
 
@@ -139,7 +143,6 @@ async function pesquisarLocal(texto) {
 
     map.setView([lat, lon], 13);
 
-    // círculo grande de proximidade (15 km)
     if (circleProximidade) circleProximidade.remove();
     circleProximidade = L.circle([lat, lon], {
         radius: 15000,
@@ -158,13 +161,10 @@ function filtrarMarcadores([lat, lon], distMax) {
     resultList.innerHTML = "";
     let encontrou = false;
 
-    // remover todos
     markers.forEach(m => map.removeLayer(m));
-
-    // recriar marcadores e filtrar
     markers = [];
 
-    pontos.forEach((p, i) => {
+    pontos.forEach((p) => {
         const marker = L.marker([p.lat, p.lng]);
         markers.push(marker);
 
@@ -193,6 +193,6 @@ function filtrarMarcadores([lat, lon], distMax) {
     });
 
     if (!encontrou) {
-        alert("⚠️ Não existem pontos de recolha próximos dessa zona.");
+        showMiniPopup("⚠️ Não existem pontos de recolha próximos dessa zona.");
     }
 }

@@ -27,7 +27,7 @@
             <div class="inline-stats">
                 <div>
                     <span>Próxima recolha</span>
-                    <strong>14–15 Dezembro</strong>
+                    <strong>24–25 Janeiro</strong>
                     <p>Supermercados parceiros e plataforma online.</p>
                 </div>
                 <div>
@@ -45,39 +45,49 @@
 
         <!-- Listagem das campanhas com datas e ações rápidas -->
         <section class="info-grid campaigns-grid">
-            <article class="info-card campaign-card">
-                <div class="campaign-meta">
-                    <span class="campaign-tag">Recolha nacional</span>
-                    <span class="campaign-date">1 Junho – 30 Setembro</span>
-                </div>
-                <h3>Recolha de Verão</h3>
-                <p>Recolha de alimentos não perecíveis em lojas e pontos parceiros.</p>
-                <ul class="campaign-points">
-                    <li>Prioridade: arroz, massa, azeite, leite e conservas.</li>
-                    <li>Entrega direta em loja ou através dos pontos de recolha.</li>
-                </ul>
-                <div class="campaign-actions">
-                    <a class="cta secondary" href="Doacoes.html">Quero doar</a>
-                    <a class="cta" href="Voluntariado.html">Ser voluntário</a>
-                </div>
-            </article>
+<!-- Campanha Recolha Nacional Atualizada -->
+<article class="info-card campaign-card">
+    <div class="campaign-image">
+        <img src="Images/campanha1.png" alt="Recolha Nacional">
+    </div>
+    <div class="campaign-meta">
+        <span class="campaign-tag">Recolha IPS</span>
+        <span class="campaign-date">29–30 Novembro</span>
+    </div>
+    <h3>48ª Campanha de Recolha de Alimentos</h3>
+    <p>Caros/as Estudantes, a tua colaboração pode fazer a diferença!</p>
+    <ul class="campaign-points">
+        <li>A tua participação apoia a recolha de alimentos para famílias em situação de vulnerabilidade.</li>
+        <li>Inscrições até 26 de Novembro. Seleciona o local e preenche o formulário.</li>
+        <li>Necessitamos de voluntários para o turno das 19h30 às 22h.</li>
+        <li>Locais: Setúbal – Auchan, Alegro | Barreiro – Continente, Santo André</li>
+    </ul>
+    <div class="campaign-actions">
+        <a class="cta disabled" href="javascript:void(0)">Terminado</a>
+    </div>
+</article>
 
-            <article class="info-card campaign-card">
-                <div class="campaign-meta">
-                    <span class="campaign-tag">Cabazes</span>
-                    <span class="campaign-date">Novembro – Dezembro</span>
-                </div>
-                <h3>Natal Solidário</h3>
-                <p>Cabazes alimentares para famílias com crianças.</p>
-                <ul class="campaign-points">
-                    <li>Inclui bens festivos e produtos de higiene.</li>
-                    <li>Entrega acompanhada por técnicos locais.</li>
-                </ul>
-                <div class="campaign-actions">
-                    <a class="cta secondary" href="Doacoes.html">Apoiar cabaz</a>
-                    <a class="cta" href="Voluntariado.html">Reforçar equipas</a>
-                </div>
-            </article>
+<!-- Campanha Natal Solidário -->
+<article class="info-card campaign-card">
+    <div class="campaign-image">
+        <img src="Images/campanha2.png" alt="Natal Solidário">
+    </div>
+    <div class="campaign-meta">
+        <span class="campaign-tag">Cabazes</span>
+        <span class="campaign-date">Dezembro</span>
+    </div>
+    <h3>Natal Solidário</h3>
+    <p>Cabazes alimentares para famílias com crianças.</p>
+    <ul class="campaign-points">
+        <li>Inclui bens festivos e produtos de higiene.</li>
+        <li>Entrega acompanhada por técnicos locais.</li>
+    </ul>
+    <div class="campaign-actions">
+        <a class="cta secondary" href="Doacoes.html">Apoiar cabaz</a>
+        <a class="cta" href="Voluntariado.html">Reforçar equipas</a>
+    </div>
+</article>
+
         </section>
 
         <section class="info-card campanhas-apoio">
@@ -96,33 +106,33 @@
 
 <script>
         // dropdown toggle simples: abre/fecha ao clicar, fecha ao clicar fora
-            document.addEventListener('click', function(e){
-                const toggle = e.target.closest('.dropdown-toggle');
-                if (toggle) {
-                    const li = toggle.parentElement;
-                    const opened = li.classList.toggle('open');
-                    toggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
-                    // fecha outros abertos
-                    document.querySelectorAll('.menu .dropdown.open').forEach(other => {
-                        if (other !== li) {
-                            other.classList.remove('open');
-                            other.querySelector('.dropdown-toggle').setAttribute('aria-expanded','false');
-                        }
-                    });
-                    return;
-                }
-                // se clicou fora, fecha todos
-                if (!e.target.closest('.menu')) {
-                    document.querySelectorAll('.menu .dropdown.open').forEach(item => {
-                        item.classList.remove('open');
-                        item.querySelector('.dropdown-toggle').setAttribute('aria-expanded','false');
-                    });
-                }
-            });
+        document.addEventListener('click', function(e){
+            const toggle = e.target.closest('.dropdown-toggle');
+            if (toggle) {
+                const li = toggle.parentElement;
+                const opened = li.classList.toggle('open');
+                toggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
+                // fecha outros abertos
+                document.querySelectorAll('.menu .dropdown.open').forEach(other => {
+                    if (other !== li) {
+                        other.classList.remove('open');
+                        other.querySelector('.dropdown-toggle').setAttribute('aria-expanded','false');
+                    }
+                });
+                return;
+            }
+            // se clicou fora, fecha todos
+            if (!e.target.closest('.menu')) {
+                document.querySelectorAll('.menu .dropdown.open').forEach(item => {
+                    item.classList.remove('open');
+                    item.querySelector('.dropdown-toggle').setAttribute('aria-expanded','false');
+                });
+            }
+        });
         document.addEventListener('DOMContentLoaded', () => {
-      if (window.headerPage) document.getElementById("header").innerHTML = headerPage;
-      if (window.footerPage) document.getElementById("footer").innerHTML = footerPage;
-    });
-    </script>
+          if (window.headerPage) document.getElementById("header").innerHTML = headerPage;
+          if (window.footerPage) document.getElementById("footer").innerHTML = footerPage;
+        });
+</script>
 </body>
 </html>
