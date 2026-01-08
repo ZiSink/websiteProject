@@ -13,12 +13,12 @@
 </head>
 
 <body class="content-page donativos-page">
-    <!-- Header padrão carregado via Layout.js -->
+    <!-- Header -->
     <header id="header"></header>
     <div class="header-bar"></div>
 
     <main class="content-layout">
-        <!-- Destaque destaca as principais formas de contribuir -->
+        <!-- destaca as principais formas de contribuir -->
         <section class="content-destaque donation-destaque">
             <p class="eyebrow">Como ajudar</p>
             <h1>Transforme solidariedade em refeições completas</h1>
@@ -116,7 +116,7 @@
     </main>
 
     <div class="footer-bar"></div>
-    <!-- Footer também injectado dinamicamente -->
+    <!-- Footer -->
     <footer id="footer"></footer>
 
 <script>
@@ -136,7 +136,7 @@
                     });
                     return;
                 }
-                // se clicou fora, fecha todos
+                // se clicar fora, fecha todos
                 if (!e.target.closest('.menu')) {
                     document.querySelectorAll('.menu .dropdown.open').forEach(item => {
                         item.classList.remove('open');

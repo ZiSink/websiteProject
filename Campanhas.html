@@ -43,9 +43,9 @@
             </div>
         </section>
 
-        <!-- Listagem das campanhas com datas e ações rápidas -->
+        <!-- Lista das campanhas com datas e ações rápidas -->
         <section class="info-grid campaigns-grid">
-<!-- Campanha Recolha Nacional Atualizada -->
+<!-- Campanha IPS -->
 <article class="info-card campaign-card">
     <div class="campaign-image">
         <img src="Images/campanha1.png" alt="Recolha Nacional">
@@ -101,7 +101,7 @@
     </main>
 
     <div class="footer-bar"></div>
-    <!-- Rodapé carregado por script comum -->
+    <!-- Footer -->
     <footer id="footer"></footer>
 
 <script>
@@ -121,7 +121,7 @@
                 });
                 return;
             }
-            // se clicou fora, fecha todos
+            // se clicar fora, fecha todos
             if (!e.target.closest('.menu')) {
                 document.querySelectorAll('.menu .dropdown.open').forEach(item => {
                     item.classList.remove('open');

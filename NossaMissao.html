@@ -19,7 +19,7 @@
 
 <main class="content-layout">
 
-    <!-- DESTAQUE -->
+    <!-- destaque -->
     <section class="content-destaque mission-destaque">
 
         <p class="eyebrow">Sobre nós</p>
@@ -46,10 +46,10 @@
        </br>
        <h1>Direção</h1> 
 
-        <!-- EQUIPA EM PIRÂMIDE -->
+        <!-- Equipa -->
         <div class="equipa-piramide">
 
-            <!-- LINHA DE CIMA -->
+            <!-- linha de cima -->
             <div class="linha linha-topo">
                 <div class="membro">
                     <div class="foto">
@@ -68,7 +68,7 @@
                 </div>
             </div>
 
-            <!-- LINHA DE BAIXO -->
+            <!-- linha de baixo -->
             <div class="linha linha-base">
                 <div class="membro">
                     <div class="foto">
@@ -99,10 +99,10 @@
 
     </section>
 
-    <!-- ESPAÇO EXTRA -->
+    <!-- espaço extra -->
     <div class="espaco-equipa"></div>
 
-    <!-- CARDS DE BAIXO -->
+    <!-- cards -->
     <section class="info-grid mission-pillars">
         <article class="info-card">
             <h3>Recolha e triagem</h3>
@@ -127,38 +127,37 @@
 <div class="footer-bar"></div>
 <footer id="footer"></footer>
 
-<script>
-document.addEventListener('click', function(e){
-    const toggle = e.target.closest('.dropdown-toggle');
-    if (toggle) {
-        const li = toggle.parentElement;
-        const opened = li.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
-        document.querySelectorAll('.menu .dropdown.open').forEach(other => {
-            if (other !== li) {
-                other.classList.remove('open');
-                other.querySelector('.dropdown-toggle')
-                    .setAttribute('aria-expanded','false');
-            }
-        });
-        return;
-    }
-    if (!e.target.closest('.menu')) {
-        document.querySelectorAll('.menu .dropdown.open').forEach(item => {
-            item.classList.remove('open');
-            item.querySelector('.dropdown-toggle')
-                .setAttribute('aria-expanded','false');
-        });
-    }
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    if (window.headerPage)
-        document.getElementById("header").innerHTML = headerPage;
-    if (window.footerPage)
-        document.getElementById("footer").innerHTML = footerPage;
-});
-</script>
+ <script>
+            // dropdown toggle simples: abre/fecha ao clicar, fecha ao clicar fora
+            document.addEventListener('click', function(e){
+                const toggle = e.target.closest('.dropdown-toggle');
+                if (toggle) {
+                    const li = toggle.parentElement;
+                    const opened = li.classList.toggle('open');
+                    toggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
+                    // fecha outros abertos
+                    document.querySelectorAll('.menu .dropdown.open').forEach(other => {
+                        if (other !== li) {
+                            other.classList.remove('open');
+                            other.querySelector('.dropdown-toggle').setAttribute('aria-expanded','false');
+                        }
+                    });
+                    return;
+                }
+                // se clicar fora, fecha todos
+                if (!e.target.closest('.menu')) {
+                    document.querySelectorAll('.menu .dropdown.open').forEach(item => {
+                        item.classList.remove('open');
+                        item.querySelector('.dropdown-toggle').setAttribute('aria-expanded','false');
+                    });
+                }
+            });
+            
+            document.addEventListener('DOMContentLoaded', () => {
+                if (window.headerPage) document.getElementById("header").innerHTML = headerPage;
+                if (window.footerPage) document.getElementById("footer").innerHTML = footerPage;
+            });
+        </script>
 
 </body>
 </html>

@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="Css/Maps.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
-<!-- JS Leaflet -->
+<!-- JS -->
 <script src="https://unpkg.com/leaflet/dist/leaflet.js" defer></script>
 <script src="Js/Layout.js" defer></script>
 </head>
@@ -21,15 +21,19 @@
 
 <main class="content">
 
-    <!-- BARRA DE PESQUISA -->
+    <!-- pesquisa -->
     <input type="text" id="mapSearch" placeholder="Pesquisar localidade, rua..." />
 
-    <!-- MENSAGEM INICIAL -->
+    <!-- Mensagem inicial -->
     <div id="mapMessage">
         Escolha um ponto no mapa para descobrir horários, contactos e parceiros desta rede de recolha.
     </div>
 
-    <!-- GRID: Mapa à esquerda, painel à direita -->
+    <!-- grid: Mapa a esquerda, painel a direita -->
+
+     <!-- (Grid é um sistema de layout bidimensional 
+        que organiza elementos em linhas e colunas) -->
+
     <div class="map-info-grid">
         <div id="map"></div>
 
@@ -42,7 +46,7 @@
         </div>
     </div>
 
-    <!-- LISTA DE RESULTADOS ABAIXO -->
+    <!-- lista dos resultados -->
     <section id="searchResults">
         <h3>Resultados da pesquisa</h3>
         <div id="resultList"></div>
@@ -58,35 +62,38 @@
 
 <script src="Js/Maps.js" defer></script>
 
-<script>
-document.addEventListener('click', function(e){
-    const toggle = e.target.closest('.dropdown-toggle');
-    if(toggle){
-        const li = toggle.parentElement;
-        const opened = li.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
-        document.querySelectorAll('.menu .dropdown.open').forEach(other => {
-            if(other !== li){
-                other.classList.remove('open');
-                other.querySelector('.dropdown-toggle').setAttribute('aria-expanded','false');
-            }
-        });
-        return;
-    }
-    if(!e.target.closest('.menu')){
-        document.querySelectorAll('.menu .dropdown.open').forEach(item => {
-            item.classList.remove('open');
-            item.querySelector('.dropdown-toggle').setAttribute('aria-expanded','false');
-        });
-    }
-});
+ <script>
+            // dropdown toggle simples: abre/fecha ao clicar, fecha ao clicar fora
+            document.addEventListener('click', function(e){
+                const toggle = e.target.closest('.dropdown-toggle');
+                if (toggle) {
+                    const li = toggle.parentElement;
+                    const opened = li.classList.toggle('open');
+                    toggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
+                    // fecha outros abertos
+                    document.querySelectorAll('.menu .dropdown.open').forEach(other => {
+                        if (other !== li) {
+                            other.classList.remove('open');
+                            other.querySelector('.dropdown-toggle').setAttribute('aria-expanded','false');
+                        }
+                    });
+                    return;
+                }
+                // se clicar fora, fecha todos
+                if (!e.target.closest('.menu')) {
+                    document.querySelectorAll('.menu .dropdown.open').forEach(item => {
+                        item.classList.remove('open');
+                        item.querySelector('.dropdown-toggle').setAttribute('aria-expanded','false');
+                    });
+                }
+            });
+            
+            document.addEventListener('DOMContentLoaded', () => {
+                if (window.headerPage) document.getElementById("header").innerHTML = headerPage;
+                if (window.footerPage) document.getElementById("footer").innerHTML = footerPage;
+            });
+        </script>
 
-// Carrega HEADER e FOOTER
-document.addEventListener('DOMContentLoaded', () => {
-    if(window.headerPage) document.getElementById("header").innerHTML = headerPage;
-    if(window.footerPage) document.getElementById("footer").innerHTML = footerPage;
-});
-</script>
 
 </body>
 </html>

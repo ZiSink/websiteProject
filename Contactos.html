@@ -13,7 +13,7 @@
 </head>
 
 <body class="content-page contactos-page">
-    <!-- Header e barra em gradiente tratados pelo Layout.js -->
+    <!-- Header -->
     <header id="header"></header>
     <div class="header-bar"></div>
 
@@ -99,7 +99,7 @@
     </main>
 
     <div class="footer-bar"></div>
-    <!-- Footer comum ao site -->
+    <!-- Footer -->
     <footer id="footer"></footer>
 
     <script>
@@ -119,7 +119,7 @@
                     });
                     return;
                 }
-                // se clicou fora, fecha todos
+                // se clicar fora, fecha todos
                 if (!e.target.closest('.menu')) {
                     document.querySelectorAll('.menu .dropdown.open').forEach(item => {
                         item.classList.remove('open');

@@ -10,7 +10,7 @@
         <script src="Js/Layout.js" defer></script>
     </head>
     <body class="home-page">
-        <!-- Header e barra de gradiente são injectados pelo Layout.js -->
+        <!-- Header -->
         <header id="header"></header>
         <div class="header-bar"></div>
     <!-- Hero Section -->
@@ -159,7 +159,7 @@
         </main>
 
         <div class="footer-bar"></div>
-        <!-- Footer injectado dinamicamente -->
+        <!-- Footer -->
         <footer id="footer"></footer>
 
         <script>
@@ -179,7 +179,7 @@
                     });
                     return;
                 }
-                // se clicou fora, fecha todos
+                // se clicar fora, fecha todos
                 if (!e.target.closest('.menu')) {
                     document.querySelectorAll('.menu .dropdown.open').forEach(item => {
                         item.classList.remove('open');

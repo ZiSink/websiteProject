@@ -1,7 +1,10 @@
 // ===============================
-// INICIALIZAÇÃO DO MAPA
+// MAPA
 // ===============================
+// Criação do mapa com Leaflet e definição da vista inicial (Lisboa)
 const map = L.map('map').setView([38.7169, -9.1399], 12);
+
+// Camada base do mapa usando OpenStreetMap
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; OpenStreetMap'
@@ -10,6 +13,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // ===============================
 // DADOS DOS PONTOS
 // ===============================
+// Lista com todos os pontos de recolha e respetivas informações
 const pontos = [
     {
         nome: "Escola Superior de Tecnologia de Setúbal (IPS)",
@@ -46,49 +50,65 @@ const pontos = [
     }
 ];
 
+// Elementos do HTML usados no mapa e nos resultados
 const infoPanel = document.getElementById("info-panel");
 const mapMessage = document.getElementById("mapMessage");
 const resultList = document.getElementById("resultList");
 const searchInput = document.getElementById("mapSearch");
 
+// Lista de marcadores e círculo de proximidade
 let markers = [];
 let circleProximidade = null;
 
 // ===============================
-// FUNÇÃO PARA MINIPOPUP
+// MINI POPUP
 // ===============================
+// Mostra uma pequena mensagem no ecrã durante alguns segundos
 function showMiniPopup(message, duration = 3000) {
     let popup = document.getElementById("miniPopup");
+
+    // Se o popup ainda não existir, é criado
     if (!popup) {
         popup = document.createElement("div");
         popup.id = "miniPopup";
         popup.className = "mini-popup";
         document.body.appendChild(popup);
     }
+
     popup.textContent = message;
     popup.classList.add("show");
+
+    // Remove o popup após o tempo definido
     setTimeout(() => popup.classList.remove("show"), duration);
 }
 
 // ===============================
-// CRIA OS MARCADORES INICIAIS
+// MARCADORES
 // ===============================
+// Cria os marcadores no mapa a partir dos pontos definidos
 function criarMarcadores() {
     markers = [];
+
     pontos.forEach(p => {
         const marker = L.marker([p.lat, p.lng]).addTo(map);
+
+        // Clique no marcador atualiza o painel de informações
         marker.on("click", () => {
             atualizarPainel(p);
             mapMessage.style.display = "none";
         });
+
         markers.push(marker);
     });
 }
+
+// Criação inicial dos marcadores
 criarMarcadores();
 
 // ===============================
 // ATUALIZAR PAINEL
 // ===============================
+// Atualiza o painel lateral com as informações do ponto selecionado
 function atualizarPainel(ponto) {
     infoPanel.innerHTML = `
         <img src="${ponto.imagem}" alt="${ponto.nome}">
@@ -106,11 +126,12 @@ function atualizarPainel(ponto) {
 // ===============================
 // PESQUISA
 // ===============================
+// Deteta quando a tecla Enter é pressionada no campo de pesquisa
 searchInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
         const query = searchInput.value.trim();
 
-        // Se input vazio → mostrar todos os pontos
+        // Se o campo estiver vazio, mostra novamente todos os pontos
         if (query.length === 0) {
             if (circleProximidade) {
                 circleProximidade.remove();
@@ -122,17 +143,23 @@ searchInput.addEventListener("keypress", (e) => {
             return;
         }
 
+        // Ignora pesquisas muito curtas
         if (query.length < 2) return;
 
         pesquisarLocal(query);
     }
 });
 
+// ===============================
+// PESQUISAR LOCAL
+// ===============================
+// Pesquisa o local usando a API do OpenStreetMap (Nominatim)
 async function pesquisarLocal(texto) {
     const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(texto)}&limit=1`;
     const res = await fetch(url, { headers: { "User-Agent": "AlimentarComCoracao" } });
     const data = await res.json();
 
+    // Caso não encontre nenhum local
     if (!data || data.length === 0) {
         showMiniPopup("⚠️ Nenhum local encontrado.");
         return;
@@ -141,9 +168,13 @@ async function pesquisarLocal(texto) {
     const lat = parseFloat(data[0].lat);
     const lon = parseFloat(data[0].lon);
 
+    // Centraliza o mapa no local pesquisado
     map.setView([lat, lon], 13);
 
+    // Remove o círculo anterior, se existir
     if (circleProximidade) circleProximidade.remove();
+
+    // Cria um círculo de proximidade
     circleProximidade = L.circle([lat, lon], {
         radius: 15000,
         color: "#2E7D32",
@@ -157,10 +188,12 @@ async function pesquisarLocal(texto) {
 // ===============================
 // FILTRAR MARCADORES
 // ===============================
+// Mostra apenas os pontos dentro da distância definida
 function filtrarMarcadores([lat, lon], distMax) {
     resultList.innerHTML = "";
     let encontrou = false;
 
+    // Remove todos os marcadores atuais
     markers.forEach(m => map.removeLayer(m));
     markers = [];
 
@@ -170,13 +203,16 @@ function filtrarMarcadores([lat, lon], distMax) {
 
         const distance = map.distance([lat, lon], marker.getLatLng());
 
+        // Verifica se o ponto está dentro do raio
         if (distance <= distMax) {
             marker.addTo(map);
             encontrou = true;
 
+            // Cria item na lista de resultados
             const item = document.createElement("div");
             item.className = "result-item";
             item.textContent = p.nome;
+
             item.addEventListener("click", () => {
                 atualizarPainel(p);
                 map.setView([p.lat, p.lng], 15);
@@ -186,12 +222,14 @@ function filtrarMarcadores([lat, lon], distMax) {
             resultList.appendChild(item);
         }
 
+        // Clique no marcador atualiza o painel
         marker.on("click", () => {
             atualizarPainel(p);
             mapMessage.style.display = "none";
         });
     });
 
+    // Caso não existam pontos próximos
     if (!encontrou) {
         showMiniPopup("⚠️ Não existem pontos de recolha próximos dessa zona.");
     }

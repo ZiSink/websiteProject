@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt">
-    <head>
-        <meta charset="UTF-8">
-        <title>Alimentar com coração</title>
-        <link rel="icon" type="image/x-icon" href="Images/minilogo.png">
-        <link rel="stylesheet" href="Css/PrecisoAjuda.css">
-        <link rel="stylesheet" href="Css/index.css">
-        <link rel="stylesheet" href="Css/Layout.css">
-        <script src="Js/Layout.js" defer></script>
-        <script src="Js/PopupPrecisoAjuda.js" defer></script>
-    </head>
-    <body class="preciso-ajuda-page">
-        <!-- Header injetado e faixa de transição -->
-        <header id="header"></header>
-		<div class="header-bar"></div>
-        <main class="preciso-ajuda">
+<head>
+    <meta charset="UTF-8">
+    <title>Alimentar com coração</title>
+
+    <link rel="icon" type="image/x-icon" href="Images/minilogo.png">
+    <link rel="stylesheet" href="Css/PrecisoAjuda.css">
+    <link rel="stylesheet" href="Css/index.css">
+    <link rel="stylesheet" href="Css/Layout.css">
+
+    <script src="Js/Layout.js" defer></script>
+</head>
+
+<body class="preciso-ajuda-page">
+
+<header id="header"></header>
+<div class="header-bar"></div>
+
+<main class="preciso-ajuda">
+
+
             <!-- Texto introdutório com instruções para o formulário -->
             <section class="intro">
                 <p class="eyebrow">Preciso de ajuda</p>
@@ -119,38 +124,93 @@
                 </div>
             </section>
         </main>
+</form>
+</div>
+</section>
+</main>
 
-        <!-- Popup reutiliza o mesmo markup de notícias para mostrar termos -->
-        <div id="popup-overlay" aria-hidden="true">
-            <div id="popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
-                <button class="close-popup" aria-label="Fechar popup">&times;</button>
-                <h2 id="popup-title"></h2>
-                <img id="popup-image" src="Images/minilogo.png" alt="">
-                <div id="popup-text"></div>
-            </div>
-        </div>
+<!-- ================= POPUP ================= -->
+<div id="popup-overlay" aria-hidden="true">
+<div id="popup" role="dialog" aria-modal="true">
 
-        <!-- Conteúdo oculto serve de base para preencher o popup -->
-        <div id="terms-content" hidden>
-            <p>
-                Os pedidos submetidos através deste formulário destinam-se exclusivamente a famílias em situação de fragilidade alimentar
-                residente em território nacional. Recolhemos apenas os dados estritamente necessários para avaliar o pedido e organizar a resposta.
-            </p>
-            <p>
-                Ao enviar o formulário autoriza a equipa do Alimentar com Coração a contactar os serviços sociais locais e as instituições parceiras,
-                sempre com o objetivo de confirmar as informações fornecidas e agilizar o apoio. Nenhuma informação é partilhada com entidades comerciais.
-            </p>
-            <p>
-                O apoio concedido é temporário, avaliado caso a caso e pode consistir em cabazes de bens essenciais, vales de compra ou encaminhamento
-                para programas parceiros. A submissão do formulário não garante a atribuição imediata de ajuda. Em caso de dúvida, contacte-nos através
-                do email apoio@alimentarcoracao.pt.
-            </p>
-        </div>
+    <button class="close-popup">&times;</button>
 
-		<div class="footer-bar"></div>
-        <!-- Footer padrão -->
-        <footer id="footer"></footer>
-        <script>        
+    <h2 id="popup-title"></h2>
+
+    <!-- IMAGEM RESTAURADA -->
+    <img id="popup-image" src="Images/minilogo.png" alt="Alimentar com Coração">
+
+    <div id="popup-text"></div>
+
+</div>
+</div>
+
+<!-- ================= CONTEÚDO TERMOS ================= -->
+<div id="terms-content" hidden>
+
+<p>
+Os pedidos submetidos através deste formulário destinam-se exclusivamente
+a famílias em situação de fragilidade alimentar.
+</p>
+
+<p>
+Os dados recolhidos são utilizados apenas pela equipa do
+<strong>Alimentar com Coração</strong> para avaliação do pedido
+e nunca são partilhados com fins comerciais.
+</p>
+
+<p>
+Ao submeter o formulário, autoriza o contacto por parte da equipa
+e de entidades parceiras, exclusivamente para efeitos de apoio social.
+</p>
+
+<p>
+O apoio concedido é temporário e avaliado caso a caso.
+A submissão do formulário não garante atribuição imediata de ajuda.
+</p>
+
+</div>
+
+<div class="footer-bar"></div>
+<footer id="footer"></footer>
+
+<!-- ================= JS POPUP TERMOS ================= -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    const overlay = document.getElementById('popup-overlay');
+    const popupTitle = document.getElementById('popup-title');
+    const popupText = document.getElementById('popup-text');
+    const closeBtn = document.querySelector('.close-popup');
+    const termsBtn = document.querySelector('.terms-trigger');
+    const termsContent = document.getElementById('terms-content');
+
+    function openPopup() {
+        popupTitle.textContent = 'Termos e Condições';
+        popupText.innerHTML = termsContent.innerHTML;
+        overlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closePopup() {
+        overlay.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+
+    termsBtn.addEventListener('click', openPopup);
+    closeBtn.addEventListener('click', closePopup);
+
+    overlay.addEventListener('click', e => {
+        if (e.target === overlay) closePopup();
+    });
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closePopup();
+    });
+
+});
+</script>
+<script>
             // dropdown toggle simples: abre/fecha ao clicar, fecha ao clicar fora
             document.addEventListener('click', function(e){
                 const toggle = e.target.closest('.dropdown-toggle');
@@ -167,7 +227,7 @@
                     });
                     return;
                 }
-                // se clicou fora, fecha todos
+                // se clicar fora, fecha todos
                 if (!e.target.closest('.menu')) {
                     document.querySelectorAll('.menu .dropdown.open').forEach(item => {
                         item.classList.remove('open');
@@ -175,11 +235,16 @@
                     });
                 }
             });
-                
+            
             document.addEventListener('DOMContentLoaded', () => {
                 if (window.headerPage) document.getElementById("header").innerHTML = headerPage;
                 if (window.footerPage) document.getElementById("footer").innerHTML = footerPage;
             });
         </script>
-    </body>
+
+</body>
 </html>
+
+
+
+
