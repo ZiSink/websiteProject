@@ -164,11 +164,37 @@
 <script src="Js/PopupNoticias.js" defer></script>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  if (window.headerPage) document.getElementById("header").innerHTML = headerPage;
-  if (window.footerPage) document.getElementById("footer").innerHTML = footerPage;
-});
-</script>
+            // dropdown toggle simples: abre/fecha ao clicar, fecha ao clicar fora
+            document.addEventListener('click', function(e){
+                const toggle = e.target.closest('.dropdown-toggle');
+                if (toggle) {
+                    const li = toggle.parentElement;
+                    const opened = li.classList.toggle('open');
+                    toggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
+                    // fecha outros abertos
+                    document.querySelectorAll('.menu .dropdown.open').forEach(other => {
+                        if (other !== li) {
+                            other.classList.remove('open');
+                            other.querySelector('.dropdown-toggle').setAttribute('aria-expanded','false');
+                        }
+                    });
+                    return;
+                }
+                // se clicar fora, fecha todos
+                if (!e.target.closest('.menu')) {
+                    document.querySelectorAll('.menu .dropdown.open').forEach(item => {
+                        item.classList.remove('open');
+                        item.querySelector('.dropdown-toggle').setAttribute('aria-expanded','false');
+                    });
+                }
+            });
+            
+            document.addEventListener('DOMContentLoaded', () => {
+                if (window.headerPage) document.getElementById("header").innerHTML = headerPage;
+                if (window.footerPage) document.getElementById("footer").innerHTML = footerPage;
+            });
+        </script>
+
 
 </body>
 </html>
