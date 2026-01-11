@@ -1,5 +1,6 @@
 // ======================= HEADER =======================
 // Guarda o HTML do header numa variável para ser reutilizado em várias páginas
+// Nota: usa template literal para manter o HTML legível e sem concatenações
 var headerPage = `
 <header class="site-header">
         <div class="header-content">
@@ -51,6 +52,7 @@ var headerPage = `
 
 // ======================= FOOTER =======================
 // Guarda o HTML do footer para manter o mesmo rodapé em todas as páginas
+// Desta forma garante-se consistência visual e facilita futuras alterações
 var footerPage = `
 <footer class="site-footer">
     <div class="footer-container">
@@ -94,6 +96,7 @@ var footerPage = `
 
 // ======================= HEADER AO FAZER SCROLL =======================
 // Controla o tamanho do header quando a página é deslizada
+// IIFE para isolar variáveis e não poluir o scope global
 (function () {
 
     // Verifica a posição do scroll
@@ -106,11 +109,13 @@ var footerPage = `
         }
 
         // Quando o scroll passa os 60px, o header fica compacto
+        // Usa classe CSS para a transição ser feita no lado do estilo
         var shouldCompact = (window.scrollY || window.pageYOffset) > 60;
         header.classList.toggle('compact', shouldCompact);
     }
 
     // Aplica a verificação durante o scroll e no carregamento da página
+    // "passive: true" evita bloquear o scroll
     window.addEventListener('scroll', updateHeaderState, { passive: true });
     window.addEventListener('load', updateHeaderState);
     document.addEventListener('DOMContentLoaded', updateHeaderState);
@@ -118,6 +123,7 @@ var footerPage = `
 
 // ======================= MENU MOBILE =======================
 // Controla a abertura e fecho do menu na versão mobile
+// Lógica centralizada num IIFE para evitar funções globais
 (function () {
 
     // Fecha o menu mobile e os dropdowns
@@ -125,6 +131,7 @@ var footerPage = `
         var nav = document.querySelector('.site-header nav');
         var toggle = document.querySelector('.nav-toggle');
 
+        // Remove classes de estado do menu e do botão
         if (nav) {
             nav.classList.remove('open');
         }
@@ -135,6 +142,7 @@ var footerPage = `
         }
 
         // Fecha todos os dropdowns abertos
+        // Atualiza também o aria-expanded dos botões de dropdown
         document.querySelectorAll('.menu .dropdown.open').forEach(function (item) {
             item.classList.remove('open');
             var dropdownToggle = item.querySelector('.dropdown-toggle');
@@ -145,6 +153,7 @@ var footerPage = `
     }
 
     // Deteta cliques na página
+    // Usa delegação para apanhar cliques em elementos dinâmicos
     document.addEventListener('click', function (e) {
 
         // Clique no botão do menu
@@ -155,6 +164,7 @@ var footerPage = `
             if (!nav) return;
 
             // Abre ou fecha o menu
+            // Mantem o aria-expanded sincronizado com o estado visual
             var isOpen = nav.classList.toggle('open');
             navToggle.classList.toggle('open', isOpen);
             navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
@@ -168,12 +178,14 @@ var footerPage = `
         }
 
         // Clique fora do header fecha o menu
+        // Evita o menu ficar aberto quando o utilizador interage fora
         if (!e.target.closest('.site-header')) {
             closeMobileNav();
         }
     });
 
     // Em ecrãs grandes o menu mobile fecha automaticamente
+    // Previne estados estranhos ao redimensionar a janela
     window.addEventListener('resize', function () {
         if (window.innerWidth > 900) {
             closeMobileNav();

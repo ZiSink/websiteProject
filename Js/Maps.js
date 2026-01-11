@@ -2,9 +2,11 @@
 // MAPA
 // ===============================
 // Criação do mapa com Leaflet e definição da vista inicial (Lisboa)
+// O id "map" tem de existir no HTML para o mapa ser renderizado
 const map = L.map('map').setView([38.7169, -9.1399], 12);
 
 // Camada base do mapa usando OpenStreetMap
+// maxZoom define o nível máximo de zoom permitido
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; OpenStreetMap'
@@ -14,6 +16,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // DADOS DOS PONTOS
 // ===============================
 // Lista com todos os pontos de recolha e respetivas informações
+// Cada objeto é usado para criar marcador e para preencher o painel lateral
 const pontos = [
     {
         nome: "Escola Superior de Tecnologia de Setúbal (IPS)",
@@ -51,12 +54,14 @@ const pontos = [
 ];
 
 // Elementos do HTML usados no mapa e nos resultados
+// São guardados em variáveis para evitar múltiplas queries ao DOM
 const infoPanel = document.getElementById("info-panel");
 const mapMessage = document.getElementById("mapMessage");
 const resultList = document.getElementById("resultList");
 const searchInput = document.getElementById("mapSearch");
 
 // Lista de marcadores e círculo de proximidade
+// markers guarda os marcadores ativos no mapa para limpeza/atualização
 let markers = [];
 let circleProximidade = null;
 
@@ -64,10 +69,12 @@ let circleProximidade = null;
 // MINI POPUP
 // ===============================
 // Mostra uma pequena mensagem no ecrã durante alguns segundos
+// Usado para avisos rápidos sem interromper a navegação
 function showMiniPopup(message, duration = 3000) {
     let popup = document.getElementById("miniPopup");
 
     // Se o popup ainda não existir, é criado
+    // Assim evitamos colocar markup fixo no HTML
     if (!popup) {
         popup = document.createElement("div");
         popup.id = "miniPopup";
@@ -86,6 +93,7 @@ function showMiniPopup(message, duration = 3000) {
 // MARCADORES
 // ===============================
 // Cria os marcadores no mapa a partir dos pontos definidos
+// Sempre que se recriam marcadores, a lista anterior é substituída
 function criarMarcadores() {
     markers = [];
 
@@ -93,6 +101,7 @@ function criarMarcadores() {
         const marker = L.marker([p.lat, p.lng]).addTo(map);
 
         // Clique no marcador atualiza o painel de informações
+        // Também esconde a mensagem inicial do mapa
         marker.on("click", () => {
             atualizarPainel(p);
             mapMessage.style.display = "none";
@@ -109,6 +118,7 @@ criarMarcadores();
 // ATUALIZAR PAINEL
 // ===============================
 // Atualiza o painel lateral com as informações do ponto selecionado
+// Usa template literal para inserir dados do ponto de forma simples
 function atualizarPainel(ponto) {
     infoPanel.innerHTML = `
         <img src="${ponto.imagem}" alt="${ponto.nome}">
@@ -127,11 +137,13 @@ function atualizarPainel(ponto) {
 // PESQUISA
 // ===============================
 // Deteta quando a tecla Enter é pressionada no campo de pesquisa
+// Não faz pesquisa automática a cada tecla para evitar chamadas à API
 searchInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
         const query = searchInput.value.trim();
 
         // Se o campo estiver vazio, mostra novamente todos os pontos
+        // Também remove o circulo de proximidade anterior
         if (query.length === 0) {
             if (circleProximidade) {
                 circleProximidade.remove();
@@ -144,6 +156,7 @@ searchInput.addEventListener("keypress", (e) => {
         }
 
         // Ignora pesquisas muito curtas
+        // Ajuda a reduzir chamadas desnecessárias à API
         if (query.length < 2) return;
 
         pesquisarLocal(query);
@@ -154,6 +167,7 @@ searchInput.addEventListener("keypress", (e) => {
 // PESQUISAR LOCAL
 // ===============================
 // Pesquisa o local usando a API do OpenStreetMap (Nominatim)
+// Devolve a primeira correspondência (limit=1)
 async function pesquisarLocal(texto) {
     const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(texto)}&limit=1`;
     const res = await fetch(url, { headers: { "User-Agent": "AlimentarComCoracao" } });
@@ -169,12 +183,14 @@ async function pesquisarLocal(texto) {
     const lon = parseFloat(data[0].lon);
 
     // Centraliza o mapa no local pesquisado
+    // Zoom 13 dá um enquadramento equilibrado
     map.setView([lat, lon], 13);
 
     // Remove o círculo anterior, se existir
     if (circleProximidade) circleProximidade.remove();
 
     // Cria um círculo de proximidade
+    // Este raio e cor são apenas para referência visual
     circleProximidade = L.circle([lat, lon], {
         radius: 15000,
         color: "#2E7D32",
@@ -182,6 +198,7 @@ async function pesquisarLocal(texto) {
         fillOpacity: 0.15
     }).addTo(map);
 
+    // Filtra e mostra apenas os pontos dentro do raio
     filtrarMarcadores([lat, lon], 15000);
 }
 
@@ -189,6 +206,7 @@ async function pesquisarLocal(texto) {
 // FILTRAR MARCADORES
 // ===============================
 // Mostra apenas os pontos dentro da distância definida
+// Recria marcadores e lista de resultados com base no raio
 function filtrarMarcadores([lat, lon], distMax) {
     resultList.innerHTML = "";
     let encontrou = false;
@@ -201,6 +219,7 @@ function filtrarMarcadores([lat, lon], distMax) {
         const marker = L.marker([p.lat, p.lng]);
         markers.push(marker);
 
+        // Calcula a distancia em metros entre o ponto pesquisado e o marcador
         const distance = map.distance([lat, lon], marker.getLatLng());
 
         // Verifica se o ponto está dentro do raio
@@ -209,6 +228,7 @@ function filtrarMarcadores([lat, lon], distMax) {
             encontrou = true;
 
             // Cria item na lista de resultados
+            // Permite escolher o ponto sem precisar clicar no mapa
             const item = document.createElement("div");
             item.className = "result-item";
             item.textContent = p.nome;
